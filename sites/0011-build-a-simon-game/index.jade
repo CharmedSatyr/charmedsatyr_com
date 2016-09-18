@@ -1,0 +1,34 @@
+//output:index.html
+doctype html
+html
+  head
+    meta(charset='utf-8', name='viewport', content='width=device-width, initial-scale=1')
+    title Build a Simon Game
+    link(rel='stylesheet', href='sass/style.min.css')
+  body
+    div.lighting
+     div.outerCircle
+       div#tl.quarter.tl
+       div#tr.quarter.tr
+       div#bl.quarter.bl
+       div#br.quarter.br
+     
+     div.innerCircle
+       div.name Simon
+       div#start.start
+        span.label Start
+       div#strict.strict
+        span.label Strict
+       div#strictLight.strictLight
+       div.display
+        span#display
+       div.powerStrip
+         span ON
+         div#power.power
+           div#powerSlider.powerSlider
+         span OFF
+     div.vertical-border
+     div.horizontal-border
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+    script(src='js/index.js')
+   
