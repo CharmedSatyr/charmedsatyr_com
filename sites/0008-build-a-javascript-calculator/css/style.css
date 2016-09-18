@@ -1,0 +1,65 @@
+/*ISSUE TRACKER in JS Comments*/
+
+body {
+  background: #07ffea;
+  background: url(https://charmedsatyr.com/xy/resources/0008/congruent_pentagon.png);
+  margin: 8%;
+  text-align: center;
+}
+
+.title {
+  color: black;
+  font-family: 'Sigmar One', cursive;
+}
+
+.display {
+  background: white;
+  border: 6px solid black;
+  border-radius: 0;
+  color: black;
+  font-family: 'Arimo', sans-serif;
+}
+
+.btn {
+  background: black;
+  border: 2px solid black;
+  border-radius: 0;
+  color: white;
+  font-size: 110%;
+  padding: 2%;
+}
+
+.btn:hover {
+  background: #ff4b3a;
+  border: 2px solid white;
+  color: black;
+}
+
+.panel {
+  border: 6px solid black;
+  border-radius: 0;
+  font-family: 'Arimo', sans-serif;
+}
+
+.calc {
+  background: #ebfdd4;
+  color: black;
+}
+
+.equals {
+  background: #b1f6cb;
+  color: black;
+}
+
+.other {
+  background: #dddddd;
+  color: black;
+}
+
+.connector {
+  background: transparent;
+  background: url(https://charmedsatyr.com/xy/resources/0008/Connector.png);
+  background-position: 79% 10%;
+  background-repeat: no-repeat;
+  background-size: 9%;
+}

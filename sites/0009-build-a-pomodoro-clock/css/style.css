@@ -1,0 +1,141 @@
+/*ISSUE TRACKER in JS Comments*/
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background: black;
+  background: url('https://charmedsatyr.com/xy/resources/0009/footer_lodyas.png');
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  margin-top: 2%;
+  text-align: center;
+  user-select: none;
+}
+
+.title {
+  color: #ff9532;
+  font-size: 72px;
+  font-weight: 900;
+}
+
+.btn-default {
+  font-size: 15px;
+}
+
+.spend {
+  font-size: 40px;
+}
+
+.adjust {
+  background: transparent;
+  border-color: transparent;
+  color: gray;
+  font-size: 55px;
+  overflow: hidden;
+}
+
+.adjust:hover {
+  color: #ff9532;
+}
+
+.time {
+  font-size: 70px;
+}
+
+.c {
+  position: relative;
+  width: 100%;
+}
+
+.dial {
+  background: #333333;
+  border: solid white 10px;
+  border-radius: 100%;
+  height: 350px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 350px;
+}
+
+.play {
+  margin-left: auto;
+  margin-right: 20%;
+}
+
+.work {
+  margin-left: 20%;
+  margin-right: auto;
+  z-index: 1;
+}
+
+#gif {
+  -moz-animation: segmentRotate 1s linear infinite;
+  -webkit-animation: segmentRotate 1s linear infinite;
+  animation: segmentRotate 1s linear infinite;
+  /*Spinner image from http://codepen.io/Zeaklous/pen/akxqt*/
+  background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEwMCAxMDAiID4NCiAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgc3Ryb2tlLWRhc2hhcnJheT0iMC45NTIiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIvPg0KPC9zdmc+');
+  background-repeat: no-repeat;
+  height: 110%;
+  left: -5%;
+  overflow: hidden;
+  position: absolute;
+  top: -5%;
+  width: 110%;
+  z-index: 2;
+}
+
+@keyframes segmentRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+.title {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.btn-default {
+  font-size: 12px;
+}
+
+.spend {
+  font-size: 30px;
+  margin-top: -10%;
+
+}
+
+.adjust {
+  font-size: 45px;
+  margin: -3%;
+}
+
+.time {
+  font-size: 50px;
+}
+
+.dial {
+  height: 250px;
+  left: 0;
+  top: 1px;
+  width: 250px;
+}
+
+.play {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.work {
+  margin-left: 5%;
+}
