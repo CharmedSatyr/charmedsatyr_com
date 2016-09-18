@@ -1,0 +1,168 @@
+//output:index.html
+doctype html
+html
+  head
+    meta(charset='UTF-8', meta name='viewport', content='width=device-width, initial-scale=1')
+    title &#9733;&#633;&#654;&#647;&#592;S p&#477;&#623;&#633;&#592;&#613;&#390;&#9733;
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/font-awesome-4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='sass/style.min.css')
+    script(src='js/jquery-3.1.0.min.js')
+    script(src='js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    script(type='text/javascript', src='js/index.js').
+  body
+    div.container-fluid
+      div.row
+        div.main.well.col-xs-12.col-md-8.col-md-offset-2
+          // title
+          div.row
+            img.satyr(src='resources/CharmedSatyr/Satyr-Purple-to-Black.png', alt='satyr logo')
+            h4.subtitle.col-xs-12 digital hedonist. learning to code.
+          br
+          // Front End Projects for FCC
+          // FCC Heading
+          div.row
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFCC') Front End Development Projects
+              br
+              span for freecodecamp
+              span.space (
+              i.fa.fa-fire
+              span )
+              p.description basic &#8594; intermediate &#8594; advanced
+          // FCC Sites
+          div.row.collapse#toggleFCC
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              a(href='sites/0000-my-first-website/index.html' target='_blank')
+                div.thumbnail-container(title='My First Website')
+                  div.thumbnail
+                    iframe(src='sites/0000-my-first-website/index.html' frameborder='0' onload='this.style.opacity=1')
+                p My First Website
+              br
+              a(href='sites/0001-personal-portfolio-webpage/index.html' target='_blank')
+                div.thumbnail-container(title='Sample Personal Portfolio')
+                  div.thumbnail
+                    iframe(src='sites/0001-personal-portfolio-webpage/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Sample Personal Portfolio
+              br
+              a(href='sites/0002-tribute-page/', target='_blank')
+                div.thumbnail-container(title='A Tribute to Spaceman Spiff')
+                  div.thumbnail
+                    iframe(src='sites/0002-tribute-page/index.html' frameborder='0' onload='this.style.opacity=1')
+                p A Tribute to Spaceman Spiff
+              br
+              a(href='sites/0003-random-quote-machine/index.html', target='_blank')
+                div.thumbnail-container(title='Random Quote Machine')
+                  div.thumbnail
+                    iframe(src='sites/0003-random-quote-machine/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Random Quote Machine
+              br
+              a(href='sites/0004-show-the-local-weather/index.html', target='_blank')
+                div.thumbnail-container(title='View Your Local Weather')
+                  div.thumbnail
+                    iframe(src='sites/0004-show-the-local-weather/index.html' frameborder='0' onload='this.style.opacity=1')
+                p View Your Local Weather
+              br
+              a(href='sites/0005-build-a-wikipedia-viewer/index.html', target='_blank')
+                div.thumbnail-container(title='Wikipedia Viewer')
+                  div.thumbnail
+                    iframe(src='sites/0005-build-a-wikipedia-viewer/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Wikipedia Viewer
+              br
+              a(href='sites/0006-use-the-twitchtv-json-api/index.html' target='_blank')
+                div.thumbnail-container(title='Twitch Stream Tracker')
+                  div.thumbnail
+                    iframe(src='sites/0006-use-the-twitchtv-json-api/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Twitch Stream Tracker
+              br
+              a(href='sites/0008-build-a-javascript-calculator/index.html' target='_blank')
+                div.thumbnail-container(title='Javascript Calculator')
+                  div.thumbnail
+                    iframe(src='sites/0008-build-a-javascript-calculator/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Javascript Calculator
+              br
+              a(href='sites/0009-build-a-pomodoro-clock/index.html' target='_blank')
+                div.thumbnail-container(title='Pomodoro Clock')
+                  div.thumbnail
+                    iframe(src='sites/0009-build-a-pomodoro-clock/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Pomodoro Clock
+              br
+              a(href='sites/0010-build-a-tic-tac-toe-game/index.html' target='_blank')
+                div.thumbnail-container(title='Tic Tac Toe')
+                  div.thumbnail
+                    iframe(src='sites/0010-build-a-tic-tac-toe-game/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Tic Tac Toe
+              br
+              a(href='sites/0011-build-a-simon-game/index.html' target='_blank')
+                div.thumbnail-container(title='Simon Game')
+                  div.thumbnail
+                    iframe(src='sites/0011-build-a-simon-game/index.html' frameborder='0' onload='this.style.opacity=1')
+                p Simon Game
+              br
+              a(href='https://www.freecodecamp.com/charmedsatyr/front-end-certification' target='_blank')
+                p.emph Front End Development Certificate
+          br
+          // Other Projects
+          // Other heading
+          div.row
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleOther') Other Projects
+              span.space
+              i.fa.fa-code
+              p.description miscellaneous code i've worked on for fun.
+              // Other Sites
+          div.row.collapse#toggleOther
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              a(href='sites/0007-corrupting-caesar-s-cipher/', target='_blank')
+                div.thumbnail-container(title="Corrupting Caesar's Cipher")
+                  div.thumbnail
+                    iframe(src='sites/0007-corrupting-caesar-s-cipher/' frameborder='0' onload='this.style.opacity=1')
+                p Corrupting Caesar's Cipher
+              br
+              a(href='https://busanmaps.herokuapp.com/', target='_blank')
+                div.thumbnail-container(title='uMAPiT')
+                  div.thumbnail
+                    iframe(src='https://busanmaps.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
+                p uMAPiT
+          br
+          // Donate
+          // Donate heading
+          div.row(title='go right ahead. i won&apos;t stop you')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
+              span.space
+              i.fa.fa-btc
+              p.description feel free to send me cryptocurrency...
+          // Donate
+          div.row.collapse#toggleDonate
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              a(href='bitcoin:18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw?message=CharmedSatyr.com%20Donate%20Button&time=1470445686')
+                p
+                  i.fa.fa-btc(aria-hidden='true').orange
+                  span.orange  bitcoin link
+              p Receiving Address: 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
+          br
+          // Contact
+          // Contact heading
+          div.row
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
+              span.space
+              i.fa.fa-send-o
+              p.description get in touch. securely.
+          // Contact sites
+          div.row.collapse#toggleContact
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              a(href='https://github.com/charmedsatyr', target='_blank')
+                p
+                  i.fa.fa-github(aria-hidden='true')
+                  span  GitHub
+              a(href='https://codepen.io/CharmedSatyr/', target='_blank')
+                p
+                  i.fa.fa-codepen(aria-hidden='true')
+                  span  CodePen
+              a(href='https://www.twitter.com/charmedsatyr', target='_blank')
+                p
+                  i.fa.fa-twitter(aria-hidden='true')
+                  span  Twitter
+              a(href='CS-OpenPGP-Public-Key.asc', target='_blank')
+                p(title='send me an encrypted message')
+                  i.fa.fa-lock(aria-hidden='true')
+                  span  OpenPGP Public Key
