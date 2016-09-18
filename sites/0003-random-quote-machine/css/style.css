@@ -1,0 +1,66 @@
+@media screen and (min-height: 1280px) {
+  body {
+    margin-top: 30%;
+  }
+}
+
+@media screen and (min-height: 1024px) and (max-height: 1279px){
+  body {
+    margin-top: 25%;
+  }
+}
+
+@media screen and (min-height: 721px) and (max-height: 1023px) {
+  body {
+    margin-top: 18%;
+  }
+}
+
+@media screen and (max-height: 720px) {
+  body {
+    margin-top: 10%;
+  }
+}
+
+body {
+  background: #000000 url(https://charmedsatyr.com/xy/resources/0003/Techno-Desktop-backgrounds-Desktop-Wallpaper.jpg);
+  color: #ffffff;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+.btn, .btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn:active {
+  background-color: #000000 !important;
+  color: #faff00 !important;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: #41E007;
+  font-family: Impact, sans-serif;
+}
+
+.main {
+  background-color: #000000;
+}
+
+.quote {
+  font-size: 20px;
+}
+
+.author {
+  font-size: 14px;
+  font-style: oblique;
+}
