@@ -1,5 +1,3 @@
-/*ISSUE TRACKER in JS Comments*/
-
 body {
   background: black;
   background: repeat url('https://charmedsatyr.com/xy/resources/0010/01_Wall_pattern_background_texture.jpg');
@@ -32,6 +30,7 @@ p {
   border-color: black;
   border-radius: 5%;
   border-style: solid;
+  color: #000000;
   font-family: 'Permanent Marker', cursive;
   font-size: 15px;
   height: 6%;
@@ -134,6 +133,44 @@ table {
   font-size: 30px;
 }
 
+@media screen and (max-width: 768px),
+screen and (max-height: 1024px) {
+  .title {
+    font-size: 72px;
+  }
+  .buttons {
+    font-size: 36px;
+  }
+  .btn {
+    font-size: 19px;
+  }
+  table {
+    font-size: 115px;
+  }
+  .box {
+    height: 176px;
+    width: 176px;
+  }
+  .popup {
+    font-size: 84px;
+  }
+  .winner {
+    height: 240px;
+    width: 600px;
+  }
+  .loser {
+    height: 360px;
+    width: 672px;
+  }
+  .tie {
+    height: 240px;
+    width: 600px;
+  }
+  .timer {
+    font-size: 36px;
+  }
+}
+
 @media screen and (max-width: 480px),
 screen and (max-height: 720px) {
   .title {
@@ -169,5 +206,82 @@ screen and (max-height: 720px) {
   }
   .timer {
     font-size: 22.5px;
+  }
+}
+
+@media screen and (max-width: 360px),
+screen and (max-height: 640px) {
+  .title {
+    font-size: 40px;
+    margin-top: 5%;
+  }
+  .buttons {
+    font-size: 17px;
+  }
+  .btn {
+    font-size: 9px;
+  }
+  table {
+    font-size: 54px;
+  }
+  .box {
+    height: 82.5px;
+    width: 82.5px;
+  }
+  .popup {
+    font-size: 39px;
+  }
+  .winner {
+    height: 112.5px;
+    width: 281px;
+  }
+  .loser {
+    height: 169px;
+    width: 315px;
+  }
+  .tie {
+    height: 112.5px;
+    width: 281px;
+  }
+  .timer {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 320px),
+screen and (max-height: 480px) {
+  .title {
+    font-size: 35px;
+  }
+  .buttons {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 8px;
+  }
+  table {
+    font-size: 48px;
+  }
+  .box {
+    height: 73.3px;
+    width: 73.3px;
+  }
+  .popup {
+    font-size: 35px;
+  }
+  .winner {
+    height: 100px;
+    width: 250px;
+  }
+  .loser {
+    height: 150px;
+    width: 280px;
+  }
+  .tie {
+    height: 100px;
+    width: 250px;
+  }
+  .timer {
+    font-size: 15px;
   }
 }

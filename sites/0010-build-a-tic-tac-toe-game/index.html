@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-
 <body>
+<!--Title-->
   <h1 class='title'>Tic Tac Toe</h1>
+<!--Buttons-->
   <span class='buttons'>
     <input type="radio" name="player" value='X' checked/> X
     <input type="radio" name="player" value='O'/> O
     <input class='btn' type="button" id="new" value='Set Player'/>
   </span>
-  <div id='result'>
-  </div>
-  </span>
+  <div id='result'></div>
   <br>
+<!--Tic Tac Toe Crosses-->
   <table align='center'>
     <tr>
       <td class='box one'>
@@ -56,11 +54,9 @@
       </td>
     </tr>
   </table>
+
+<!--Scripts-->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-
   <script src="js/index.js"></script>
-
-
 </body>
-
 </html>
