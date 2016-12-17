@@ -1,0 +1,15 @@
+# Blocks robots from specific folders / directories
+User-agent: *
+Disallow: /charmed-tech/
+Disallow: /charmedsatyr/
+Disallow: /josephdwolfe/
+Disallow: /mindfulminimalism/
+Disallow: /satyr/
+Disallow: /xy/resources/
+Disallow: /xy/css/
+Disallow: /xy/fonts/
+Disallow: /xy/.git/
+Disallow: /xy/js/
+Disallow: /xy/sass/
+Disallow: /README.md
+Disallow: /.git/
