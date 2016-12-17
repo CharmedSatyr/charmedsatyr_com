@@ -1,0 +1,69 @@
+body {
+  /*Background image is a touch transparent and set over black to improve content visibility*/
+  background: black url(../../../resources/0001/Busan_KR-Blue-Background_Image-TRANSPARENT.png);
+  /*Background image is a touch transparent and set over black to improve content visibility*/
+  /*This makes the background sticky so the text just rolls over it */
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: arial, sans-serif;
+  margin: 40px 10px 10px 20px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  }
+
+h1,
+h2,
+h3,
+.heading {
+  color: yellow;
+  font-weight: bold;
+  text-align: center;
+}
+
+.heading {
+  pointer-events: none;
+}
+
+a,
+a:active {
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
+}
+
+a:hover,
+.anim:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+  }
+
+.btn {
+  background: #000000;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 200%;
+}
+
+.content {
+  color: white;
+  font-size: 150%;
+  text-shadow: 1px 1px black;
+
+}
+
+.monoFont {
+  font-family: Monospace;
+  font-weight: normal;
+}
+
+.gitFont {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.tweetFont {
+  font-family: 'Helvetica Neue', Helvetica, Liberation Sans, Arial, sans-serif;
+}
+
+.fa {
+  font-family: FontAwesome;
+}
