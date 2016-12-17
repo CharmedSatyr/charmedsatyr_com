@@ -17,7 +17,6 @@ for (var j = 0; j < twitchers.length; j++) {
 
 //This function pulls information for each twitcher and surrounds them with basic formatting
 function run(x) {
-
   $.ajax({
     type: 'GET',
     url: 'https://api.twitch.tv/kraken/streams/' + x,

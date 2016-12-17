@@ -6,7 +6,8 @@
 @font-face {
    font-family: 'Droid Sans';
    font-weight: bold;
-   src: url('../fonts/DroidSans-Bold.ttf');}
+   src: url('../fonts/DroidSans-Bold.ttf');
+ }
 
 
 body {
