@@ -1,8 +1,7 @@
-/*ISSUE TRACKER in JS comments*/
-
 body {
-  background: black
-/*Background image is a touch transparent and set over black to improve content visibility*/    url(https://www.charmedsatyr.com/xy/resources/0001/Busan,%20KR%20-%20Blue%20Background%20Image%20-%20TRANSPARENT.png);
+  /*Background image is a touch transparent and set over black to improve content visibility*/
+  background: black url(../../../resources/0001/Busan_KR-Blue-Background_Image-TRANSPARENT.png);
+  /*Background image is a touch transparent and set over black to improve content visibility*/
   /*This makes the background sticky so the text just rolls over it */
   background-attachment: fixed;
   background-size: cover;
@@ -49,7 +48,7 @@ a:hover,
   color: white;
   font-size: 150%;
   text-shadow: 1px 1px black;
-  
+
 }
 
 .monoFont {
