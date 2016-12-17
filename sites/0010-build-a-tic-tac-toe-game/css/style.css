@@ -1,6 +1,11 @@
+@font-face {
+ font-family: 'Permanent Marker';
+ src: url('../fonts/PermanentMarker.ttf');
+ }
+
 body {
   background: black;
-  background: repeat url('https://charmedsatyr.com/xy/resources/0010/01_Wall_pattern_background_texture.jpg');
+  background: repeat url('../../../resources/0010/01_Wall_pattern_background_texture.jpg');
   font-family: 'Permanent Marker', cursive;
   margin-bottom: 10%;
   text-align: center;
@@ -39,7 +44,7 @@ p {
 }
 
 table {
-  background: url('https://charmedsatyr.com/xy/resources/0010/lightpaperfibers.png');
+  background: url('../../../resources/0010/lightpaperfibers.png');
   border-collapse: collapse;
   border-radius: 1%;
   border-style: solid;
