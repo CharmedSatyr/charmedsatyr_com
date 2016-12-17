@@ -1,8 +1,17 @@
-/*ISSUE TRACKER in JS Comments*/
+@font-face {
+ font-family: 'Montserrat';
+ src: url('../fonts/Montserrat-Regular.ttf');
+ }
+
+@font-face {
+   font-family: 'Montserrat';
+   font-weight: bold;
+   src: url('../fonts/Montserrat-Bold.ttf');
+ }
 
 body {
   background: black;
-  background: url(https://www.charmedsatyr.com/xy/resources/0007/dark_geometric.png);
+  background: url(../../../resources/0007/dark_geometric.png);
   color: black;
   font-family: sans-serif;
   margin: 5% 10% 5% 10%;
@@ -10,7 +19,7 @@ body {
 
 .main {
   background: white;
-  background: url(https://www.charmedsatyr.com/xy/resources/0007/handmadepaper.png);
+  background: url(../../../resources/0007/handmadepaper.png);
   text-align: center;
 }
 
@@ -37,6 +46,7 @@ h4{
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
+
 .newP {
   font-family: 'Montserrat', sans-serif;
 }
@@ -49,7 +59,7 @@ h4{
 
 .ink {
   background: white;
-  background: url(https://www.charmedsatyr.com/xy/resources/0007/black_ink.png);
+  background: url(../../../resources/0007/black_ink.png);
   background-position: 70% 10%;
   background-repeat: no-repeat;
   background-size: 10%;

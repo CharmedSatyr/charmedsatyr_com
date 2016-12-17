@@ -3,9 +3,9 @@ ISSUE TRACKER
 -Enter key pressed in an input box reloads or breaks the page
 -Given the orientation of the page, be sure to update HTTP for resource links to HTTPS
 */
-  
+
 $('#btn').click(function() {
-    
+
   var entry = $('input[name=entry]').val().toUpperCase();
   var backdoor = 'Collect it all!';
 
