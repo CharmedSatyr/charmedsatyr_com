@@ -1,8 +1,17 @@
-/*ISSUE TRACKER in JS Comments*/
+@font-face {
+ font-family: 'Sigmar One';
+ src: url('../fonts/Sigmar_One/SigmarOne.ttf');
+ }
+
+@font-face {
+   font-family: 'Arimo';
+   font-weight: bold;
+   src: url('../fonts/Arimo/Arimo-Regular.ttf');
+ }
 
 body {
   background: #07ffea;
-  background: url(https://charmedsatyr.com/xy/resources/0008/congruent_pentagon.png);
+  background: url(../../../resources/0008/congruent_pentagon.png);
   margin: 8%;
   text-align: center;
 }
@@ -58,7 +67,7 @@ body {
 
 .connector {
   background: transparent;
-  background: url(https://charmedsatyr.com/xy/resources/0008/Connector.png);
+  background: url(../../../resources/0008/Connector.png);
   background-position: 79% 10%;
   background-repeat: no-repeat;
   background-size: 9%;

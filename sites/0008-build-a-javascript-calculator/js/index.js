@@ -17,7 +17,7 @@ function calc(display) {
       str[x] = parseFloat(str[x]);
     }
   }
-  
+
   /*
 //Factorial
   function fact(val) {
@@ -33,7 +33,7 @@ function calc(display) {
     if (str[m] === '!') {
       str.splice((m - 1), 2, (fact(str[m - 1])));
     } return str;
-  } 
+  }
 */
   //Multiplication  & division respecting order of operations
   for (var i = 0; i < str.length; i++) {
