@@ -1,0 +1,18 @@
+# addon site redirection
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^josephwolfe\.online$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.josephwolfe\.online$
+RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^josephdwolfe\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.josephdwolfe\.com$
+RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^charmedsatyr\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.charmedsatyr\.com$
+RewriteRule ^/?$ "https\:\/\/charmedsatyr\.com\/xy\/" [R=301,L]
+
+RewriteOptions inherit
+
+# disable directory browsing
+Options ExecCGI Includes IncludesNOEXEC SymLinksIfOwnerMatch -Indexes
