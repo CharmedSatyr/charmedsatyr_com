@@ -10,7 +10,6 @@ ISSUE TRACKER / Wish List
 //The function run on clicking the Random button
 $("#rando").click(function() {
   var randoLink = "https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=20&rnnamespace=0&format=json";
-
   $.ajax({
     url: randoLink,
     type: 'GET',
@@ -24,7 +23,6 @@ $("#rando").click(function() {
       console.log('Success!');
 
       var html = "<div><strong>Selections from Wikipedia:</strong></div><br>";
-
       var result = wiki.query.random;
 
       for (var x in result) {
