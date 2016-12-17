@@ -1,12 +1,12 @@
 @media screen and (min-height: 1280px) {
   body {
-    margin-top: 35%;
+    margin-top: 25%;
   }
 }
 
 @media screen and (min-height: 1024px) and (max-height: 1279px){
   body {
-    margin-top: 25%;
+    margin-top: 18%;
   }
 }
 
