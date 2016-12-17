@@ -1,15 +1,13 @@
-/* ISSUE TRACKER in JS comments */
-
 body {
   background: black;
-  background: top url(https://www.charmedsatyr.com/xy/resources/0002/calvin-and-hobbes-space-man-spiff-in-space.jpg);
+  background: top url(../../../resources/0002/calvin-and-hobbes-space-man-spiff-in-space.jpg);
   font-size: large;
-  margin: 5% 10% 5% 10%;
+  margin: 3% 10% 5% 10%;
   text-align: center;
 }
 
 .scenery {
-  background: url(https://www.charmedsatyr.com/xy/resources/0002/alien%20scenery.jpg);
+  background: url(../../../resources/0002/alien%20scenery.jpg);
 }
 
 h1,
@@ -44,7 +42,7 @@ h2 {
 
 .about {
   background: black;
-  background: top url(https://www.charmedsatyr.com/xy/resources/0002/calvin-and-hobbes-space-man-spiff-in-space.jpg);
+  background: top url(../../../resources/0002/calvin-and-hobbes-space-man-spiff-in-space.jpg);
   color: white;
   text-shadow: 1px 1px black;
 }
