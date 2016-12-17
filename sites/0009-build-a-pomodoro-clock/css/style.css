@@ -1,4 +1,13 @@
-/*ISSUE TRACKER in JS Comments*/
+@font-face {
+ font-family: 'Titillium Web';
+ src: url('../fonts/TitilliumWeb-Regular.ttf');
+ }
+
+@font-face {
+   font-family: 'Titillium Web';
+   font-weight: bold;
+   src: url('../fonts/TitilliumWeb-Black.ttf');
+ }
 
 body {
   -webkit-touch-callout: none;
@@ -7,7 +16,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   background: black;
-  background: url('https://charmedsatyr.com/xy/resources/0009/footer_lodyas.png');
+  background: url('../../../resources/0009/footer_lodyas.png');
   color: white;
   font-family: 'Titillium Web', sans-serif;
   margin-top: 2%;
