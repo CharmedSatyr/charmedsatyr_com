@@ -20,7 +20,7 @@ html
           br
           // Front End Projects for FCC
           // FCC Heading
-          div.row
+          div.row(title='check out my progress!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFCC') Front End Development Projects
               br
               span for freecodecamp
@@ -64,7 +64,7 @@ html
               a(href='sites/0004-show-the-local-weather/index.html', target='_blank')
                 div.thumbnail-container(title='View Your Local Weather')
                   div.thumbnail
-                    iframe(src='sites/0004-show-the-local-weather/index.html' frameborder='0' onload='this.style.opacity=1')
+                    iframe(src='sites/0004-show-the-local-weather/index.html' sandbox='allow-top-navigation allow-same-origin' frameborder='0' onload='this.style.opacity=1')
                 p View Your Local Weather
               br
               //0005-build-a-wikipedia-viewer
@@ -133,7 +133,7 @@ html
               a(href='https://busanmaps.herokuapp.com/', target='_blank')
                 div.thumbnail-container(title='uMAPiT')
                   div.thumbnail
-                    iframe(src='https://busanmaps.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
+                    iframe(src='resources/uMAPiT/uMapIT_Image.png' frameborder='0' onload='this.style.opacity=1')
                 p uMAPiT
           br
           // Donate
