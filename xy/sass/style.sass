@@ -102,12 +102,8 @@ body
 
 /* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
 .thumbnail iframe
-  -ms-zoom: 0.35
-  -moz-transform: scale(0.35)
   -moz-transform-origin: 0 0
-  -o-transform: scale(0.35)
   -o-transform-origin: 0 0
-  -webkit-transform: scale(0.35)
   -webkit-transform-origin: 0 0
   height: 900px
   opacity: 0
@@ -127,10 +123,8 @@ body
 .thumbnail-container
   background: #rgba(89, 0, 255, 0.5)
   display: inline-block
-  height: calc(900px * 0.35)
   overflow: hidden
   position: relative
-  width: calc(1440px * 0.35)
 
 .orange
   color: rgb(255, 148, 23)
@@ -150,3 +144,88 @@ a:hover
 
 iframe
   width: 100%
+
+/* Media queries for the website thumbnails */
+@media screen and (max-width: 420px)
+  .thumbnail iframe
+    -ms-zoom: 0.11
+    -moz-transform: scale(0.11)
+    -o-transform: scale(0.11)
+    -webkit-transform: scale(0.11)
+    transform: 0.11
+
+  .thumbnail-container
+    height: calc(900px * 0.11)
+    width: calc(1440px * 0.11)
+
+@media screen and (min-width: 421px)
+  .thumbnail iframe
+    -ms-zoom: 0.21
+    -moz-transform: scale(0.21)
+    -o-transform: scale(0.21)
+    -webkit-transform: scale(0.21)
+    transform: 0.21
+
+  .thumbnail-container
+    height: calc(900px * 0.21)
+    width: calc(1440px * 0.21)
+
+@media screen and (min-width: 560px)
+  .thumbnail iframe
+    -ms-zoom: 0.26
+    -moz-transform: scale(0.26)
+    -o-transform: scale(0.26)
+    -webkit-transform: scale(0.26)
+    transform: 0.26
+
+  .thumbnail-container
+    height: calc(900px * 0.26)
+    width: calc(1440px * 0.26)
+
+@media screen and (min-width: 1200px)
+  .thumbnail iframe
+    -ms-zoom: 0.31
+    -moz-transform: scale(0.31)
+    -o-transform: scale(0.31)
+    -webkit-transform: scale(0.31)
+    transform: 0.31
+
+  .thumbnail-container
+    height: calc(900px * 0.31)
+    width: calc(1440px * 0.31)
+
+@media screen and (min-width: 1440px)
+  .thumbnail iframe
+    -ms-zoom: 0.36
+    -moz-transform: scale(0.36)
+    -o-transform: scale(0.36)
+    -webkit-transform: scale(0.36)
+    transform: 0.36
+
+  .thumbnail-container
+    height: calc(900px * 0.36)
+    width: calc(1440px * 0.36)
+
+@media screen and (min-width: 1680px)
+  .thumbnail iframe
+    -ms-zoom: 0.41
+    -moz-transform: scale(0.41)
+    -o-transform: scale(0.41)
+    -webkit-transform: scale(0.41)
+    transform: 0.41
+
+  .thumbnail-container
+    height: calc(900px * 0.41)
+    width: calc(1440px * 0.41)
+
+@media screen and (min-width: 1920px)
+  .thumbnail iframe
+    -ms-zoom: 0.50
+    -moz-transform: scale(0.50)
+    -o-transform: scale(0.50)
+    -webkit-transform: scale(0.50)
+    transform: 0.50
+
+  .thumbnail-container
+    height: calc(900px * 0.50)
+    width: calc(1440px * 0.50)
