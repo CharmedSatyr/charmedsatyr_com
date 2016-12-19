@@ -23,10 +23,10 @@ html
           div.row(title='check out my progress!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFCC') Front End Development Projects
               br
-              span for freecodecamp
-              span.space (
+              span for
+              span.space.mono freeCodeCamp (
               i.fa.fa-fire
-              span )
+              span.mono )
               p.description basic &#8594; intermediate &#8594; advanced
           // FCC Sites
           div.row.collapse#toggleFCC
@@ -115,11 +115,11 @@ html
           br
           // Other Projects
           // Other heading
-          div.row
+          div.row(title='cordial, cooperative code cobbling')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleOther') Other Projects
               span.space
               i.fa.fa-code
-              p.description miscellaneous code i've worked on for fun.
+              p.description non-code camp projects i've worked on
               //Other Sites
           div.row.collapse#toggleOther
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
@@ -138,11 +138,11 @@ html
           br
           // Donate
           // Donate heading
-          div.row(title='go right ahead. i won\'t stop you')
+          div.row(title='feel free to send me cryptocurrency...')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
               span.space
               i.fa.fa-btc
-              p.description feel free to send me cryptocurrency...
+              p.description contributions help me pay for equipment and training
           // Donate
           div.row.collapse#toggleDonate
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
@@ -154,7 +154,7 @@ html
           br
           // Contact
           // Contact heading
-          div.row
+          div.row(title='this pgp is easy protonmail')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
               span.space
               i.fa.fa-send-o
