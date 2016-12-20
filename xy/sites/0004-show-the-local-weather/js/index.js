@@ -46,6 +46,47 @@ function rangeOfColors(val) {
 
 $(document).ready(function() {
 
+/*Possible geolocator replacements
+//1
+$.getJSON('http://freegeoip.net/json/')
+  .then(function(position) {
+    var latitude = position.latitude;
+    var longitude = position.longitude;
+
+//2
+$.getJSON('http://ipinfo.io', function(data) {
+  var location = data.loc;
+  arr = location.split(',');
+  lat = arr[0];
+  lon = arr[1];
+  unit = 'metric';
+
+  apiUrl = 'http://api.openweathermap.org/data/2.5/weather?lat=' +
+    lat + '&lon=' +
+    lon + '&units=' +
+    unit + '&appid=8ae95a0698ced7693a3427c0a9ac10cd';
+
+//3
+function getLocation() {
+  // Using the GEO IP API due to HTTP restrictions from OpenWeatherMap
+  $.getJSON('https://freegeoip.net/json/?callback=?', function(loc) {
+    $('#city').text(loc.city + ', ' + loc.region_name + ', ' + loc.country_name);
+    getWeather(loc.latitude, loc.longitude, loc.country_code);
+  })
+  .fail(function(err) {
+    getWeather();
+  });
+}
+
+function getWeather(lat, lon, countryCode) {
+  var weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?lat=' +
+    lat + '&lon=' + lon + '&units=imperial' + '&type=accurate' + callback;
+  if(window.location.protocol === 'https:') weatherAPI = 'https://cors-anywhere.herokuapp.com/' + weatherAPI
+  $.getJSON(weatherAPI, function(weatherData) {
+
+
+
+*/
   //Geolocator
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
