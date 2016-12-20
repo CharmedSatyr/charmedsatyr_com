@@ -44,21 +44,19 @@ function rangeOfColors(val) {
 
 $(document).ready(function() {
 
-
 /*
-//HTML Geolocator
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var lon = position.coords.longitude;
-    var lat = position.coords.latitude;
-*/
-
   //Geolocator based on IP address
   $.getJSON('https://ipinfo.io', function(data) {
     var location = data.loc.split(',');
     var lat = location[0];
     var lon = location[1];
+*/
+
+//HTML Geolocator
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var lon = position.coords.longitude;
+    var lat = position.coords.latitude;
 
     var weatherAPI = "http://api.openweathermap.org/data/2.5/weather?lat=";
     //Weather display
@@ -227,16 +225,17 @@ if (navigator.geolocation) {
       } else {
         $('#clouds').html('Currently Unavailable');
       }
-    });
+});
+});
+}
 
-    //Metric/Imperial button toggle
-    $('#buttonM, #buttonI').click(function() {
-      $('#tempC, #tempF').toggleClass('goAway');
-      $('#windSpeedM, #windSpeedI').toggleClass('goAway');
-      $('#visibilityM, #visibilityI').toggleClass('goAway');
-      $('#pressureM, #pressureI').toggleClass('goAway');
-      $('#buttonM, #buttonI').toggleClass('goAway');
-    });
+//Metric/Imperial button toggle
+$('#buttonM, #buttonI').click(function() {
+$('#tempC, #tempF').toggleClass('goAway');
+$('#windSpeedM, #windSpeedI').toggleClass('goAway');
+$('#visibilityM, #visibilityI').toggleClass('goAway');
+$('#pressureM, #pressureI').toggleClass('goAway');
+$('#buttonM, #buttonI').toggleClass('goAway');
+});
 
-  });
 });
