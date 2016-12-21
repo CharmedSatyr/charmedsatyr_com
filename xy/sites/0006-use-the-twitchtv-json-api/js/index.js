@@ -1,10 +1,3 @@
-/*
-ISSUE TRACKER
--Try to rearrange the active streamers to the top.
--If I add a back end, it would be possible to tweak to add a twitcher via an input box
--Visual improvements
-*/
-
 //Add a twitcher here, and everything else will automatically update
 var twitchers = ['freeCodeCamp', 'food', 'Bethesda', 'Boogie2988', 'GopherGaming', 'TotalBiscuit', 'brunofin', 'comster404'];
 

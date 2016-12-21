@@ -1,12 +1,3 @@
-/*
-ISSUE TRACKER / Wish List
--Combine the API calls for the search and randomizer to avoid code duplication
--Search on keyup/press increases API usage; might create scaling problem in a commercial project
--Fails to continue printing 'Results for "entry":' properly when input is too long
--Results often appear in a nonintuitive order
--Visual improvements
-*/
-
 //The function run on clicking the Random button
 $("#rando").click(function() {
   var randoLink = "https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=20&rnnamespace=0&format=json";

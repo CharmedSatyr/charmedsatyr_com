@@ -1,9 +1,3 @@
-/*
-ISSUE TRACKER/Wish List
--Open Weather Map only provides an HTTPS API with paid accounts
--Get better icons from https://erikflowers.github.io/weather-icons/
-*/
-
 //Range of colors used for the background, based on metric temperature benchmarks
 function rangeOfColors(val) {
   var bgCol = "";

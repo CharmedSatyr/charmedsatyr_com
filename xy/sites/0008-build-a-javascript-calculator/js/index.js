@@ -1,11 +1,3 @@
-/*
-ISSUE TRACKER
--History
--Improve UI
--Add exponents, parentheses, square root, factorial?
--Better +/-
-*/
-//The string that appears on click
 var display = '';
 
 function calc(display) {

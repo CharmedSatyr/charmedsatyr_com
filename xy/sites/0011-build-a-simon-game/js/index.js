@@ -1,8 +1,3 @@
-/*
-ISSUE TRACKER
--Streamline code. Better fades? Javascript promises?
-*/
-
 //Document ready
 $(document).ready(function() {
   //Power button toggles slider and all functionality

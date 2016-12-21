@@ -1,12 +1,3 @@
-/*
-ISSUE TRACKER
--Not clicking 'hard' results in errors
--Change if/else to switch statements
--Utilize oneV, twoV, etc. more to clean up code
--Add difficulty settings
--Need media queries
-*/
-
 var player = 'X';
 var ai = 'O';
 var counter = 0;

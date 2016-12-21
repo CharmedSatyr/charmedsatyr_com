@@ -1,12 +1,3 @@
-/*
-ISSUE TRACKER
--Add hour handler
--Keep Minus from going below 0
--Change adjuster buttons to slider to improve ease of changing timers?
--Sort out homemade alternative images for the spinner
--IMPROVE MEDIA QUERIES
-*/
-
 var freshW = 60 * 40;
 var freshP = 60 * 5;
 

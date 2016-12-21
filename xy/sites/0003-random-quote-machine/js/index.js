@@ -1,9 +1,3 @@
-/*
-ISSUE TRACKER: 
-1) Some quotes are too long for twitter. Bit.ly or similar integration?
-2) Make function rando more random.
-*/
-
 /* Random number generator. Used with range specified below. */
 function rando(min, max) {
   return (Math.floor(Math.random() * (max - min + 1)) + min);
