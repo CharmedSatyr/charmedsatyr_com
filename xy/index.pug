@@ -7,8 +7,6 @@ html
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/font-awesome.min.css')
     link(rel='stylesheet', href='sass/style.min.css')
-    script(type='text/javascript', src='js/jquery-3.1.0.min.js')
-    script(type='text/javascript', src='js/bootstrap.min.js')
   body
     div.container-fluid
       div.row
@@ -22,11 +20,8 @@ html
           // FCC Heading
           div.row(title='check out my progress!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFCC') Front End Development Projects
-              br
-              span for
-              span.space.mono freeCodeCamp (
-              i.fa.fa-fire
-              span.mono )
+              span.space
+              i.fa.fa-free-code-camp
               p.description basic &#8594; intermediate &#8594; advanced
           // FCC Sites
           div.row.collapse#toggleFCC
@@ -78,7 +73,7 @@ html
               a(href='sites/0006-use-the-twitchtv-json-api/index.html' target='_blank')
                 div.thumbnail-container(title='Twitch Stream Tracker')
                   div.thumbnail
-                    iframe(src='sites/0006-use-the-twitchtv-json-api/index.html' frameborder='0' onload='this.style.opacity=1')
+                    iframe(src='resources/0006/Twitch.html' frameborder='0' onload='this.style.opacity=1')
                 p Twitch Stream Tracker
               br
               //0008-build-a-javascript-calculator
@@ -92,7 +87,7 @@ html
               a(href='sites/0009-build-a-pomodoro-clock/index.html' target='_blank')
                 div.thumbnail-container(title='Pomodoro Clock')
                   div.thumbnail
-                    iframe(src='sites/0009-build-a-pomodoro-clock/index.html' frameborder='0' onload='this.style.opacity=1')
+                    iframe(src='resources/0009/Pomodoro.html' frameborder='0' onload='this.style.opacity=1')
                 p Pomodoro Clock
               br
               //0010-build-a-tic-tac-toe-game
@@ -112,6 +107,18 @@ html
               //Free Code Camp Front End Development Certificate
               a(href='https://www.freecodecamp.com/charmedsatyr/front-end-certification' target='_blank')
                 p.emph Front End Development Certificate
+          br
+          // Data Visualization Projects for FCC
+          // Data Visualization Heading
+          div.row(title='check out my progress!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleData') Data Visualization Projects
+              span.space
+              i.fa.fa-camera-retro
+              p.description sass &#8594; react &#8594; d3
+          // Data Visualization Sites
+          div.row.collapse#toggleData
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              p Coming soon!
           br
           // Other Projects
           // Other heading
@@ -138,11 +145,11 @@ html
           br
           // Donate
           // Donate heading
-          div.row(title='feel free to send me cryptocurrency...')
+          div.row(title='my contributors are some of the best people on the planet.')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
               span.space
               i.fa.fa-btc
-              p.description contributions help me pay for equipment and training
+              p.description help me pay for equipment and training
           // Donate
           div.row.collapse#toggleDonate
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
@@ -152,29 +159,45 @@ html
                   span.orange  bitcoin link
               p Receiving Address: 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
           br
+          //Social
+          //Social heading
+          div.row(title='see what i\'m up to')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleSocial') Find me on other sites
+              span.space
+              i.fa.fa-retweet
+              p.description coding + social
+          //Social sites
+          div.row.collapse#toggleSocial
+            div.inner.well.col.xs-12.col-md-8.col-md-offset-2
+              div.row
+                  div.col-xs-4
+                    a(href='https://github.com/CharmedSatyr', target='_blank')
+                      i.fa.fa-github(aria-hidden='true')
+                      span  GitHub
+                  div.col-xs-4
+                    a(href='https://codepen.io/CharmedSatyr/', target='_blank')
+                      i.fa.fa-codepen(aria-hidden='true')
+                      span  CodePen
+                  div.col-xs-4
+                    a(href='https://www.twitter.com/CharmedSatyr', target='_blank')
+                      i.fa.fa-twitter(aria-hidden='true')
+                      span  Twitter
+          br
           // Contact
           // Contact heading
           div.row(title='this pgp is easy protonmail')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
               span.space
               i.fa.fa-send-o
-              p.description get in touch. securely.
+              p.description send me a message
           // Contact sites
           div.row.collapse#toggleContact
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              a(href='https://github.com/charmedsatyr', target='_blank')
-                p
-                  i.fa.fa-github(aria-hidden='true')
-                  span  GitHub
-              a(href='https://codepen.io/CharmedSatyr/', target='_blank')
-                p
-                  i.fa.fa-codepen(aria-hidden='true')
-                  span  CodePen
-              a(href='https://www.twitter.com/charmedsatyr', target='_blank')
-                p
-                  i.fa.fa-twitter(aria-hidden='true')
-                  span  Twitter
               a(href='CS-OpenPGP-Public-Key.asc', target='_blank')
                 p(title='send me an encrypted message')
                   i.fa.fa-lock(aria-hidden='true')
                   span  OpenPGP Public Key
+              p A contact form is in the works! Reach me via PGP or social media.
+              //iframe(src='contact/contact.html')
+    script(type='text/javascript', src='js/jquery-3.1.0.min.js')
+    script(type='text/javascript', src='js/bootstrap.min.js')
