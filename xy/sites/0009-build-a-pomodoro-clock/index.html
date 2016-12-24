@@ -1,62 +1,65 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Pomodoro Clock</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/style.min.css">
-  </head>
-<body>
-<div class='container-fluid'>
-  <!--Headings-->
-  <div class='row'>
-    <div class='col-xs-12'>
-      <div class='title'>
-        <p>Pomodoro Clock</p>
-      </div>
-    </div>
-  </div>
-  <!--Buttons-->
-  <div class='row'>
-    <div class='col-xs-12'>
-      <div class='btn btn-default' id='start'>Start</div>
-      <div class='btn btn-default' id='pause'>Pause</div>
-      <div class='btn btn-default' id='restart'>Refresh</div>
-      <div class='btn btn-default' id='default'>Reset</div>
-      <br>
-      <br>
-    </div>
-  </div>
-  <!--Work and Play-->
-  <div class='row'>
-    <div>
-      <div class='c'>
-        <div class='work dial col-xs-12 col-md-6'>
-          <div id='onW'></div>
-          <br>
-          <br>
-          <br>
-          <p class='spend' id='spendW'>Work</p>
-          <button class='adjust' id='minusW'>-</button>
-          <span id='work' class='time'></span>
-          <button class='adjust' id='plusW'>+</button>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pomodoro Clock</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+
+    <body>
+        <div class='container-fluid'>
+            <!--Headings-->
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='title'>
+                        <p>Pomodoro Clock</p>
+                    </div>
+                </div>
+            </div>
+            <!--Buttons-->
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='btn btn-default' id='start'>Start</div>
+                    <div class='btn btn-default' id='pause'>Pause</div>
+                    <div class='btn btn-default' id='restart'>Refresh</div>
+                    <div class='btn btn-default' id='default'>Reset</div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <!--Work and Play-->
+            <div class='row'>
+                <div>
+                    <div class='c'>
+                        <div class='work dial col-xs-12 col-md-6'>
+                            <div id='onW'></div>
+                            <br>
+                            <br>
+                            <br>
+                            <p class='spend' id='spendW'>Work</p>
+                            <button class='adjust' id='minusW'>-</button>
+                            <span id='work' class='time'></span>
+                            <button class='adjust' id='plusW'>+</button>
+                        </div>
+                        <div class='play dial col-xs-12 col-md-6'>
+                            <div id='onP'></div>
+                            <br>
+                            <br>
+                            <br>
+                            <p class='spend' id='spendP'>Play</p>
+                            <button class='adjust' id='minusP'>-</button>
+                            <span id='play' class='time'></span>
+                            <button class='adjust' id='plusP'>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class='play dial col-xs-12 col-md-6'>
-          <div id='onP'></div>
-          <br>
-          <br>
-          <br>
-          <p class='spend' id='spendP'>Play</p>
-          <button class='adjust' id='minusP'>-</button>
-          <span id='play' class='time'></span>
-          <button class='adjust' id='plusP'>+</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <script src='js/jquery-3.1.1.min.js'></script>
-  <script src="js/index.min.js"></script>
-  </body>
+        <script src='js/jquery-3.1.1.min.js'></script>
+        <script src="js/index.min.js"></script>
+    </body>
+
 </html>

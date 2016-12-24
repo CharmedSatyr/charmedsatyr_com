@@ -1,79 +1,83 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Corrupting Caesar's Cipher</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
-<div class='container-fluid'>
-  <div class='col-xs-12 col-lg-10 col-lg-offset-1 well main'>
-    <div class='ink'>
-      <br>
-      <h1><strong>Corrupting Caesar's Cipher</strong></h1>
-      <h3 class='subtitle'>Demonstrating simple encryption and a pernicious backdoor</h3>
-      <br>
-      <p><i>The <a href='https://en.wikipedia.org/wiki/FBI%E2%80%93Apple_encryption_dispute' target='_blank'><strong>Apple vs. FBI </strong></a> case may be over, but debates surrounding encryption are sure to continue. You're not alone if you think aspects of the controversy seem to require a computer science degree to understand. This site illustrates some of the basic technical principles involved to help even non-geeks weigh in. Begin by reading up below, or <strong><a href='#Demo'>skip straight to the demo.</a></strong></i></p>
-      <br>
-      <h4>What is encryption?</h4>
-      <p>Encryption is an ancient method of protecting confidential information. It helps to ensure that messages or other data can only be understood by their intended recipients.</p>
-      <p><a href='https://en.wikipedia.org/wiki/Caesar_cipher' target='_blank'><strong>Julius Caesar, for example, reportedly used a shift cipher for his military correspondence.</strong></a> In shift ciphers, the values of the letters are shifted by set amounts. A common
-        use is the ROT13 ("rotate by 13 places") cipher, in which the values of the letters are shifted by 13 places. For example, "A" ↔ "N", "B" ↔ "O", and "CAESAR'S CIPHER" ↔ "PNRFNE'F PVCURE". Anyone with the key to the cipher can understand the message
-        pretty easily. To anyone else, the message is likely to look like gobbledygook.</p>
-    </div>
-    <p>Secure modern encryption uses far more complex methods to protect your data. Nonetheless, consider two points with this example in mind:
-      <ul>
-        <li>Encryption is simply an application of math to communications.</li>
-        <li>The stronger the encryption, the securer your data.</li>
-      </ul>
-      <br>
-      <h4>The importance of strong passphrases</h4>
-      <p>Today, secure communications techniques usually rely on computers to run complex algorithms. In typical modern use, encryption and decryption require authentication like a password or longer passphrase to
-        deploy. Without your passphrase, a hacker would only be able to see encrypted data. She would have to break the encryption (e.g., for Caesar's Cipher, figure out she needs to shift each letter by 13 places in the alphabet) to be able to read your data. But with your passphrase, a hacker can access it just as you would. Therefore:
-        <ul>
-          <li>The stronger the passphrase, the securer the data.</li>
-          <li>If a hacker figures out your passphrase, strong encryption can't help you.</li>
-        </ul>
-      </p>
-      <br>
-      <h4>Backdoors</h4>
-      <p>If the company that wrote the program you're using builds a "backdoor" into the program, it creates an intentional security defect, a technical method of accessing your data without either cracking the encryption OR figuring out your passphrase. Even under ideal
-        circumstances, no one can <i>guarantee</i> that any particular backdoor will always remain known only to authorized parties who will use it legally and morally. Therefore:</p>
-      <ul>
-        <li>All backdoors, by definition, weaken the security of your data.</li>
-        <li>Security defects used  legitimately by good girls can be exploited equally by bad girls.</li>
-      </ul>
-      <br>
-      <h4><a name='Demo' class='Demo'><strong>A demonstration</strong></a></h4>
-      <p>Here, the situation plays out from the hacker's point of view. In a normal case, if the hacker's passphrase does not match yours, Caesar's Cipher will protect your data.</p>
-      <p>If, however, the hacker becomes aware of a backdoor&mdash;through whatever means&mdash;she can gain access to your data no matter how convoluted your passphrase is, and even if the encryption is much stronger than Caesar's Cipher. For this example,
-        the backdoor takes the form of a master passphrase. Use it below by typing "<strong>Collect it all!</strong>" as the hacker's passphrase.</p>
-      <br>
-      <div class='form'>
-        <form>
-          <input type="text" placeholder='store your data here...' name='entry' id='entry'></input><span class='btn btn-default' id='btn'>Click here to try it</span>
-        </form>
-      </div>
-      <br>
-      <div class='form'>
-        <form>
-          <input type="text" placeholder='your secret passphrase...' name='entryPW'></input>
-        </form>
-      </div>
-      <div class='form'>
-        <form>
-          <input type="text" placeholder="the hacker's passphrase..." name='entryH'></input>
-          </span>
-        </form>
-        <div id='output'></div>
-      </div>
-      <br>
-      <p style='text-align: center'>For more tips on keeping your online information safe, check out <a href='https://ssd.eff.org/' target='_blank'><strong>EFF's Surveillance Self-Defense Guide</strong></a>.</p>
-  </div>
-</div>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/index.min.js"></script>
-  </body>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Corrupting Caesar's Cipher</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+
+    <body>
+        <div class='container-fluid'>
+            <div class='col-xs-12 col-lg-10 col-lg-offset-1 well main'>
+                <div class='ink'>
+                    <br>
+                    <h1><strong>Corrupting Caesar's Cipher</strong></h1>
+                    <h3 class='subtitle'>Demonstrating simple encryption and a pernicious backdoor</h3>
+                    <br>
+                    <p><i>The <a href='https://en.wikipedia.org/wiki/FBI%E2%80%93Apple_encryption_dispute' target='_blank'><strong>Apple vs. FBI </strong></a> case may be over, but debates surrounding encryption are sure to continue. You're not alone if you think aspects of the controversy seem to require a computer science degree to understand. This site illustrates some of the basic technical principles involved to help even non-geeks weigh in. Begin by reading up below, or <strong><a href='#Demo'>skip straight to the demo.</a></strong></i></p>
+                    <br>
+                    <h4>What is encryption?</h4>
+                    <p>Encryption is an ancient method of protecting confidential information. It helps to ensure that messages or other data can only be understood by their intended recipients.</p>
+                    <p><a href='https://en.wikipedia.org/wiki/Caesar_cipher' target='_blank'><strong>Julius Caesar, for example, reportedly used a shift cipher for his military correspondence.</strong></a> In shift ciphers, the values of the letters are
+                        shifted by set amounts. A common use is the ROT13 ("rotate by 13 places") cipher, in which the values of the letters are shifted by 13 places. For example, "A" ↔ "N", "B" ↔ "O", and "CAESAR'S CIPHER" ↔ "PNRFNE'F PVCURE". Anyone
+                        with the key to the cipher can understand the message pretty easily. To anyone else, the message is likely to look like gobbledygook.</p>
+                </div>
+                <p>Secure modern encryption uses far more complex methods to protect your data. Nonetheless, consider two points with this example in mind:
+                    <ul>
+                        <li>Encryption is simply an application of math to communications.</li>
+                        <li>The stronger the encryption, the securer your data.</li>
+                    </ul>
+                    <br>
+                    <h4>The importance of strong passphrases</h4>
+                    <p>Today, secure communications techniques usually rely on computers to run complex algorithms. In typical modern use, encryption and decryption require authentication like a password or longer passphrase to deploy. Without your passphrase,
+                        a hacker would only be able to see encrypted data. She would have to break the encryption (e.g., for Caesar's Cipher, figure out she needs to shift each letter by 13 places in the alphabet) to be able to read your data. But with
+                        your passphrase, a hacker can access it just as you would. Therefore:
+                        <ul>
+                            <li>The stronger the passphrase, the securer the data.</li>
+                            <li>If a hacker figures out your passphrase, strong encryption can't help you.</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <h4>Backdoors</h4>
+                    <p>If the company that wrote the program you're using builds a "backdoor" into the program, it creates an intentional security defect, a technical method of accessing your data without either cracking the encryption OR figuring out your
+                        passphrase. Even under ideal circumstances, no one can <i>guarantee</i> that any particular backdoor will always remain known only to authorized parties who will use it legally and morally. Therefore:</p>
+                    <ul>
+                        <li>All backdoors, by definition, weaken the security of your data.</li>
+                        <li>Security defects used legitimately by good girls can be exploited equally by bad girls.</li>
+                    </ul>
+                    <br>
+                    <h4><a name='Demo' class='Demo'><strong>A demonstration</strong></a></h4>
+                    <p>Here, the situation plays out from the hacker's point of view. In a normal case, if the hacker's passphrase does not match yours, Caesar's Cipher will protect your data.</p>
+                    <p>If, however, the hacker becomes aware of a backdoor&mdash;through whatever means&mdash;she can gain access to your data no matter how convoluted your passphrase is, and even if the encryption is much stronger than Caesar's Cipher.
+                        For this example, the backdoor takes the form of a master passphrase. Use it below by typing "<strong>Collect it all!</strong>" as the hacker's passphrase.</p>
+                    <br>
+                    <div class='form'>
+                        <form>
+                            <input type="text" placeholder='store your data here...' name='entry' id='entry'></input><span class='btn btn-default' id='btn'>Click here to try it</span>
+                        </form>
+                    </div>
+                    <br>
+                    <div class='form'>
+                        <form>
+                            <input type="text" placeholder='your secret passphrase...' name='entryPW'></input>
+                        </form>
+                    </div>
+                    <div class='form'>
+                        <form>
+                            <input type="text" placeholder="the hacker's passphrase..." name='entryH'></input>
+                            </span>
+                        </form>
+                        <div id='output'></div>
+                    </div>
+                    <br>
+                    <p style='text-align: center'>For more tips on keeping your online information safe, check out <a href='https://ssd.eff.org/' target='_blank'><strong>EFF's Surveillance Self-Defense Guide</strong></a>.</p>
+            </div>
+        </div>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/index.min.js"></script>
+    </body>
+
 </html>

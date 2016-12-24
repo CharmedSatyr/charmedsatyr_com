@@ -1,92 +1,94 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Local Weather Viewer</title>
-    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'/>
-    <link rel="stylesheet" href="css/style.min.css"/>
-  </head>
+<html>
 
-<body>
-  <div class="container-fluid">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Local Weather Viewer</title>
+        <link rel='stylesheet prefetch' href='css/bootstrap.min.css' />
+        <link rel="stylesheet" href="css/style.min.css" />
+    </head>
 
-    <!--Everything above the main weather box-->
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="title">Current Weather in
-          <!--City & Country-->
-          <div class="location">
-            <span id="city">Your</span>
-            <span id="country">City</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--The main weather box-->
-    <div class="container-fixed">
-      <div class="row weather">
-        <div class="well col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
-          <!--Temperature-->
-          <span class='temp' id='tempC'><span style='font-size: large'>Loading...</span></span>
-          <span class='temp goAway' id='tempF'></span>
-          <!--Button-->
-          <span class='btn btn-default' id='buttonM'><span style='font-size: small'>Requires permission<br> to access your location.<br><br>You might also have to <br>allow mixed content in your <br>browser because the free <br>Open Weather Map API <br> doesn't use HTTPS.</span></span>
-          <span class='btn btn-default goAway' id='buttonI'> </span>
-          <!--Icon & Description-->
-          <div>
-            <span id="icon"></span>
-            <span id="description"></span>
-          </div>
-          <!--TABLE-->
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              <table class="table">
-                <!--Wind Speed & Direction-->
-                <tr>
-                  <td class='l'>Wind:</td>
-                  <td class='r'>
-                    <span id='windSpeedM'></span>
-                    <span class='goAway' id='windSpeedI'></span>
-                    <span id='windDeg'></span>
-                  </td>
-                </tr>
-                <!--Pressure-->
-                <tr>
-                  <td class="l">Pressure:</td>
-                  <td class="r">
-                    <span id="pressureM"></span>
-                    <span class='goAway' id='pressureI'></span>
-                  </td>
-                </tr>
-                <!--Humidity-->
-                <tr>
-                  <td class="l">Humidity:</td>
-                  <td class="r">
-                    <span id="humidity"></span>
-                  </td>
-                </tr>
-                <!--Visibility-->
-                <tr>
-                  <td class='l'>Visibility:</td>
-                  <td class='r'>
-                    <span id='visibilityM'></span>
-                    <span class='goAway' id='visibilityI'></span>
-                  </td>
-                </tr>
-                <!--Cloudiness-->
-                <tr>
-                  <td class="l">Cloudiness:</td>
-                  <td class="r"><span id="clouds"></span></td>
-                </tr>
-              </table>
+    <body>
+        <div class="container-fluid">
+
+            <!--Everything above the main weather box-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="title">Current Weather in
+                        <!--City & Country-->
+                        <div class="location">
+                            <span id="city">Your</span>
+                            <span id="country">City</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!--The main weather box-->
+            <div class="container-fixed">
+                <div class="row weather">
+                    <div class="well col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
+                        <!--Temperature-->
+                        <span class='temp' id='tempC'><span style='font-size: large'>Loading...</span></span>
+                        <span class='temp goAway' id='tempF'></span>
+                        <!--Button-->
+                        <span class='btn btn-default' id='buttonM'><span style='font-size: small'>Requires permission<br> to access your location.<br><br>You might also have to <br>allow mixed content in your <br>browser because the free <br>Open Weather Map API <br> doesn't use HTTPS.</span></span>
+                        <span class='btn btn-default goAway' id='buttonI'> </span>
+                        <!--Icon & Description-->
+                        <div>
+                            <span id="icon"></span>
+                            <span id="description"></span>
+                        </div>
+                        <!--TABLE-->
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <table class="table">
+                                    <!--Wind Speed & Direction-->
+                                    <tr>
+                                        <td class='l'>Wind:</td>
+                                        <td class='r'>
+                                            <span id='windSpeedM'></span>
+                                            <span class='goAway' id='windSpeedI'></span>
+                                            <span id='windDeg'></span>
+                                        </td>
+                                    </tr>
+                                    <!--Pressure-->
+                                    <tr>
+                                        <td class="l">Pressure:</td>
+                                        <td class="r">
+                                            <span id="pressureM"></span>
+                                            <span class='goAway' id='pressureI'></span>
+                                        </td>
+                                    </tr>
+                                    <!--Humidity-->
+                                    <tr>
+                                        <td class="l">Humidity:</td>
+                                        <td class="r">
+                                            <span id="humidity"></span>
+                                        </td>
+                                    </tr>
+                                    <!--Visibility-->
+                                    <tr>
+                                        <td class='l'>Visibility:</td>
+                                        <td class='r'>
+                                            <span id='visibilityM'></span>
+                                            <span class='goAway' id='visibilityI'></span>
+                                        </td>
+                                    </tr>
+                                    <!--Cloudiness-->
+                                    <tr>
+                                        <td class="l">Cloudiness:</td>
+                                        <td class="r"><span id="clouds"></span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of document fluid container-->
         </div>
-      </div>
-    </div>
-    <!--End of document fluid container-->
-  </div>
-  <script src='js/jquery-3.1.1.min.js'></script>
-  <script src="js/index.min.js"></script>
-  </body>
+        <script src='js/jquery-3.1.1.min.js'></script>
+        <script src="js/index.min.js"></script>
+    </body>
+
 </html>

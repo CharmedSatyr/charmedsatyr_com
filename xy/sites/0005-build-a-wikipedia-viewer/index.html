@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Wikipedia Viewer</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-</head>
-<body>
-  <div class='container-fluid'>
-    <div class='row main'>
-      <div class='col-xs-12'>
-        <div>
-          <img src="../../resources/0005/Wikipedia_logo_silver.png" class="img-responsive globe" width='150'>
-          <img src="../../resources/0005/Wikipedia_wordmark.svg" class='img-responsive' alt="Wikipedia" width='240'>
-          <br>
-          <h1>Viewer</h1>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class='row'>
-      <div class='col-xs-12'>
-        <form>
-          <span class="glyphicon glyphicon-search"></span><input type="text" title='Search' placeholder='Search...' name="Search" class='search' id='bar'></input>
-          <span class="btn btn-primary" title='View random articles from Wikipedia' id='rando'>Random
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Wikipedia Viewer</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div class='container-fluid'>
+            <div class='row main'>
+                <div class='col-xs-12'>
+                    <div>
+                        <img src="../../resources/0005/Wikipedia_logo_silver.png" class="img-responsive globe" width='150'>
+                        <img src="../../resources/0005/Wikipedia_wordmark.svg" class='img-responsive' alt="Wikipedia" width='240'>
+                        <br>
+                        <h1>Viewer</h1>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <form>
+                        <span class="glyphicon glyphicon-search"></span><input type="text" title='Search' placeholder='Search...' name="Search" class='search' id='bar'></input>
+                        <span class="btn btn-primary" title='View random articles from Wikipedia' id='rando'>Random
             <span class='fa fa-random'></span>
-          </span>
-        </form>
-      </div>
-    </div>
-    <br>
-    <div class='row'>
-      <p id='Results'></p>
-    </div>
-  </div>
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/index.min.js"></script>
-</body>
+                        </span>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <p id='Results'></p>
+            </div>
+        </div>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/index.min.js"></script>
+    </body>
+
 </html>
