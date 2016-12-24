@@ -1,23 +1,5 @@
-# Blocks robots from specific folders / directories
+# Blocks robots from all files / directories except /xy/index.html
+
 User-agent: *
-
-# Other sites
-Disallow: /charmed-tech/
-Disallow: /charmedsatyr/
-Disallow: /josephdwolfe/
-Disallow: /mindfulminimalism/
-Disallow: /satyr/
-
-# Developer
-Disallow: /.git/
-Disallow: /README.md
-
-# xy folder except index.html
-Disallow: /xy/sites/
-Disallow: /xy/resources/
-Disallow: /xy/style/
-Disallow: /xy/fonts/
-Disallow: /xy/js/
-Disallow: /xy/contact/
-Disallow: /xy/CS-OpenPGP-Public-Key.asc
-Disallow: /xy/index.pug
+Disallow: /
+Allow: /xy/index.html
