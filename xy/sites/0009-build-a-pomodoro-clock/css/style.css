@@ -103,7 +103,7 @@ body {
   }
   .adjust {
     font-size: 20px;
-    margin: 0 -8% 0 -8%;
+    margin: 0 -6% 0 -6%;
     top: -2%;
   }
   .time {
@@ -131,12 +131,11 @@ body {
     font-size: 9px;
   }
   .spend {
-    font-size: 30px;
-    margin: -5% 0 0 0;
+    font-size: 20px;
+    margin: -12% 0 0 0;
   }
   .adjust {
     font-size: 25px;
-    margin: 0 -6% 0 -6%;
     top: -2%;
   }
   .time {
@@ -160,7 +159,12 @@ body {
   .title {
     font-size: 38px;
   }
+  .spend {
+    font-size: 25px;
+    margin: 0 0 0 0;
+  }
   .adjust {
+    margin: 0 -4% 0 -4%;
     top: -4%;
   }
   .dial {
@@ -216,89 +220,100 @@ body {
   }
 }
 
-@media only screen and (min-width: 800px) {
-  .title {
-    font-size: 55px;
-  }
-  .spend {
-    font-size: 55px;
-    margin: 2% 0 0 0;
-  }
-  .adjust {
-    font-size: 45px;
-    margin: 0 -2% 0 -2%;
-  }
-  .dial {
-    border: solid white 15px;
-    height: 350px;
-    width: 350px;
+@media screen and (min-width: 800px) {
+  @media screen and (min-height: 600px) {
+    .title {
+      font-size: 55px;
+    }
+    .spend {
+      font-size: 55px;
+      margin: 2% 0 0 0;
+    }
+    .adjust {
+      font-size: 45px;
+      margin: 0 -2% 0 -2%;
+    }
+    .dial {
+      border: solid white 15px;
+      height: 350px;
+      width: 350px;
+    }
   }
 }
 
 @media only screen and (min-width: 980px) {
-  .title {
-    font-size: 65px;
-  }
-  .adjust {
-    top: -4%;
-  }
-  .play {
-    margin-right: 10%;
-  }
-  .work {
-    margin-left: 10%;
-  }
-}
-
-@media only screen and (min-width: 1080px) {
-  .title {
-    font-size: 90px;
-  }
-  .btn-default {
-    font-size: 15px;
-  }
-  .spend {
-    font-size: 65px;
-    margin: 5% 0 0 0;
-  }
-  .adjust {
-    font-size: 50px;
-    margin: 0 -1% 0 -1%;
-  }
-  .time {
-    font-size: 80px;
-  }
-  .dial {
-    height: 400px;
-    top: 60px;
-    width: 400px;
-  }
-  .play {
-    margin-right: 13%;
-  }
-  .work {
-    margin-left: 13%;
+  @media screen and (min-height: 600px) {
+    .title {
+      font-size: 65px;
+    }
+    .adjust {
+      top: -4%;
+    }
+    .play {
+      margin-right: 10%;
+    }
+    .work {
+      margin-left: 10%;
+    }
   }
 }
 
-@media only screen and (min-width: 1280px) {
-  .dial {
-    height: 425px;
-    width: 425px;
+@media screen and (min-height: 720px) {
+  @media only screen and (min-width: 1080px) {
+    .title {
+      font-size: 90px;
+    }
+    .btn-default {
+      font-size: 15px;
+    }
+    .spend {
+      font-size: 65px;
+      margin: 5% 0 0 0;
+    }
+    .adjust {
+      font-size: 50px;
+      margin: 0 -1% 0 -1%;
+    }
+    .time {
+      font-size: 80px;
+    }
+    .dial {
+      height: 400px;
+      top: 60px;
+      width: 400px;
+    }
+    .play {
+      margin-right: 13%;
+    }
+    .work {
+      margin-left: 13%;
+    }
   }
-  .play {
-    margin-right: 18%;
+  @media only screen and (min-width: 1280px) {
+    .spend {
+      font-size: 75px;
+      margin: 7% 0 0 0;
+    }
+    .dial {
+      height: 450px;
+      width: 450px;
+    }
+    .time {
+      font-size: 90px;
+    }
+    .play {
+      margin-right: 18%;
+    }
+    .work {
+      margin-left: 18%;
+    }
   }
-  .work {
-    margin-left: 18%;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .play {
-    margin-right: 25%;
-  }
-  .work {
-    margin-left: 25%;
+  @media only screen and (min-width: 1920px) {
+    .play {
+      margin-right: 25%;
+    }
+    .work {
+      margin-left: 25%;
+    }
   }
 }
