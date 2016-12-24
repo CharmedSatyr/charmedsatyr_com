@@ -138,81 +138,44 @@ table {
   font-size: 30px;
 }
 
-@media screen and (max-width: 768px), screen and (max-height: 1024px) {
+@media screen and (max-width: 320px), screen and (max-height: 480px) {
   .title {
-    font-size: 72px;
+    font-size: 35px;
   }
   .buttons {
-    font-size: 36px;
+    font-size: 15px;
   }
   .btn {
-    font-size: 19px;
+    font-size: 8px;
   }
   table {
-    font-size: 115px;
+    font-size: 48px;
   }
   .box {
-    height: 176px;
-    width: 176px;
+    height: 73.3px;
+    width: 73.3px;
   }
   .popup {
-    font-size: 84px;
+    font-size: 35px;
   }
   .winner {
-    height: 240px;
-    width: 600px;
+    height: 100px;
+    width: 250px;
   }
   .loser {
-    height: 360px;
-    width: 672px;
+    height: 150px;
+    width: 280px;
   }
   .tie {
-    height: 240px;
-    width: 600px;
+    height: 100px;
+    width: 250px;
   }
   .timer {
-    font-size: 36px;
+    font-size: 15px;
   }
 }
 
-@media screen and (max-width: 480px), screen and (max-height: 720px) {
-  .title {
-    font-size: 52.5px;
-  }
-  .buttons {
-    font-size: 22.5px;
-  }
-  .btn {
-    font-size: 12px;
-  }
-  table {
-    font-size: 72px;
-  }
-  .box {
-    height: 110px;
-    width: 110px;
-  }
-  .popup {
-    font-size: 52.5px;
-  }
-  .winner {
-    height: 150px;
-    width: 375px;
-  }
-  .loser {
-    height: 225px;
-    width: 420px;
-  }
-  .tie {
-    height: 150px;
-    width: 375px;
-  }
-  .timer {
-    font-size: 22.5px;
-  }
-}
-
-@media screen and (max-width: 360px), screen and (max-height: 640px) {
+@media screen and (min-width: 321px) {
   .title {
     font-size: 40px;
     margin-top: 5%;
@@ -250,39 +213,79 @@ table {
   }
 }
 
-@media screen and (max-width: 320px), screen and (max-height: 480px) {
+@media screen and (min-width: 480px) {
   .title {
-    font-size: 35px;
+    font-size: 52.5px;
+    margin-top: 2%;
   }
   .buttons {
-    font-size: 15px;
+    font-size: 22.5px;
   }
   .btn {
-    font-size: 8px;
+    font-size: 12px;
   }
   table {
-    font-size: 48px;
+    font-size: 72px;
   }
   .box {
-    height: 73.3px;
-    width: 73.3px;
+    height: 110px;
+    width: 110px;
   }
   .popup {
-    font-size: 35px;
+    font-size: 52.5px;
   }
   .winner {
-    height: 100px;
-    width: 250px;
+    height: 150px;
+    width: 375px;
   }
   .loser {
-    height: 150px;
-    width: 280px;
+    height: 225px;
+    width: 420px;
   }
   .tie {
-    height: 100px;
-    width: 250px;
+    height: 150px;
+    width: 375px;
   }
   .timer {
-    font-size: 15px;
+    font-size: 22.5px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  @media screen and (min-height: 800px) {
+    .title {
+      font-size: 72px;
+    }
+    .buttons {
+      font-size: 36px;
+    }
+    .btn {
+      font-size: 19px;
+    }
+    table {
+      font-size: 115px;
+    }
+    .box {
+      height: 176px;
+      width: 176px;
+    }
+    .popup {
+      font-size: 84px;
+    }
+    .winner {
+      height: 240px;
+      width: 600px;
+    }
+    .loser {
+      height: 360px;
+      width: 672px;
+    }
+    .tie {
+      height: 240px;
+      width: 600px;
+    }
+    .timer {
+      font-size: 36px;
+    }
   }
 }
