@@ -15,6 +15,11 @@ RewriteCond %{HTTP_HOST} ^josephdwolfe\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.josephdwolfe\.com$
 RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
 
+#redirect charmed.tech to eff.org
+RewriteCond %{HTTP_HOST} ^charmed\.tech$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.charmed\.tech$
+RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
+
 #redirect charmedsatyr.com to charmedsatyr.com/xy/
 RewriteCond %{HTTP_HOST} ^charmedsatyr\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.charmedsatyr\.com$
