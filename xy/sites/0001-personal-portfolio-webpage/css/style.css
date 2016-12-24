@@ -9,12 +9,9 @@ body {
   margin: 40px 10px 10px 20px;
   text-align: center;
   text-shadow: 1px 1px black;
-  }
+}
 
-h1,
-h2,
-h3,
-.heading {
+h1, h2, h3, .heading {
   color: yellow;
   font-weight: bold;
   text-align: center;
@@ -24,19 +21,17 @@ h3,
   pointer-events: none;
 }
 
-a,
-a:active {
+a, a:active {
   color: white;
   text-decoration: none;
   text-shadow: 1px 1px black;
 }
 
-a:hover,
-.anim:hover {
+a:hover, .anim:hover {
   color: red;
   cursor: pointer;
   text-decoration: none;
-  }
+}
 
 .btn {
   background: #000000;
@@ -48,7 +43,6 @@ a:hover,
   color: white;
   font-size: 150%;
   text-shadow: 1px 1px black;
-
 }
 
 .monoFont {

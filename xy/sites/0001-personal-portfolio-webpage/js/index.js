@@ -1,16 +1,16 @@
 $(document).ready(function() {
-    $('.anim').hover(
-        function() {
-            $(this).animate({
-                fontSize: '+=2px'
-            });
-        },
-        function() {
-            $(this).animate({
-                fontSize: '-=2px'
-            });
-        }
-    );
+	$('.anim').hover(
+		function() {
+			$(this).animate({
+				fontSize: '+=2px'
+			});
+		},
+		function() {
+			$(this).animate({
+				fontSize: '-=2px'
+			});
+		}
+	);
 });
 
 /*

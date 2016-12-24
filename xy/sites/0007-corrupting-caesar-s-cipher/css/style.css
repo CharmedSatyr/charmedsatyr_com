@@ -1,13 +1,13 @@
 @font-face {
- font-family: 'Montserrat';
- src: url('../fonts/Montserrat-Regular.ttf');
- }
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
 
 @font-face {
-   font-family: 'Montserrat';
-   font-weight: bold;
-   src: url('../fonts/Montserrat-Bold.ttf');
- }
+  font-family: 'Montserrat';
+  font-weight: bold;
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
 
 body {
   background: black;
@@ -36,13 +36,11 @@ h1 {
   text-shadow: 0.25px 0.25px limegreen, -0.25px -0.25px limegreen;
 }
 
-a,
-a:hover,
-a:visited {
+a, a:hover, a:visited {
   color: black;
 }
 
-h4{
+h4 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }

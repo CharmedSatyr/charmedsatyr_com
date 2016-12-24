@@ -1,13 +1,13 @@
 @font-face {
- font-family: 'Sigmar One';
- src: url('../fonts/Sigmar_One/SigmarOne.ttf');
- }
+  font-family: 'Sigmar One';
+  src: url('../fonts/Sigmar_One/SigmarOne.ttf');
+}
 
 @font-face {
-   font-family: 'Arimo';
-   font-weight: bold;
-   src: url('../fonts/Arimo/Arimo-Regular.ttf');
- }
+  font-family: 'Arimo';
+  font-weight: bold;
+  src: url('../fonts/Arimo/Arimo-Regular.ttf');
+}
 
 body {
   background: #07ffea;

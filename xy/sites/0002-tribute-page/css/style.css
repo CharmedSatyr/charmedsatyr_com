@@ -10,8 +10,7 @@ body {
   background: url(../../../resources/0002/alien%20scenery.jpg);
 }
 
-h1,
-h2 {
+h1, h2 {
   color: #FFE959;
   font-variant: small-caps;
   font-weight: bold;
