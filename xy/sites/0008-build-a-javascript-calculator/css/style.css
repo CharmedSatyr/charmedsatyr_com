@@ -22,47 +22,47 @@ body {
 }
 
 .display {
-  background: white;
-  border: 6px solid black;
+  background: #FFFFFF;
+  border: 6px solid #000000;
   border-radius: 0;
-  color: black;
+  color: #000000;
   font-family: 'Arimo', sans-serif;
 }
 
 .btn {
-  background: black;
-  border: 2px solid black;
+  background: #000000;
+  border: 2px solid #000000;
   border-radius: 0;
-  color: white;
+  color: #FFFFFF;
   font-size: 110%;
   padding: 2%;
 }
 
 .btn:hover {
   background: #ff4b3a;
-  border: 2px solid white;
-  color: black;
+  border: 2px solid #FFFFFF;
+  color: #000000;
 }
 
 .panel {
-  border: 6px solid black;
+  border: 6px solid #000000;
   border-radius: 0;
   font-family: 'Arimo', sans-serif;
 }
 
 .calc {
   background: #ebfdd4;
-  color: black;
+  color: #000000;
 }
 
 .equals {
   background: #b1f6cb;
-  color: black;
+  color: #000000;
 }
 
 .other {
   background: #dddddd;
-  color: black;
+  color: #000000;
 }
 
 .connector {
