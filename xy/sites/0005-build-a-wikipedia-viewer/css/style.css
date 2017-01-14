@@ -10,9 +10,9 @@
 }
 
 body {
-  text-align: center;
   color: black;
   font-family: 'Droid Sans', sans-serif;
+  text-align: center;
 }
 
 a, a:hover, a:visited {
