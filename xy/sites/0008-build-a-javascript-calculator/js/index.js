@@ -11,8 +11,19 @@ function calc(display) {
 	}
 
 	/*
-//Factorial
-  function fact(val) {
+//Factorial - however, it isn't integrated yet, and parseFloat(n!) may not work.
+
+//Possibly better, recursive factorial function. Need to be integrated.
+function factorial(n) {
+	if (n === 0) {
+		return 1;
+	} else {
+		return n * factorial(n - 1);
+	}
+};
+
+//Old factorial function
+	function fact(val) {
     var o = val - 1;
     while (o > 0) {
       val = val * o;
@@ -27,6 +38,7 @@ function calc(display) {
     } return str;
   }
 */
+
 	//Multiplication  & division respecting order of operations
 	for (var i = 0; i < str.length; i++) {
 		if (str[i] === '*') {
