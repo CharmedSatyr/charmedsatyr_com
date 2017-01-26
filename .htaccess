@@ -5,25 +5,10 @@ RewriteEngine on
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://charmedsatyr.com/$1 [R,L]
 
-#redirect josephwolfe.online to eff.org
-RewriteCond %{HTTP_HOST} ^josephwolfe\.online$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.josephwolfe\.online$
-RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
-
-#redirect josephdwolfe.com to eff.org
-RewriteCond %{HTTP_HOST} ^josephdwolfe\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.josephdwolfe\.com$
-RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
-
-#redirect charmed.tech to eff.org
-RewriteCond %{HTTP_HOST} ^charmed\.tech$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.charmed\.tech$
-RewriteRule ^/?$ "https\:\/\/eff\.org\/" [R=301,L]
-
 #redirect charmedsatyr.com to charmedsatyr.com/xy/
-RewriteCond %{HTTP_HOST} ^charmedsatyr\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.charmedsatyr\.com$
-RewriteRule ^/?$ "https\:\/\/charmedsatyr\.com\/xy\/" [R=301,L]
+#RewriteCond %{HTTP_HOST} ^charmedsatyr\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^www\.charmedsatyr\.com$
+#RewriteRule ^/?$ "https\:\/\/charmedsatyr\.com\/xy\/" [R=301,L]
 
 RewriteOptions inherit
 
