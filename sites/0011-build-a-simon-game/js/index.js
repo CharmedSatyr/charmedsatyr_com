@@ -21,11 +21,11 @@ $(document).ready(function() {
 		});
 
 		//Variables for and links to sounds
-		audioTL = new Audio('https://www.charmedsatyr.com/xy/resources/0011/simonSound1.mp3');
-		audioTR = new Audio('https://www.charmedsatyr.com/xy/resources/0011/simonSound2.mp3');
-		audioBL = new Audio('https://www.charmedsatyr.com/xy/resources/0011/simonSound3.mp3');
-		audioBR = new Audio('https://www.charmedsatyr.com/xy/resources/0011/simonSound4.mp3');
-		buzzer = new Audio('https://www.charmedsatyr.com/xy/resources/0011/Buzzer.mp3');
+		audioTL = new Audio('https://www.charmedsatyr.com/resources/0011/simonSound1.mp3');
+		audioTR = new Audio('https://www.charmedsatyr.com/resources/0011/simonSound2.mp3');
+		audioBL = new Audio('https://www.charmedsatyr.com/resources/0011/simonSound3.mp3');
+		audioBR = new Audio('https://www.charmedsatyr.com/resources/0011/simonSound4.mp3');
+		buzzer = new Audio('https://www.charmedsatyr.com/resources/0011/Buzzer.mp3');
 
 		//Standard highlight/sound function that takes specific quarter variables
 		function fx() {
