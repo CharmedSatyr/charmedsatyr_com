@@ -23,7 +23,8 @@
 }
 
 body {
-  background: #000000 url(https://charmedsatyr.com/xy/resources/0003/Techno-Desktop-backgrounds-Desktop-Wallpaper.jpg);
+  background: #000000;
+  background: url(../../../resources/0003/Techno-Desktop-backgrounds-Desktop-Wallpaper.jpg);
   color: #ffffff;
   margin-bottom: 10%;
   text-align: center;
