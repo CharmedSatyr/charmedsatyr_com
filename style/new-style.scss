@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf');
+}
+
+$gold-color: #ffd338;
+$gray-color: #a0a0a0;
+$trans-purple-color: #a757f2;
+$trans-purple-color: rgba(167,87,242,0.4);
+$white-color: #ffffff;
+
+body {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background: #727272 url('../resources/CharmedSatyr/Flying.jpg') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.main {
+  background-color: $gray-color;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 100%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  min-height: 80%;
+  /* Fallback for vh unit */
+  min-height: 80vh;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+.satyr {
+  height: 150px;
+  margin-top: 1%;
+  position: relative;
+  width: auto;
+}
+
+.subtitle {
+  color: $gold-color;
+  font-size: 130%;
+  text-shadow: 1px 1px 4px black;
+}
+
+.headings {
+  background: $trans-purple-color;
+  border-color: $gray-color;
+  color: $white-color;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 120%;
+  text-shadow: 1px 1px 2px black;
+  &:hover {
+    background: #592e82;
+    color: $gold-color;
+    border-color: $gray-color !important;
+  }
+  &:active,
+  &:target {
+    background: #592e82 !important;
+    color: $gold-color !important;
+  }
+}
+
+.fa {
+  font-size: 120%;
+}
+
+.space {
+  margin-left: 1%;
+}
+
+.description {
+  color: $gray-color;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 80%;
+  text-shadow: 1px 1px 2px black;
+}
+
+.mono {
+  font-family: monospace;
+}
+
+
+//See if you can figure out why a black box appears around the clicked links
+a {
+  &:hover,
+  &:active,
+  &:target,
+  &:visited {
+    text-decoration: none !important;
+}
+}
+
+.inner {
+  a {
+    background: white url('../resources/CharmedSatyr/handmadepaper.jpg') repeat;
+    border-radius: 1px;
+    color: black;
+    font-size: 110%;
+    margin-top: -1%;
+    &:hover {
+      color: $gold-color;
+      text-shadow: 1px 1px 1px black, -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black;
+      text-decoration: none;
+    }
+    &:active,
+    &:target, &:visited {
+      text-decoration: none !important;
+}
+    p {
+      margin: 2%;
+    }
+  }
+}
+
+.emph {
+  color: $gold-color;
+  font-size: 130%;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black;
+}
+
+
+/* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
+
+.thumbnail {
+  iframe {
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    height: 900px;
+    opacity: 0;
+    position: relative;
+    transform-origin: 0 0;
+    transition: all 300ms ease-in-out;
+    width: 1440px;
+  }
+  &::after {
+    bottom: 0;
+    content: ''; //This line prevents interaction
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.thumbnail-container {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.orange {
+  color: rgb(255, 148, 23);
+  font-weight: bold;
+}
+
+
+/* Media queries for the website thumbnails */
+
+@mixin transform-iframe($size) {
+  .thumbnail iframe {
+    -ms-zoom: $size;
+    -moz-transform: scale($size);
+    -o-transform: scale($size);
+    -webkit-transform: scale($size);
+    transform: $size;
+  }
+  .thumbnail-container {
+    height: 900px * $size; //No need for "calc"
+    width: 1440px * $size; //No need for "calc"
+  }
+}
+
+@mixin font($f-size) {
+  .headings,
+  .headings a,
+  .headings a:hover,
+  .headings a:visited {
+    font-size: $f-size;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  @include font(100%);
+  @include transform-iframe(0.15);
+}
+
+@media screen and (min-width: 421px) {
+  @include font(100%);
+  @include transform-iframe(0.21);
+}
+
+@media screen and (min-width: 560px) {
+  @include font(120%);
+  @include transform-iframe(0.26);
+}
+
+@media screen and (min-width: 1200px) {
+  @include transform-iframe(0.31);
+}
+
+@media screen and (min-width: 1440px) {
+  @include transform-iframe(0.36);
+}
+
+@media screen and (min-width: 1680px) {
+  @include transform-iframe(0.41);
+}
+
+@media screen and (min-width: 1920px) {
+  @include transform-iframe(0.50);
+}
