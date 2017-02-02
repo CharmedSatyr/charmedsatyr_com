@@ -1,3 +1,5 @@
+
+
 @media screen and (min-height: 1280px) {
   body {
     margin-top: 18%;
@@ -42,12 +44,20 @@ body {
   text-align: center;
 }
 
+.shader {
+	//font-size: 100%;
+//	background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%,rgba(117,117,117,0.5) 100%);
+//	height: 100%;
+}
+
+
 .text {
   margin-bottom: 2%;
 }
 
 .btn, .btn:hover, .btn:active {
   background: rgba(255, 255, 255, 0.0);
+  color: black;
   font-size: 150%;
   font-weight: bold;
   padding: 0 2% 0 2%;
@@ -74,7 +84,6 @@ body {
 }
 
 .weather {
-  /*  text-align: center;*/
   padding: 2% 0 0 0;
 }
 
@@ -90,6 +99,11 @@ body {
 .l {
   text-align: left;
   font-weight: bold;
+}
+
+.poweredby {
+  height: 30px;
+  margin-bottom: 1%;
 }
 
 
