@@ -30,107 +30,79 @@ function rangeOfColors(val) {
 			bgCol = "rgba(255, 0, 0, 1.0)";
 			break;
 		default:
-			bgCol = "rgb(249, 213, 237)";
+			bgCol = "pink";
 			break;
 	}
 	return bgCol;
 }
 
-$(document).ready(function() {
+//Icons
+var icons = {
+	clear_day: '\u2600️',
+	clear_night: '\uD83C\uDF19',
+	rain: '\u2614️',
+	snow: '\uD83C\uDF28',
+	sleet: '\uD83C\uDF27',
+	wind: '\uD83C\uDF2C',
+	fog: '\uD83C\uDF2B',
+	cloudy: '\u2601️',
+	partly_cloudy_day: '\uD83C\uDF25',
+	partly_cloudy_night: '\uD83C\uDF19\u2601️'
+};
 
-	/*
-	  //Geolocator based on IP address
-	  $.getJSON('https://ipinfo.io', function(data) {
-	    var location = data.loc.split(',');
-	    var lat = location[0];
-	    var lon = location[1];
-	*/
+//Find your location
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(pos) {
 
-	//HTML Geolocator
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			var lon = position.coords.longitude;
-			var lat = position.coords.latitude;
+		var lat = (pos.coords.latitude).toFixed(3); //40.714;
+		var lon = (pos.coords.longitude).toFixed(3); //-73.961;
+		var key = '011ffb7f7744c9434fcbcdc0c9a0b65f';
+		var units = '?units=si';
+		var url = 'https://api.darksky.net/forecast/' + key + '/' + lat + ',' + lon + units;
 
-			//Weather display
-			$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=" + "061f24cf3cde2f60644a8240302983f2", function(report) {
+		var googleKey = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
+		var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + googleKey; //=YOUR_API_KEY' + lon + ',' + lat + 'key=' + googleKey;
 
-				//City
-				var city = report.name;
-				if (city !== undefined) {
-					$('#city').html(city + ", ");
-				} else {
-					$('#city').html('Currently Unavailable, ');
-				}
-				//Country - only Korea and Canada will be spelled out
-				function spell(val) {
-					var a = "";
-					if (val === 'KR') {
-						a = 'South Korea';
-					} else if (val === 'CA') {
-						a = 'Canada';
-					} else {
-						a = val;
-					}
-					return a;
-				}
 
-				var country = spell(report.sys.country);
-				if (country !== undefined) {
-					$('#country').html(country);
-				} else {
-					$('#country').html('Location Not Detected');
-				}
+		//Google API for location
+		$.getJSON(mapAPI, function(JSON) {
+
+			$('#location').html(JSON.results[0].address_components[2].long_name + ', ' + JSON.results[0].address_components[4].long_name + ', ' + JSON.results[0].address_components[5].long_name);
+
+		});
+
+		//DarkSky API for location weather
+		return $.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(data) {
+				console.log('Success! Displaying weather data.');
+
+				//Icons
+				$('#icon').html(icons['' + data.currently.icon.replace(/-/g, '_')]).attr('title', data.currently.summary);
+
 				//Temperature
-				var temp = Math.round(report.main.temp - 273.15);
+				var temp = Math.round(data.currently.temperature);
 
-				if (temp !== undefined) {
+				$('#tempC').html(temp + '&deg;');
+				$('#buttonM').html("C");
 
-					$('#tempC').html(temp + "&deg");
-					$('#tempF').html(Math.round(temp * 1.8 + 32) + "&deg");
-					$('#buttonM').html("C");
-					$('#buttonI').html("F");
-				} else {
-					$('#tempC, #tempF').html('Currently Unavailable');
-				}
+				$('#tempF').html(Math.round(temp * 1.8 + 32) + "&deg");
+				$('#buttonI').html("F");
+
 				//Background color based on temp, per rangeOfColors above
 				$('body').css("background-color", rangeOfColors(temp));
 
-				//Icon
-				var icon = report.weather[0].icon;
-				var iconLink = "http://openweathermap.org/img/w/" + icon + ".png";
-				if (icon !== undefined) {
-					$('#icon').html("<img src=" + iconLink + ">");
-				} else {
-					$('#icon').html('');
-				}
-				//Description - Custom function capitalizes each word's first letter
-				function titleCase(str) {
-					str = str.toLowerCase().split(' ');
-					for (var i = 0; i < str.length; i++) {
-						str[i] = str[i].replace(str[i][0], str[i][0].toUpperCase());
-					}
-					str = str.join(' ');
-					return str;
-				}
+				//Description
+				$('#currentDescription').html(data.currently.summary);
+				$('#dailySummary').html(data.daily.summary);
 
-				var description = titleCase(report.weather[0].description);
-				if (description !== undefined) {
-					$('#description').html(description);
-				} else {
-					$('#description').html('');
-				}
-				//Wind
 				//Wind Speed
-				var windSpeed = report.wind.speed;
-				if (windSpeed !== undefined) {
-					$('#windSpeedM').html(windSpeed.toFixed(1) + " m/s, ");
-					$('#windSpeedI').html((windSpeed * 2.23694).toFixed(1) + " mph, ");
-				} else {
-					$('#windSpeedM, #windSpeedI').html('Currently Unavailable');
-				}
-				//Wind Direction - Custom function for the direction because the one from openweathermap.org is sometimes undefined
-				var windDeg = Math.round(report.wind.deg);
+				$('#windSpeedM').html((data.currently.windSpeed).toFixed(1) + ' m/s, ');
+				$('#windSpeedI').html((data.currently.windSpeed * 2.23694).toFixed(1) + " mph, ");
+
+				//Wind Direction
+				var windDeg = Math.round(data.currently.windBearing);
 
 				function compass(val) {
 					switch (true) {
@@ -183,7 +155,7 @@ $(document).ready(function() {
 							answer = val + "&deg NNW";
 							break;
 						default:
-							answer = "Not Calculated";
+							answer = '';
 							break;
 					}
 					return answer;
@@ -191,46 +163,42 @@ $(document).ready(function() {
 				$('#windDeg').html(compass(windDeg));
 
 				//Pressure
-				var pressure = report.main.pressure;
-				if (pressure !== undefined) {
-					$('#pressureM').html(pressure.toFixed(1) + " mb");
-					$('#pressureI').html((pressure * 0.03).toFixed(1) + " in");
-				} else {
-					$('#pressureM, #pressureI').html('Currently Unavailable');
-				}
+				$('#pressureM').html(data.currently.pressure + ' hPa');
+				$('#pressureI').html((data.currently.pressure * 0.03).toFixed(1) + " in");
+
 				//Humidity
-				var humidity = report.main.humidity;
-				if (humidity !== undefined) {
-					$('#humidity').html(humidity + '%');
-				} else {
-					$('#humidity').html('Currently Unavailable');
-				}
+				$('#humidity').html(data.currently.humidity * 100 + '%');
+
 				//Visibility
-				var visibility = report.visibility;
-				if (visibility !== undefined) {
-					$('#visibilityM').html(visibility + ' m');
-					$('#visibilityI').html(Math.round((visibility * 3.281)) + ' ft');
+				if (data.currently.visibility !== undefined) {
+					$('#visibilityM').html((data.currently.visibility).toFixed(1) + ' km');
+					$('#visibilityI').html((data.currently.visibility * 0.621).toFixed(1) + ' mi');
 				} else {
-					$('#visibilityM, #visibilityI').html('Currently Unavailable');
+					$('#visibilityM, #visibilityI').html('Unavailable');
 				}
-				//Clouds
-				var clouds = report.clouds.all;
-				if (clouds !== undefined) {
-					$('#clouds').html(clouds + "%");
+
+				//Cloud cover
+				if (data.currently.cloudCover !== undefined) {
+					$('#clouds').html(data.currently.cloudCover + '%');
 				} else {
-					$('#clouds').html('Currently Unavailable');
+					$('#clouds').html('Unavailable');
 				}
-			});
+			},
+			error: function() {
+				console.log('Unable to display weather.');
+			}
 		});
-	}
-
-	//Metric/Imperial button toggle
-	$('#buttonM, #buttonI').click(function() {
-		$('#tempC, #tempF').toggleClass('goAway');
-		$('#windSpeedM, #windSpeedI').toggleClass('goAway');
-		$('#visibilityM, #visibilityI').toggleClass('goAway');
-		$('#pressureM, #pressureI').toggleClass('goAway');
-		$('#buttonM, #buttonI').toggleClass('goAway');
 	});
+} else {
+	console.log('Geolocation data unavailable.');
+}
 
+//Metric/Imperial button toggle
+$('#buttonM, #buttonI').click(function() {
+	$('#tempC, #tempF').toggleClass('goAway');
+	$('#windSpeedM, #windSpeedI').toggleClass('goAway');
+	$('#visibilityM, #visibilityI').toggleClass('goAway');
+	$('#pressureM, #pressureI').toggleClass('goAway');
+	$('#buttonM, #buttonI').toggleClass('goAway');
+	$('#dailySummary').toggleClass('goAway');
 });

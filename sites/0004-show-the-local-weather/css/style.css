@@ -34,17 +34,23 @@
 }
 
 body {
-  text-align: center;
-  color: #000000;
+  background: pink;
+  color: black;
   font-family: 'Ubuntu', sans-serif;
-  background: rgb(232, 184, 217);
+  font-weight: normal;
+  margin: 4% 0 0 0;
+  text-align: center;
+}
+
+.text {
+  margin-bottom: 2%;
 }
 
 .btn, .btn:hover, .btn:active {
   background: rgba(255, 255, 255, 0.0);
   font-size: 150%;
   font-weight: bold;
-  padding: 0% 2% 0% 2%;
+  padding: 0 2% 0 2%;
   position: relative;
   bottom: 11px;
 }
@@ -56,20 +62,20 @@ body {
 .location {
   font-size: 150%;
   font-weight: bold;
-  color: #ffffff;
-  text-shadow: 1px 1px #000000;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
-div.well {
-  padding: 20px 20px 0px 20px;
+.well {
+  padding: 20px 20px 0 20px;
   background: rgba(255, 255, 255, 0.5);
   position: relative;
   bottom: 10px;
 }
 
 .weather {
-  text-align: center;
-  padding: 2% 0% 0% 0%;
+  /*  text-align: center;*/
+  padding: 2% 0 0 0;
 }
 
 .temp {

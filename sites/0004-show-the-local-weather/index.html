@@ -2,23 +2,21 @@
 <html>
 
     <head>
-        <meta charset="UTF-8" />
-        <title>Local Weather Viewer</title>
-        <link rel='stylesheet prefetch' href='css/bootstrap.min.css' />
-        <link rel="stylesheet" href="css/style.min.css" />
+        <meta charset="UTF-8">
+        <title>Local Weather Viewer 2.0</title>
+        <link rel='stylesheet prefetch' href='css/bootstrap-3.3.7.min.css'>
+        <link rel="stylesheet" href="css/style.min.css">
     </head>
 
     <body>
         <div class="container-fluid">
-
             <!--Everything above the main weather box-->
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="title">Current Weather in
+                    <div class="title">Current Weather near
                         <!--City & Country-->
                         <div class="location">
-                            <span id="city">Your</span>
-                            <span id="country">City</span>
+                            <span id="location">Your Location</span>
                         </div>
                     </div>
                 </div>
@@ -31,13 +29,15 @@
                         <span class='temp' id='tempC'><span style='font-size: large'>Loading...</span></span>
                         <span class='temp goAway' id='tempF'></span>
                         <!--Button-->
-                        <span class='btn btn-default' id='buttonM'><span style='font-size: small'>Requires permission<br> to access your location.<br><br>You might also have to <br>allow mixed content in your <br>browser because the free <br>Open Weather Map API <br> doesn't use HTTPS.</span></span>
+                        <span class='btn btn-default' id='buttonM'><span style='font-size: small'>*</span></span>
                         <span class='btn btn-default goAway' id='buttonI'> </span>
                         <!--Icon & Description-->
-                        <div>
+                        <div class='text'>
                             <span id="icon"></span>
-                            <span id="description"></span>
+                            <span id="currentDescription"></span>
                         </div>
+                        <div class='text col-xs-10 col-xs-offset-1' id='dailySummary'></div>
+
                         <!--TABLE-->
                         <div class="row">
                             <div class="col-xs-10 col-xs-offset-1">
@@ -87,7 +87,7 @@
             </div>
             <!--End of document fluid container-->
         </div>
-        <script src='js/jquery-3.1.1.min.js'></script>
+        <script src='js/jquery-3.1.0.min.js'></script>
         <script src="js/index.min.js"></script>
     </body>
 
