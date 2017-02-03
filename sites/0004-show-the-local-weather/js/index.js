@@ -2,6 +2,7 @@ var lat, lon;
 
 //Access the DarkSky API to get current weather
 function pullWeather() {
+
 	var key = '011ffb7f7744c9434fcbcdc0c9a0b65f';
 	var units = '?units=si';
 	var url = 'https://api.darksky.net/forecast/' + key + '/' + lat + ',' + lon + units;
@@ -37,9 +38,8 @@ if (navigator.geolocation) {
 		pullWeather();
 	});
 } else {
-	console.log("HTML5 geolocation not permitted.")
+	console.log('HTML5 geolocation not permitted.')
 }
-
 
 //Calculate and organize weather report based on active geolocation
 function report(data) {
@@ -49,59 +49,49 @@ function report(data) {
 	var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
 
 	$.getJSON(mapAPI, function(JSON) {
-		$('#location').html(JSON.results[0].address_components[2].long_name + ', ' + JSON.results[0].address_components[4].long_name + ', ' + JSON.results[0].address_components[5].long_name);
+		$('#location').html(JSON.results[0].address_components[2].long_name + ', ' + JSON.results[0].address_components[3].long_name + ', ' + JSON.results[0].address_components[4].long_name);
 	});
 
-	//Icons
-	var icons = {
-		clear_day: '\u2600️',
-		clear_night: '\uD83C\uDF19',
-		rain: '\u2614️',
-		snow: '\uD83C\uDF28',
-		sleet: '\uD83C\uDF27',
-		wind: '\uD83C\uDF2C',
-		fog: '\uD83C\uDF2B',
-		cloudy: '\u2601️',
-		partly_cloudy_day: '\uD83C\uDF25',
-		partly_cloudy_night: '\uD83C\uDF19\u2601️'
-	};
-
-	//Place icons
-	$('#icon').html(icons['' + data.currently.icon.replace(/-/g, '_')]).attr('title', data.currently.summary);
+	//Place icons from https://erikflowers.github.io/weather-icons/
+	if (data.currently.icon) {
+		$('#icon').addClass('wi-forecast-io-' + data.currently.icon);
+	} else {
+		$('#icon').addClass('wi-cloud'); //fallback icon
+	}
 
 	//Range of colors used for the background, based on metric temperature benchmarks
 	function rangeOfColors(val) {
-		var bgCol = "";
+		var bgCol = '';
 		switch (true) {
 			case (val < 0):
-				bgCol = "rgba(1, 1, 255, 1.0)";
+				bgCol = 'rgba(1, 1, 255, 1.0)';
 				break;
 			case ((val >= 0) && (val < 4.44)):
-				bgCol = "rgba(1, 146, 255, 1.0)";
+				bgCol = 'rgba(1, 146, 255, 1.0)';
 				break;
 			case ((val >= 4.44) && (val < 10)):
-				bgCol = "rgba(76, 192, 220, 1.0)";
+				bgCol = 'rgba(76, 192, 220, 1.0)';
 				break;
 			case ((val >= 10) && (val < 15.56)):
-				bgCol = "rgba(1, 255, 154, 1.0)";
+				bgCol = 'rgba(1, 255, 154, 1.0)';
 				break;
 			case ((val >= 15.56) && (val < 21.11)):
-				bgCol = "rgba(156, 255, 41, 1.0)";
+				bgCol = 'rgba(156, 255, 41, 1.0)';
 				break;
 			case ((val >= 21.11) && (val < 26.67)):
-				bgCol = "rgba(255, 248, 3, 1.0)";
+				bgCol = 'rgba(255, 248, 3, 1.0)';
 				break;
 			case ((val >= 26.67) && (val < 32.22)):
-				bgCol = "rgba(255, 163, 3, 1.0)";
+				bgCol = 'rgba(255, 163, 3, 1.0)';
 				break;
 			case ((val >= 32.22) && (val < 37.78)):
-				bgCol = "rgba(255, 87, 3, 1.0)";
+				bgCol = 'rgba(255, 87, 3, 1.0)';
 				break;
 			case (val >= 37.78):
-				bgCol = "rgba(255, 0, 0, 1.0)";
+				bgCol = 'rgba(255, 0, 0, 1.0)';
 				break;
 			default:
-				bgCol = "pink";
+				bgCol = 'pink';
 				break;
 		}
 		return bgCol;
@@ -111,86 +101,93 @@ function report(data) {
 	var temp = Math.round(data.currently.temperature);
 
 	$('#tempC').html(temp + '&deg;');
-	$('#buttonM').html("C");
+	$('#buttonM').html('C');
 
-	$('#tempF').html(Math.round(temp * 1.8 + 32) + "&deg");
-	$('#buttonI').html("F");
+	$('#tempF').html(Math.round(temp * 1.8 + 32) + '&deg');
+	$('#buttonI').html('F');
 
 	//Background color based on temp, per rangeOfColors above
-	$('body').css("background-color", rangeOfColors(temp));
+	$('body').css('background-color', rangeOfColors(temp));
 
-	//Description
+	//Description - seems easier to replace the C temp with F than to call the API again
 	$('#currentDescription').html(data.currently.summary);
-	$('#dailySummary').html(data.daily.summary);
+	$('#dailySummaryM').html(data.daily.summary);
+
+	var regex = /([0-9]+°C)/g;
+	var oldVal = data.daily.summary.match(regex);
+	var newVal = Math.round(parseFloat(oldVal) * 1.8 + 32) + '°' + 'F';
+	var dailySummaryI = (data.daily.summary).replace(oldVal, newVal);
+	$('#dailySummaryI').html(dailySummaryI);
 
 	//Wind Speed
-	$('#windSpeedM').html((data.currently.windSpeed).toFixed(1) + ' m/s, ');
-	$('#windSpeedI').html((data.currently.windSpeed * 2.23694).toFixed(1) + " mph, ");
+	$('#windSpeedM').html((data.currently.windSpeed).toFixed(1) + ' m/s ');
+	$('#windSpeedI').html((data.currently.windSpeed * 2.23694).toFixed(1) + ' mph ');
 
 	//Wind Direction
 	var windDeg = Math.round(data.currently.windBearing);
-
-	function compass(val) {
-		switch (true) {
-			case (((val > 348.75) && (val <= 360)) || ((val >= 0) && (val <= 11.25))):
-				answer = val + "&deg N";
-				break;
-			case ((val > 11.25) && (val <= 33.75)):
-				answer = val + "&deg NNE";
-				break;
-			case ((val > 33.75) && (val <= 56.25)):
-				answer = val + "&deg NE";
-				break;
-			case ((val > 56.25) && (val <= 78.75)):
-				answer = val + "&deg ENE";
-				break;
-			case ((val > 78.75) && (val <= 101.25)):
-				answer = val + "&deg E";
-				break;
-			case ((val > 101.25) && (val <= 123.75)):
-				answer = val + "&deg ESE";
-				break;
-			case ((val > 123.75) && (val <= 146.25)):
-				answer = val + "&deg SE";
-				break;
-			case ((val > 146.25) && (val <= 168.75)):
-				answer = val + "&deg SSE";
-				break;
-			case ((val > 168.75) && (val <= 191.25)):
-				answer = val + "&deg S";
-				break;
-			case ((191.25 > val) && (val <= 213.75)):
-				answer = val + "&deg SSW";
-				break;
-			case ((213.75 > val) && (val <= 236.25)):
-				answer = val + "&deg SW";
-				break;
-			case ((val > 236.25) && (val <= 258.75)):
-				answer = val + "&deg WSW";
-				break;
-			case ((val > 258.75) && (val <= 281.25)):
-				answer = val + "&deg W";
-				break;
-			case ((val > 281.25) && (val <= 303.75)):
-				answer = val + "&deg WNW";
-				break;
-			case ((val > 303.75) && (val <= 326.25)):
-				answer = val + "&deg NW";
-				break;
-			case ((val > 326.25) && (val <= 348.75)):
-				answer = val + "&deg NNW";
-				break;
-			default:
-				answer = '';
-				break;
+	$('#compaz').addClass('towards-' + data.currently.windBearing + '-deg');
+	/*
+		function compass(val) {
+			switch (true) {
+				case (((val > 348.75) && (val <= 360)) || ((val >= 0) && (val <= 11.25))):
+					answer = val + '&deg N';
+					break;
+				case ((val > 11.25) && (val <= 33.75)):
+					answer = val + '&deg NNE';
+					break;
+				case ((val > 33.75) && (val <= 56.25)):
+					answer = val + '&deg NE';
+					break;
+				case ((val > 56.25) && (val <= 78.75)):
+					answer = val + '&deg ENE';
+					break;
+				case ((val > 78.75) && (val <= 101.25)):
+					answer = val + '&deg E';
+					break;
+				case ((val > 101.25) && (val <= 123.75)):
+					answer = val + '&deg ESE';
+					break;
+				case ((val > 123.75) && (val <= 146.25)):
+					answer = val + '&deg SE';
+					break;
+				case ((val > 146.25) && (val <= 168.75)):
+					answer = val + '&deg SSE';
+					break;
+				case ((val > 168.75) && (val <= 191.25)):
+					answer = val + '&deg S';
+					break;
+				case ((191.25 > val) && (val <= 213.75)):
+					answer = val + '&deg SSW';
+					break;
+				case ((213.75 > val) && (val <= 236.25)):
+					answer = val + '&deg SW';
+					break;
+				case ((val > 236.25) && (val <= 258.75)):
+					answer = val + '&deg WSW';
+					break;
+				case ((val > 258.75) && (val <= 281.25)):
+					answer = val + '&deg W';
+					break;
+				case ((val > 281.25) && (val <= 303.75)):
+					answer = val + '&deg WNW';
+					break;
+				case ((val > 303.75) && (val <= 326.25)):
+					answer = val + '&deg NW';
+					break;
+				case ((val > 326.25) && (val <= 348.75)):
+					answer = val + '&deg NNW';
+					break;
+				default:
+					answer = '';
+					break;
+			}
+			return answer;
 		}
-		return answer;
-	}
-	$('#windDeg').html(compass(windDeg));
-
+		$('#windDeg').html(compass(windDeg));
+	*/
 	//Pressure
 	$('#pressureM').html(Math.round(data.currently.pressure) + ' hPa');
-	$('#pressureI').html(Math.round(data.currently.pressure * 0.03) + " inHg");
+	$('#pressureI').html(Math.round(data.currently.pressure * 0.03) + ' inHg');
 
 	//Humidity
 	$('#humidity').html(Math.round(data.currently.humidity * 100) + '%');
@@ -217,5 +214,5 @@ $('#buttonM, #buttonI').click(function() {
 	$('#visibilityM, #visibilityI').toggleClass('goAway');
 	$('#pressureM, #pressureI').toggleClass('goAway');
 	$('#buttonM, #buttonI').toggleClass('goAway');
-	$('#dailySummary').toggleClass('goAway');
+	$('#dailySummaryM, #dailySummaryI').toggleClass('goAway');
 });

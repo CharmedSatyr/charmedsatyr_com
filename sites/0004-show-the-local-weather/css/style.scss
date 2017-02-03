@@ -24,18 +24,18 @@
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('../fonts/Ubuntu-M.ttf');
+  src: url('../font/Ubuntu-M.ttf');
 }
 
 @font-face {
   font-family: 'Ubuntu';
   font-weight: bold;
-  src: url('../fonts/Ubuntu-B.ttf');
+  src: url('../font/Ubuntu-B.ttf');
 }
 
 body {
   background: pink;
-  background:  radial-gradient(circle, rgba(255, 255, 255, 0.1), darken(rgba(0, 0, 0, 0.2), 5%));
+  background:  radial-gradient(circle, rgba(255, 255, 255, 0.1), darken(rgba(0, 0, 0, 0.2), 4%));
   color: black;
   font-family: 'Ubuntu', sans-serif;
   font-size: 180%;
@@ -49,7 +49,7 @@ body {
 }
 
 .btn, .btn:hover, .btn:active {
-  background: rgba(255, 255, 255, 0.0);
+  background: rgba(255, 255, 255, 0.0) !important;
   color: #000000;
   font-size: 200%;
   font-weight: bold;
@@ -83,6 +83,12 @@ body {
 .temp {
   font-size: 300%;
   font-weight: bold;
+}
+
+.wi, .wi-wind {
+  font-size: 150%;
+  position: relative;
+  bottom: -0.1em;
 }
 
 .r {

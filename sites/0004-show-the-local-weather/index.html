@@ -6,6 +6,8 @@
         <title>Local Weather Viewer 2.0</title>
         <link rel='stylesheet prefetch' href='css/bootstrap-3.3.7.min.css'>
         <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href='css/weather-icons.min.css'>
+        <link rel="stylesheet" href='css/weather-icons-wind.min.css'>
     </head>
 
     <body>
@@ -33,10 +35,11 @@
                         <span class='btn btn-default goAway' id='buttonI'> </span>
                         <!--Icon & Description-->
                         <div class='text'>
-                            <span id="icon"></span>
+                            <i id="icon" class='wi'></i>
                             <span id="currentDescription"></span>
                         </div>
-                        <div class='text col-xs-10 col-xs-offset-1' id='dailySummary'></div>
+                        <div class='text col-xs-10 col-xs-offset-1' id='dailySummaryM'></div>
+                        <div class='text col-xs-10 col-xs-offset-1 goAway' id='dailySummaryI'></div>
 
                         <!--TABLE-->
                         <div class="row">
@@ -47,8 +50,9 @@
                                         <td class='l'>Wind:</td>
                                         <td class='r'>
                                             <span id='windSpeedM'></span>
-                                            <span class='goAway' id='windSpeedI'></span>
+                                            <span id='windSpeedI' class='goAway'></span>
                                             <span id='windDeg'></span>
+                                            <i id='compaz' class='wi wi-wind'></i>
                                         </td>
                                     </tr>
                                     <!--Pressure-->
@@ -56,7 +60,7 @@
                                         <td class="l">Pressure:</td>
                                         <td class="r">
                                             <span id="pressureM"></span>
-                                            <span class='goAway' id='pressureI'></span>
+                                            <span id='pressureI' class='goAway'></span>
                                         </td>
                                     </tr>
                                     <!--Humidity-->
