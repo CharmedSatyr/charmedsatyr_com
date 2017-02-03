@@ -26,6 +26,15 @@ $.getJSON('https://ipinfo.io', function(data) {
 	var location = data.loc.split(',');
 	lat = location[0];
 	lon = location[1];
+
+	var country = data.country;
+
+	if (data.country == 'KR') {
+		country = 'South Korea';
+	}
+
+	$('#location').html(data.region + ', ' + country);
+
 	pullWeather();
 });
 
@@ -35,6 +44,16 @@ if (navigator.geolocation) {
 		lat = (pos.coords.latitude).toFixed(3);
 		lon = (pos.coords.longitude).toFixed(3);
 		console.log('HTML5 geolocation permitted. Lat, Lon: ' + lat + ', ' + lon);
+
+		//Google API name for location - DarkSky doesn't offer reverse geolocation
+		var kee = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
+		var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
+
+		$.getJSON(mapAPI, function(JSON) {
+			$('#location').html(JSON.results[(JSON.results.length - 3)].formatted_address);
+		});
+
+
 		pullWeather();
 	});
 } else {
@@ -43,14 +62,6 @@ if (navigator.geolocation) {
 
 //Calculate and organize weather report based on active geolocation
 function report(data) {
-
-	//Google API name for location
-	var kee = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
-	var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
-
-	$.getJSON(mapAPI, function(JSON) {
-		$('#location').html(JSON.results[0].address_components[2].long_name + ', ' + JSON.results[0].address_components[3].long_name + ', ' + JSON.results[0].address_components[4].long_name);
-	});
 
 	//Place icons from https://erikflowers.github.io/weather-icons/
 	if (data.currently.icon) {
@@ -207,6 +218,7 @@ function report(data) {
 		$('#clouds').html('Unavailable');
 	}
 }
+
 //Metric/Imperial button toggle
 $('#buttonM, #buttonI').click(function() {
 	$('#tempC, #tempF').toggleClass('goAway');
