@@ -45,8 +45,8 @@ if (navigator.geolocation) {
 function report(data) {
 
 	//Google API name for location
-	var googleKey = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
-	var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + googleKey;
+	var kee = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
+	var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
 
 	$.getJSON(mapAPI, function(JSON) {
 		$('#location').html(JSON.results[0].address_components[2].long_name + ', ' + JSON.results[0].address_components[4].long_name + ', ' + JSON.results[0].address_components[5].long_name);
@@ -189,8 +189,8 @@ function report(data) {
 	$('#windDeg').html(compass(windDeg));
 
 	//Pressure
-	$('#pressureM').html(data.currently.pressure + ' hPa');
-	$('#pressureI').html((data.currently.pressure * 0.03).toFixed(1) + " in");
+	$('#pressureM').html(Math.round(data.currently.pressure) + ' hPa');
+	$('#pressureI').html(Math.round(data.currently.pressure * 0.03) + " inHg");
 
 	//Humidity
 	$('#humidity').html(Math.round(data.currently.humidity * 100) + '%');
