@@ -23,6 +23,7 @@ function pullWeather() {
 //Pull weather for geolocation based on IP address
 $.getJSON('https://ipinfo.io', function(data) {
 	console.log('IP address detected: ' + data.ip + '. Lat, Lon: ' + lat + ', ' + lon);
+
 	var location = data.loc.split(',');
 	lat = location[0];
 	lon = location[1];
@@ -33,11 +34,11 @@ $.getJSON('https://ipinfo.io', function(data) {
 		country = 'South Korea';
 	}
 
-	$('#location').html(data.region + ', ' + country);
+	$('#location').html(data.city + ', ' + data.region + ', ' + country);
 
 	pullWeather();
 });
-
+/*
 //Pull weather for geolocation based on HTML5
 if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(function(pos) {
@@ -59,7 +60,7 @@ if (navigator.geolocation) {
 } else {
 	console.log('HTML5 geolocation not permitted.')
 }
-
+*/
 //Calculate and organize weather report based on active geolocation
 function report(data) {
 
