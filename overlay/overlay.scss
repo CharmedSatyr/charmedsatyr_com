@@ -1,0 +1,52 @@
+$mid: 40px;
+$bord: $mid*0.08;
+$g: 'G.png';
+$s: 'S.png';
+
+@mixin buttons($bhw, $size, $img) {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background: no-repeat center/$size url($img) rgba(255, 255, 255, 0.2);
+  border: $bord solid rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px #101010;
+  color: #000000;
+  height: $bhw;
+  margin-bottom: $mid * 0.1;
+  width: $bhw;
+
+  &:hover, &.active {
+    background: no-repeat center/$size url($img) rgba(255, 255, 255, 0.4);
+  }
+};
+
+#s-g-logo-container {
+    //align-items: center; //Used for cross axis
+    background: rgba(0, 0, 0, 0.0);
+    color: white;
+    display: flex;
+    flex-direction: column; //Determines direction of main axis. BUT column DOESN'T SEEM TO RESPOND TO OTHER PARAMETERS IN THE SAME WAY AS ROW
+    height: ($mid + $bord) * 2.115;
+    //justify-content: space-around; //Used for main axis
+    left: 0;
+    line-height: $mid;
+    margin-left: 1%;
+    margin-top: 1%;
+    overflow: visible;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: $mid + $bord * 2;
+    z-index: 100;
+
+    .s-logo {
+      @include buttons($mid, 90%, $s);
+    }
+
+    .g-logo {
+      @include buttons($mid, 105%, $g);
+  }
+}
