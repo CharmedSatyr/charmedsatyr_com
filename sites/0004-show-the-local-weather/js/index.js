@@ -138,65 +138,65 @@ function report(data) {
 	//Wind Direction
 	var windDeg = Math.round(data.currently.windBearing);
 	$('#compaz').addClass('towards-' + data.currently.windBearing + '-deg');
-	/*
-		function compass(val) {
-			switch (true) {
-				case (((val > 348.75) && (val <= 360)) || ((val >= 0) && (val <= 11.25))):
-					answer = val + '&deg N';
-					break;
-				case ((val > 11.25) && (val <= 33.75)):
-					answer = val + '&deg NNE';
-					break;
-				case ((val > 33.75) && (val <= 56.25)):
-					answer = val + '&deg NE';
-					break;
-				case ((val > 56.25) && (val <= 78.75)):
-					answer = val + '&deg ENE';
-					break;
-				case ((val > 78.75) && (val <= 101.25)):
-					answer = val + '&deg E';
-					break;
-				case ((val > 101.25) && (val <= 123.75)):
-					answer = val + '&deg ESE';
-					break;
-				case ((val > 123.75) && (val <= 146.25)):
-					answer = val + '&deg SE';
-					break;
-				case ((val > 146.25) && (val <= 168.75)):
-					answer = val + '&deg SSE';
-					break;
-				case ((val > 168.75) && (val <= 191.25)):
-					answer = val + '&deg S';
-					break;
-				case ((191.25 > val) && (val <= 213.75)):
-					answer = val + '&deg SSW';
-					break;
-				case ((213.75 > val) && (val <= 236.25)):
-					answer = val + '&deg SW';
-					break;
-				case ((val > 236.25) && (val <= 258.75)):
-					answer = val + '&deg WSW';
-					break;
-				case ((val > 258.75) && (val <= 281.25)):
-					answer = val + '&deg W';
-					break;
-				case ((val > 281.25) && (val <= 303.75)):
-					answer = val + '&deg WNW';
-					break;
-				case ((val > 303.75) && (val <= 326.25)):
-					answer = val + '&deg NW';
-					break;
-				case ((val > 326.25) && (val <= 348.75)):
-					answer = val + '&deg NNW';
-					break;
-				default:
-					answer = '';
-					break;
-			}
-			return answer;
+
+	function compass(val) {
+		switch (true) {
+			case (((val > 348.75) && (val <= 360)) || ((val >= 0) && (val <= 11.25))):
+				answer = val + '&deg N';
+				break;
+			case ((val > 11.25) && (val <= 33.75)):
+				answer = val + '&deg NNE';
+				break;
+			case ((val > 33.75) && (val <= 56.25)):
+				answer = val + '&deg NE';
+				break;
+			case ((val > 56.25) && (val <= 78.75)):
+				answer = val + '&deg ENE';
+				break;
+			case ((val > 78.75) && (val <= 101.25)):
+				answer = val + '&deg E';
+				break;
+			case ((val > 101.25) && (val <= 123.75)):
+				answer = val + '&deg ESE';
+				break;
+			case ((val > 123.75) && (val <= 146.25)):
+				answer = val + '&deg SE';
+				break;
+			case ((val > 146.25) && (val <= 168.75)):
+				answer = val + '&deg SSE';
+				break;
+			case ((val > 168.75) && (val <= 191.25)):
+				answer = val + '&deg S';
+				break;
+			case ((191.25 > val) && (val <= 213.75)):
+				answer = val + '&deg SSW';
+				break;
+			case ((213.75 > val) && (val <= 236.25)):
+				answer = val + '&deg SW';
+				break;
+			case ((val > 236.25) && (val <= 258.75)):
+				answer = val + '&deg WSW';
+				break;
+			case ((val > 258.75) && (val <= 281.25)):
+				answer = val + '&deg W';
+				break;
+			case ((val > 281.25) && (val <= 303.75)):
+				answer = val + '&deg WNW';
+				break;
+			case ((val > 303.75) && (val <= 326.25)):
+				answer = val + '&deg NW';
+				break;
+			case ((val > 326.25) && (val <= 348.75)):
+				answer = val + '&deg NNW';
+				break;
+			default:
+				answer = '';
+				break;
 		}
-		$('#windDeg').html(compass(windDeg));
-	*/
+		return answer;
+	}
+	$('#windDeg').html(compass(windDeg));
+
 	//Pressure
 	$('#pressureM').html(Math.round(data.currently.pressure) + ' hPa');
 	$('#pressureI').html(Math.round(data.currently.pressure * 0.03) + ' inHg');
