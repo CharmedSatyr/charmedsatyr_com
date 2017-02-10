@@ -1,0 +1,23 @@
+{
+  "name": "0012-markdown-previewer",
+  "version": "1.0.0",
+  "description": "\"Build a Markdown Previewer\" is a requirement for freeCodeCamp Data Visualization Certification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Default test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharmedSatyr/Markdown_Previewer.git"
+  },
+  "keywords": [
+    "freeCodeCamp",
+    "ReactJS"
+  ],
+  "author": "CharmedSatyr",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CharmedSatyr/Markdown_Previewer/issues"
+  },
+  "homepage": "https://github.com/CharmedSatyr/Markdown_Previewer#readme"
+}
