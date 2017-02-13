@@ -1,17 +1,31 @@
- @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
+//Fonts
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
 
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  font-weight: 900;
+  src: url('../fonts/Roboto/Roboto-Black.ttf');
+}
+
+//Variables
 $blue: #61dafb;
 $light: #bbbbbb;
 $gray: #2d2d2d;
 $dark: #222;
+$orange: #c05b4d;
 
 //Page background
 #app {
   background: $gray;
   color: $dark;
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   a {
-    color: #c05b4d;
+    color: $orange;
     text-decoration: none;
   }
 }
@@ -20,6 +34,7 @@ $dark: #222;
 .container {
   background: $dark;
 }
+
 img {
   margin: -0.6% -0.5% 0 0;
   height: 36px;
@@ -46,8 +61,7 @@ img {
       background: #f4f4f4;
     }
   }
-}
-
-.right-panel {
-  margin-top: -1%;
+  .right-panel {
+    margin-top: -1%;
+  }
 }
