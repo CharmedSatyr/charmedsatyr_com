@@ -1,5 +1,6 @@
 # **Markdown_Previewer**
 ### Build a Markdown Previewer is a requirement for freeCodeCamp Data Visualization Certification: https://www.freecodecamp.com/challenges/build-a-markdown-previewer
+#### **Date Completed**: Feb 13, 2017
 
 >1. **Objective**: Build a [CodePen.io](https://codepen.io/) app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/JXrLLE/.
 >

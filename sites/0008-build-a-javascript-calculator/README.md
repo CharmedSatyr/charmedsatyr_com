@@ -1,5 +1,6 @@
 # **Javascript_Calculator**
 ### **Build a Javascript Calculator** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/build-a-javascript-calculator
+#### **Date Completed**: Apr 28, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/rLJZrA/.
 

@@ -1,5 +1,6 @@
 # **Local_Weather_Viewer**
 ### **"Show the Local Weather"** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/show-the-local-weather
+#### **Date Completed**: Mar 06, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/bELRjV.
 

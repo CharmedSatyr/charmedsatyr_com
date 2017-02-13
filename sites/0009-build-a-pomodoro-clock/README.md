@@ -1,5 +1,6 @@
 # **Pomodoro_Clock**
 ### **Build a Pomodoro Clock** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/build-a-pomodoro-clock
+#### **Date Completed**: May 03, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/aNyxXR/.
 

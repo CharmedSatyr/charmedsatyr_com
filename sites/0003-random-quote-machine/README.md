@@ -1,5 +1,6 @@
 # **Random_Quote_Machine**
 ### **"Build a Random Quote Machine"** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/build-a-random-quote-machine
+#### **Date Completed**: Feb 23, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/ONjoLe/.
 

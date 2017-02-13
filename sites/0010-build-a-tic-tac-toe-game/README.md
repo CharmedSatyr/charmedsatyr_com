@@ -1,5 +1,6 @@
 # **Tic_Tac_Toe**
 ### **Build a Tic Tac Toe Game** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game
+#### **Date Completed**: May 09, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/KzXQgy/.
 

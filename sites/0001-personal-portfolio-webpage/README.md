@@ -1,5 +1,6 @@
 # **Personal_Portfolio**
 ### **"Build a Personal Portfolio Webpage"** is a requirement for freeCodeCamp Front End Certification: https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage
+#### **Date Completed**: Feb 13, 2016
 
 >1. **Objective**: Build a [CodePen.io]('https://codepen.io') app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/YqLyXB/.
 
