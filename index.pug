@@ -13,7 +13,8 @@ html
                 div.main.well.col-xs-12.col-md-8.col-md-offset-2
                     // title
                     div.row
-                        img.satyr(src='resources/CharmedSatyr/sm-Satyr-Purple-to-Black.png', alt='CharmedSatyr logo')
+                        img.satyr(src='resources/CharmedSatyr/Black-Satyr.png', alt='CharmedSatyr logo')
+                        //Subtitles
                         h4.subtitle.col-xs-12 digital hedonist. learning to code.
                     br
                     // Front End Projects for FCC
@@ -148,7 +149,7 @@ html
                     br
                     // Donate
                     // Donate heading
-                    div.row(title='my contributors are some of the best people on the planet.')
+                    div.row
                         div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
                             i.fa.fa-btc
                             p.description help me pay for equipment and training
@@ -159,37 +160,15 @@ html
                                 p
                                     i.fa.fa-btc(aria-hidden='true').orange
                                     span.orange  bitcoin link
-                            p Receiving Address: 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
-                    br
-                    //Social
-                    //Social heading
-                    div.row(title='see what else i\'m up to, and say hello')
-                        div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleSocial') Find me on other sites
-                            i.fa.fa-retweet
-                            p.description coding + social
-                    //Social sites
-                    div.row.collapse#toggleSocial
-                        div.inner.well.col.xs-12.col-md-8.col-md-offset-2
-                            div.row
-                                div.col-xs-4
-                                    a(href='https://github.com/CharmedSatyr', target='_blank')
-                                        i.fa.fa-github(aria-hidden='true')
-                                        span  GitHub
-                                div.col-xs-4
-                                    a(href='https://codepen.io/CharmedSatyr/', target='_blank')
-                                        i.fa.fa-codepen(aria-hidden='true')
-                                        span  CodePen
-                                div.col-xs-4
-                                    a(href='https://www.twitter.com/CharmedSatyr', target='_blank')
-                                        i.fa.fa-twitter(aria-hidden='true')
-                                        span  Twitter
+                            p Receiving Address:
+                                code 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
                     br
                     // Contact
                     // Contact heading
-                    div.row(title='this pgp is easy protonmail')
+                    div.row
                         div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
                             i.fa.fa-send-o
-                            p.description send me a message
+                            p.description send me a secure message
                     // Contact sites
                     div.row.collapse#toggleContact
                         div.inner.well.col-xs-12.col-md-8.col-md-offset-2
@@ -199,5 +178,18 @@ html
                                     span  OpenPGP Public Key
                             p A contact form is in the works! Reach me via PGP or social media.
                             //iframe(src='contact/contact.html')
+                            //Social sites
+                    div.row
+                        div.social.col.xs-12.col-md-8.col-md-offset-2
+                            div.row
+                                div.col-xs-2.col-xs-offset-3
+                                    a(href='https://github.com/CharmedSatyr', target='_blank')
+                                        i.fa.fa-github(aria-hidden='false')
+                                div.col-xs-2
+                                    a(href='https://codepen.io/CharmedSatyr/', target='_blank')
+                                        i.fa.fa-codepen(aria-hidden='false')
+                                div.col-xs-2
+                                    a(href='https://www.twitter.com/CharmedSatyr', target='_blank')
+                                        i.fa.fa-twitter(aria-hidden='false')
         script(type='text/javascript', src='js/jquery-3.1.0.min.js')
         script(type='text/javascript', src='js/bootstrap.min.js')

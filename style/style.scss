@@ -33,7 +33,8 @@ $black-color: #202020;
 $gold-color: #ffd338 !important;
 $gray-color: #a0a0a0;
 $trans-purple-color: #a757f2;
-$trans-purple-color: rgba(167,87,242,0.4);
+$trans-purple-color: rgba(40,31,220,0.4);
+$purple: rgba(40,31,220,0.5);
 $white-color: #ffffff;
 
 /* Mixins not used for media queries */
@@ -53,8 +54,9 @@ $white-color: #ffffff;
   color: $gold-color;
   text: {
     decoration: none;
-    shadow: 1px 1px 2px $black-color, -1px -1px 2px $black-color, 1px -1px 2px $black-color, -1px 1px 2px $black-color;
+    shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
   }
+
 }
 
 /* Styles */
@@ -64,41 +66,49 @@ body {
   -ms-user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  background: $gray-color url('../resources/CharmedSatyr/Flying.jpg') no-repeat;
+  background: $gray-color url('../resources/CharmedSatyr/R-DSC_0232.JPG') no-repeat;
   background-attachment: fixed;
   background-size: cover;
   height: 100%;
 }
 
 .satyr {
+  height: 120px;
   margin-top: 1%;
   width: auto;
 }
 
 .subtitle {
-  @include mfonts(#ffd338,$alt,130%,1px 1px 4px $black-color);
+  @include emph;
 }
 
 .main {
   @include mfonts($white-color,$alt,100%);
   background-color: $gray-color;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   margin-bottom: 3%;
   margin-top: 3%;
   min-height: 80%; // Fallback for vh unit
   min-height: 80vh;
   padding-bottom: 5%;
   text-align: center;
+  code {
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+  }
 }
 
 .headings {
-  @include mfonts($white-color,$sub,100%,1px 1px 2px $black-color);
+  @include mfonts($white-color,$sub,100%,(1px 1px 2px $black-color, -1px -1px 2px $black-color));
   background: $trans-purple-color;
   border-color: $gray-color;
   &:hover,
   &:active,
   &:target {
-    background: #592e82 !important;
+    background: $purple !important;
     border-color: $gray-color !important;
   }
   &:hover {
@@ -121,8 +131,9 @@ body {
     }
   }
   p {
-    margin: 2%;
+    margin: 0.5% 0 2% 0;
   }
+
   /* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
   .thumbnail {
     iframe {
@@ -151,6 +162,19 @@ body {
     overflow: hidden;
     position: relative;
   }
+}
+
+.social, .social a {
+  color: #000000;
+  font-size: 160%;
+  margin-top: 2%;
+  margin-bottom: -6%;
+  text-shadow: 0 0 1px $gold-color;
+}
+
+.social a:hover {
+    color: $gold-color;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important; //This doesn't work when it's nested inside .social
 }
 
 /* Mixins used for media queries */
