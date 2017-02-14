@@ -179,10 +179,6 @@ body {
 
 /* Mixins used for media queries */
 @mixin transform-iframe($size) {
-  .satyr {
-    height: 120px * 2.5 * $size;
-  }
-
   .thumbnail iframe {
     -ms-zoom: $size;
     -moz-transform: scale($size);
@@ -209,20 +205,32 @@ body {
 @media screen and (max-width: 420px) {
   @include heading-size(100%);
   @include transform-iframe(0.15);
+  .satyr {
+    height: 80px;
+  }
 }
 
 @media screen and (min-width: 421px) {
   @include heading-size(100%);
   @include transform-iframe(0.21);
+  .satyr {
+    height: 90px;
+  }
 }
 
 @media screen and (min-width: 560px) {
   @include heading-size(120%);
   @include transform-iframe(0.26);
+  .satyr {
+    height: 110px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   @include transform-iframe(0.31);
+  .satyr {
+    height: 120px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
