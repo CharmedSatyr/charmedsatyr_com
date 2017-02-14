@@ -179,6 +179,10 @@ body {
 
 /* Mixins used for media queries */
 @mixin transform-iframe($size) {
+  .satyr {
+    height: 120px * 2.5 * $size;
+  }
+
   .thumbnail iframe {
     -ms-zoom: $size;
     -moz-transform: scale($size);
