@@ -2,6 +2,7 @@ $mid: 40px;
 $bord: $mid*0.08;
 $g: 'G.png';
 $s: 'S.png';
+$t: 'T.png';
 
 @mixin buttons($bhw, $size, $img) {
   -khtml-user-select: none;
@@ -48,5 +49,9 @@ $s: 'S.png';
 
     .g-logo {
       @include buttons($mid, 105%, $g);
+  }
+
+    .t-logo {
+      @include buttons($mid, 70%, $t);
   }
 }
