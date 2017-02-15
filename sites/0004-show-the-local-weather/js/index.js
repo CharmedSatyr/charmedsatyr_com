@@ -38,29 +38,30 @@ $.getJSON('https://ipinfo.io', function(data) {
 
 	pullWeather();
 });
-/*
-//Pull weather for geolocation based on HTML5
-if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(function(pos) {
-		lat = (pos.coords.latitude).toFixed(3);
-		lon = (pos.coords.longitude).toFixed(3);
-		console.log('HTML5 geolocation permitted. Lat, Lon: ' + lat + ', ' + lon);
 
-		//Google API name for location - DarkSky doesn't offer reverse geolocation
-		var kee = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
-		var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
+$('#accuracy').click(function() {
+  //Pull weather for geolocation based on HTML5
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      lat = (pos.coords.latitude).toFixed(3);
+      lon = (pos.coords.longitude).toFixed(3);
+      console.log('HTML5 geolocation permitted. Lat, Lon: ' + lat + ', ' + lon);
 
-		$.getJSON(mapAPI, function(JSON) {
-			$('#location').html(JSON.results[(JSON.results.length - 3)].formatted_address);
-		});
+      //Google API name for location - DarkSky doesn't offer reverse geolocation
+      var kee = 'AIzaSyAMejMCinUM1S2dzyVCpJf9q-Ns-e1YSnw';
+      var mapAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key' + kee;
 
+      $.getJSON(mapAPI, function(JSON) {
+        $('#location').html(JSON.results[(JSON.results.length - 3)].formatted_address);
+      });
 
-		pullWeather();
-	});
-} else {
-	console.log('HTML5 geolocation not permitted.')
-}
-*/
+      pullWeather();
+    });
+  } else {
+    console.log('HTML5 geolocation not permitted.');
+  }
+});
+
 //Calculate and organize weather report based on active geolocation
 function report(data) {
 
