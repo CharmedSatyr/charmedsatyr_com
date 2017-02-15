@@ -61,19 +61,19 @@ body {
   font-weight: bold;
   color: #ffffff;
   text-shadow: 1px 1px #000000, 0 -1px #000000, -1px 0 #000000;
-}
 
+  #accuracy {
+    bottom: -1%;
+    font-size: 50%;
+    padding: 2px;
+    text-shadow: none;
+  }
+}
 .well {
   padding: 20px 20px 0 20px;
   background: rgba(255, 255, 255, 0.5);
   position: relative;
   bottom: 10px;
-}
-
-#accuracy {
-  left: -45%;
-  bottom: -100%;
-  position: relative;
 }
 
 .weather {
