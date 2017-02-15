@@ -71,7 +71,7 @@ body {
 }
 
 #accuracy {
-  left: -50%;
+  left: -45%;
   bottom: -100%;
   position: relative;
 }
@@ -110,4 +110,10 @@ body {
 
 .goAway {
   display: none;
+}
+
+@media screen and (max-width: 720px) {
+  #accuracy {
+    left: -35%;
+  }
 }
