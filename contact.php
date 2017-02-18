@@ -7,8 +7,6 @@ $yourname = check_input($_POST['yourname'], "Enter your name");
 $subject  = check_input($_POST['subject'], "Write a subject");
 $email    = check_input($_POST['email']);
 $website  = check_input($_POST['website']);
-$likeit   = check_input($_POST['likeit']);
-$how_find = check_input($_POST['how']);
 $comments = check_input($_POST['comments'], "Write your comments");
 
 /* If e-mail is not valid show error message */
@@ -31,9 +29,6 @@ Your contact form has been submitted by:
 Name: $yourname
 E-mail: $email
 URL: $website
-
-Like the website? $likeit
-How did he/she find it? $how_find
 
 Comments:
 $comments
