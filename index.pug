@@ -183,9 +183,35 @@ html
                             p(title='send me an encrypted message')
                                 i.fa.fa-lock(aria-hidden='true')
                                 span  OpenPGP Public Key
-                        p A contact form is in the works! Reach me via PGP or social media.
-                        //iframe(src='contact/contact.html')
-                        //Social sites
+                        br
+                        form(action="contact.php" method="post")
+                            p
+                                strong Your Name
+                                br
+                                input(type="text" name="yourname")
+                                br
+                                br
+                                strong Subject
+                                br
+                                input(type="text" name="subject")
+                                br
+                                br
+                                strong E-mail
+                                br
+                                input(type="text" name="email")
+                                br
+                                br
+                                span Website
+                                br
+                                input(type="text" name="website")
+                                br
+                                br
+                                strong Your comments
+                                br
+                                textarea(name="comments" rows="10" cols="40")
+                                p
+                                input(type="submit" value="Send it!")
+                //Social sites
                 div.row
                     div.social.col.xs-12.col-md-8.col-md-offset-2
                         div.row
