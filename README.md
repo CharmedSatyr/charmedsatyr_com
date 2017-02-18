@@ -1,5 +1,7 @@
-# charmedsatyr.com
+# CharmedSatyr.com
 
-I'm learning how to code!
+I'm learning to code!
 
-Track my progress at https://CharmedSatyr.com
+This is a personal portfolio page illustrating my coding journey.
+
+See my progress at https://CharmedSatyr.com
