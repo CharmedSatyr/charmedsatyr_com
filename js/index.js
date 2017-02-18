@@ -1,3 +1,4 @@
+//Initiates and controls queryloader2.min.js
 window.addEventListener('DOMContentLoaded', function() {QueryLoader2(document.querySelector("body"), {
   barColor: "#efefef",
   backgroundColor: "#111",
