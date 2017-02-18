@@ -39,15 +39,15 @@ $white-color: #ffffff;
 
 /* Mixins not used for media queries */
 @mixin mfonts($mcolor: $white-color, $mfont: $alt, $msize: 100%, $outline: 0 0 0 $black-color) {
-    color: $mcolor;
-    font: {
-      family: $mfont;
-      size: $msize;
-    }
-    text: {
-      decoration: none;
-      shadow: $outline;
-    }
+  color: $mcolor;
+  font: {
+    family: $mfont;
+    size: $msize;
+  }
+  text: {
+    decoration: none;
+    shadow: $outline;
+  }
 }
 
 @mixin emph {
@@ -56,10 +56,9 @@ $white-color: #ffffff;
     decoration: none;
     shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
   }
-
 }
 
-/*Noscript*/
+/*NoScript*/
 .ns {
   background: $gold-color;
   border-bottom: 2px solid $black-color;
