@@ -59,6 +59,18 @@ $white-color: #ffffff;
 
 }
 
+/*Noscript*/
+.ns {
+  background: $gold-color;
+  border-bottom: 2px solid $black-color;
+  border-top: 2px solid $black-color;
+  color: $black-color;
+  font-size: 150%;
+  font-weight: 800;
+  margin: 1% 0 -1% 0;
+  text-align: center;
+}
+
 /*Thumbnail fade-in*/
 #fader {
   animation: fadein 3s;
