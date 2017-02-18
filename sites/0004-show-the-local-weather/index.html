@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Local Weather Viewer 2.0</title>
+        <title>Local Weather Viewer</title>
         <link rel='stylesheet prefetch' href='css/bootstrap-3.3.7.min.css'>
         <link rel="stylesheet" href="css/style.min.css">
         <link rel="stylesheet" href='css/weather-icons.min.css'>
@@ -15,8 +15,11 @@
     </head>
 
     <body>
-        <!--Start CharmedSatyr Overlay Buttons-->
-        <div id='s-g-logo-container'>
+        <!--Start CharmedSatyr Overlay - NoScript and Buttons-->
+        <noscript>
+          <div id='ns'>Please enable Javascript. This site will not function properly without it.</div>
+        </noscript>
+        <div id='s-g-t-logo-container'>
             <a href='../../index.html'>
                 <div class='s-logo' title='Return to CharmedSatyr.com' alt='Link to CharmedSatyr.com'>
                 </div>
@@ -30,7 +33,10 @@
                 </div>
             </a>
         </div>
-        <!--End CharmedSatyr Overlay Buttons-->
+        <!--End CharmedSatyr Overlay-->
+
+
+
         <div class="container-fluid">
             <!--Everything above the main weather box-->
             <div class="row">
@@ -40,7 +46,7 @@
                         <div class="location">
                             <span id="location">Your Location</span>
                             <!--Location Accuracy-->
-                            <span class='btn btn-default' id='accuracy' title='Click for more location accuracy'>
+                            <span class='btn btn-default' id='accuracy' title='Click to improve location accuracy'>
                               <i class='fa fa-location-arrow'></i>
                             </span>
                         </div>
