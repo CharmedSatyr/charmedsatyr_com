@@ -1,43 +1,31 @@
 <?php
 /* Set e-mail recipient */
-$myemail  = "email@charmedsatyr.com";
+$myemailEntry  = "email@charmedsatyr.com";
 
 /* Check all form inputs using check_input function */
-$yourname = check_input($_POST['yourname'], "Enter your name");
-$subject  = check_input($_POST['subject'], "Write a subject");
-$email    = check_input($_POST['email']);
-$website  = check_input($_POST['website']);
-$comments = check_input($_POST['comments'], "Write your comments");
-
-/* If e-mail is not valid show error message */
-if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
-{
-    show_error("E-mail address not valid");
-}
-
-/* If URL is not valid set $website to empty */
-if (!preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $website))
-{
-    $website = '';
-}
+$nameEntry = check_input($_POST['nameEntry'], 'Enter your name');
+$subjectEntry  = check_input($_POST['subjectEntry'], 'Write a subjectEntry');
+$emailEntry    = check_input($_POST['emailEntry']);
+$websiteEntry  = check_input($_POST['websiteEntry']);
+$messageEntry = check_input($_POST['messageEntry'], 'Write your message');
 
 /* Let's prepare the message for the e-mail */
 $message = "Hello!
 
 Your contact form has been submitted by:
 
-Name: $yourname
-E-mail: $email
-URL: $website
+Name: $nameEntry
+E-mail: $emailEntry
+URL: $websiteEntry
 
-Comments:
-$comments
+Message:
+$messageEntry
 
 End of message
 ";
 
 /* Send the message using mail() function */
-mail($myemail, $subject, $message);
+mail($emailEntry, $subjectEntry, $messageEntry);
 
 /* Redirect visitor to the thank you page */
 header('Location: thanks.html');
@@ -58,16 +46,6 @@ function check_input($data, $problem='')
 
 function show_error($myError)
 {
-?>
-    <html>
-    <body>
-
-    <b>Please correct the following error:</b><br />
-    <?php echo $myError; ?>
-
-    </body>
-    </html>
-<?php
 exit();
 }
 ?>

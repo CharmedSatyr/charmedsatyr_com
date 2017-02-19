@@ -183,16 +183,18 @@
         <div id="toggleContact" class="row collapse">
           <div class="inner well col-xs-12 col-md-8 col-md-offset-2"><a href="publickey.email-at-charmedsatyr-dot-com.txt" target="_blank">
               <p title="send me an encrypted message"><i aria-hidden="true" class="fa fa-lock"></i><span> OpenPGP Public Key</span></p></a><br>
-            <form action="contact.php" method="post">
-              <p><strong>Your Name</strong><br>
-                <input type="text" name="yourname"><br><br><strong>Subject</strong><br>
-                <input type="text" name="subject"><br><br><strong>E-mail</strong><br>
-                <input type="text" name="email"><br><br><span>Website</span><br>
-                <input type="text" name="website"><br><br><strong>Your comments</strong><br>
-                <textarea name="comments" rows="10" cols="40"></textarea>
-                <p></p>
-                <input type="submit" value="Send it!">
-              </p>
+            <form method="post" action="contact.php">
+              <div>Name</div>
+              <input id="nameEntry" type="text" name="nameEntry"><br><span id="nameError" class="error"></span><br><br>
+              <div>Email</div>
+              <input id="emailEntry" type="text" name="emailEntry"><br><span id="emailError" class="error"></span><br><br>
+              <div>Website</div>
+              <input id="websiteEntry" type="text" name="websiteEntry"><br><span id="websiteError" class="error"></span><br><br>
+              <div>Subject</div>
+              <input id="subjectEntry" type="text" name="subjectEntry"><br><span id="subjectError" class="error"></span><br><br>
+              <div>Message</div>
+              <input id="messageEntry" type="text" name="messageEntry"><br><span id="messageError" class="error"></span><br><br>
+              <div id="submit" class="btn btn-default">Submit</div><br><br>
             </form>
           </div>
         </div>
@@ -212,5 +214,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/queryloader2.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
   </body>
 </html>

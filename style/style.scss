@@ -58,6 +58,40 @@ $white-color: #ffffff;
   }
 }
 
+/* Contact form */
+.error {
+  color: red;
+}
+
+#submit {
+  background: $gray-color;
+  border: 1px solid $black-color;
+  color: $black-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  &:hover {
+    @include emph;
+  }
+}
+
+input {
+  border-radius: 6px;
+  border-color: gray;
+  height: 5%;
+  height: 5vh;
+  padding-left: 5px;
+  position: relative;
+  text-align: left;
+  top: 1px;
+  width: 50%;
+}
+
+#messageEntry {
+  height: 50%;
+  height: 25vh;
+  width: 50%;
+}
+
 /*Thumbnail fade-in*/
 #fader {
   animation: fadein 3s;
