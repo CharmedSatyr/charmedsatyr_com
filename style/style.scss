@@ -58,6 +58,35 @@ $white-color: #ffffff;
   }
 }
 
+//Thank you and Error pages
+.tyerrHead {
+  @include mfonts($gold-color,$sub,180%);
+  text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
+}
+
+.tyerrDesc {
+  @include mfonts($white-color,$alt,140%);
+  text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
+}
+
+.tyerrMain {
+    @include mfonts($white-color,$alt,100%);
+    background-color: $gray-color;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 3%;
+    margin-top: 10%;
+    min-height: 20%; // Fallback for vh unit
+    min-height: 20vh;
+    padding-bottom: 5%;
+    text-align: center;
+    .fa {
+      font-size: 150%;
+    }
+    .satyr {
+      height: 120px;
+    }
+}
+
 /* Contact form */
 .formEntry {
   margin-right: 0;
@@ -196,21 +225,6 @@ body {
   }
   .description {
     @include mfonts($gray-color, $alt, 80%, 1px 1px 2px $black-color);
-  }
-}
-
-.ty {
-  border: 2px solid $black-color;
-  @include mfonts($white-color,$sub,150%,(1px 1px 2px $black-color, -1px -1px 2px $black-color));
-  @include emph;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 3%;
-  margin-top: 5%;
-  padding-bottom: 5%;
-  text-align: center;
-  width: 50%;
-  .description {
-    @include mfonts($white-color, $alt, 80%, 1px 1px 2px $black-color);
   }
 }
 
