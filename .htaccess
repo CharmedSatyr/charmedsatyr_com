@@ -10,6 +10,9 @@ RewriteRule ^(.*)$ https://charmedsatyr.com/$1 [R,L]
 #RewriteCond %{HTTP_HOST} ^www\.charmedsatyr\.com$
 #RewriteRule ^/?$ "https\:\/\/charmedsatyr\.com\/xy\/" [R=301,L]
 
+#Error 404 page
+ErrorDocument 404 https://charmedsatyr.com/error404.html
+
 RewriteOptions inherit
 
 # disable directory browsing
