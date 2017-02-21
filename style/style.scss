@@ -65,18 +65,21 @@ $white-color: #ffffff;
 }
 
 .error {
-  color: red;
+  color: #fc0206;
   margin: 0 0 2% 0;
 }
 
 input {
+  border-radius: 1%;
   margin-bottom: 1%;
+
 }
 
 #messageEntry {
-    height: 50%;
-    height: 25vh;
-    width: 50%;
+  border-radius: 1%;
+  height: 50%;
+  height: 25vh;
+  width: 50%;
 }
 
 #submit {
