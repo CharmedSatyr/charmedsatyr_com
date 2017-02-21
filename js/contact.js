@@ -61,7 +61,7 @@ $('#submit').click(function() {
 	}
 
 	//Error handling for messageEntry
-	var messageEntry = $('input[name=messageEntry]').val();
+	var messageEntry = $('textarea[name=messageEntry]').val();
 
 	if (messageEntry === '') {
 		$('#messageError').html('Didn\'t you mean to write a message?');
