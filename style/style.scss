@@ -59,9 +59,25 @@ $white-color: #ffffff;
 }
 
 /* Contact form */
+.formEntry {
+  margin-right: 0;
+  text-align: right;
+}
+
 .error {
   color: red;
+  margin: 0 0 2% 0;
 }
+
+input {
+  margin-bottom: 1%;
+}
+
+#messageEntry {
+    height: 50%;
+    height: 25vh;
+    width: 50%;
+  }
 
 #submit {
   background: $gray-color;
@@ -74,30 +90,16 @@ $white-color: #ffffff;
   }
 }
 
-input {
-  border-radius: 6px;
-  border-color: gray;
-  height: 5%;
-  height: 5vh;
-  padding-left: 5px;
-  position: relative;
-  text-align: left;
-  top: 1px;
-  width: 50%;
-}
-
-#messageEntry {
-  height: 50%;
-  height: 25vh;
-  width: 50%;
+#submitReal {
+  display: none; //Invisible, PHP-connected input button
 }
 
 /*Thumbnail fade-in*/
 #fader {
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
 }
 
 /*Animation*/
