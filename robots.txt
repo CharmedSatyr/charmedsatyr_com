@@ -1,5 +1,5 @@
-# Blocks robots from all files / directories except /xy/index.html
+# Blocks robots from all files / directories except /index.html
 
 User-agent: *
 Disallow: /
-Allow: /xy/index.html
+Allow: /index.html
