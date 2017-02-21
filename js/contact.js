@@ -1,7 +1,9 @@
 $('#submit').click(function() {
 
+	//Testing values - 0 fails; 1 passes
 	var noSubmit = [0, 0, 0, 0, 0];
 
+	//Error handling for nameEntry
 	var nameEntry = $('input[name=nameEntry]').val();
 	var nameRegex = /^[a-zA-Z -]*$/;
 
@@ -16,6 +18,7 @@ $('#submit').click(function() {
 		noSubmit[0] = 1;
 	}
 
+	//Error handling for emailEntry
 	var emailEntry = $('input[name=emailEntry]').val();
 	var emailRegex = /([\w\-]+\@[\w\-]+\.[\w\-].+)/;
 
@@ -30,6 +33,7 @@ $('#submit').click(function() {
 		noSubmit[1] = 1;
 	}
 
+	//Error handling for websiteEntry
 	var websiteEntry = $('input[name=websiteEntry]').val();
 	var websiteRegex = /[<>{}!`'"$*;\\]/gi;
 
@@ -41,6 +45,7 @@ $('#submit').click(function() {
 		noSubmit[2] = 1;
 	}
 
+	//Error handling for subjectEntry
 	var subjectEntry = $('input[name=subjectEntry]').val();
 	var subjectRegex = /[<>{}]/;
 
@@ -55,6 +60,7 @@ $('#submit').click(function() {
 		noSubmit[3] = 1;
 	}
 
+	//Error handling for messageEntry
 	var messageEntry = $('input[name=messageEntry]').val();
 
 	if (messageEntry === '') {
@@ -65,11 +71,13 @@ $('#submit').click(function() {
 		noSubmit[4] = 1;
 	}
 
+	//If tests pass, trigger the invisible Input button
 	var a = noSubmit.reduce(function(acc, curr, index) {
 		return acc + curr;
 	});
-	if (a === 5) {
-		window.location = 'contact.php';
-	}
+
+	if (a == 5) {
+		$('#submitReal').trigger('click');
+  }
 
 });
