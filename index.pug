@@ -185,39 +185,33 @@ html
                                 span  OpenPGP Public Key
                         br
                         form(method='post' action='contact.php')
-                            div Name
-                            input#nameEntry(type='text' name='nameEntry')
+                            div.row
+                                div.formEntry.col-xs-3.col-xs-offset-1 Name
+                                    span.error *
+                                input#nameEntry.col-xs-4(type='text' name='nameEntry')
+                            div#nameError.error
+                            div.row
+                                div.formEntry.col-xs-3.col-xs-offset-1 Email
+                                    span.error *
+                                input#emailEntry.col-xs-4(type='text' name='emailEntry')
+                            div#emailError.error
+                            div.row
+                                div.formEntry.col-xs-3.col-xs-offset-1 Website
+                                input#websiteEntry.col-xs-4(type='text' name='websiteEntry')
+                            div#websiteError.error
+                            div.row
+                                div.formEntry.col-xs-3.col-xs-offset-1 Subject
+                                    span.error *
+                                input#subjectEntry.col-xs-4(type='text' name='subjectEntry')
+                            div#subjectError.error
+                            div.row
+                                div.formEntry.col-xs-3 Message
+                                    span.error *
+                                input#messageEntry.col-xs-4(type='text' name='messageEntry')
+                            div#messageError.error
                             br
-                            span#nameError.error
-                            br
-                            br
-                            div Email
-                            input#emailEntry(type='text' name='emailEntry')
-                            br
-                            span#emailError.error
-                            br
-                            br
-                            div Website
-                            input#websiteEntry(type='text' name='websiteEntry')
-                            br
-                            span#websiteError.error
-                            br
-                            br
-                            div Subject
-                            input#subjectEntry(type='text' name='subjectEntry')
-                            br
-                            span#subjectError.error
-                            br
-                            br
-                            div Message
-                            input#messageEntry(type='text' name='messageEntry')
-                            br
-                            span#messageError.error
-                            br
-                            br
-                            div#submit.btn.btn-default Submit
-                            br
-                            br
+                            div#submit.btn.btn-default(type='submit' value='Submit') Submit
+                            input#submitReal(type='submit' value='Real')
                 //Social sites
                 div.row
                     div.social.col.xs-12.col-md-8.col-md-offset-2

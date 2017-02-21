@@ -184,17 +184,33 @@
           <div class="inner well col-xs-12 col-md-8 col-md-offset-2"><a href="publickey.email-at-charmedsatyr-dot-com.txt" target="_blank">
               <p title="send me an encrypted message"><i aria-hidden="true" class="fa fa-lock"></i><span> OpenPGP Public Key</span></p></a><br>
             <form method="post" action="contact.php">
-              <div>Name</div>
-              <input id="nameEntry" type="text" name="nameEntry"><br><span id="nameError" class="error"></span><br><br>
-              <div>Email</div>
-              <input id="emailEntry" type="text" name="emailEntry"><br><span id="emailError" class="error"></span><br><br>
-              <div>Website</div>
-              <input id="websiteEntry" type="text" name="websiteEntry"><br><span id="websiteError" class="error"></span><br><br>
-              <div>Subject</div>
-              <input id="subjectEntry" type="text" name="subjectEntry"><br><span id="subjectError" class="error"></span><br><br>
-              <div>Message</div>
-              <input id="messageEntry" type="text" name="messageEntry"><br><span id="messageError" class="error"></span><br><br>
-              <div id="submit" class="btn btn-default">Submit</div><br><br>
+              <div class="row">
+                <div class="formEntry col-xs-3 col-xs-offset-1">Name<span class="error">*</span></div>
+                <input id="nameEntry" type="text" name="nameEntry" class="col-xs-4">
+              </div>
+              <div id="nameError" class="error"></div>
+              <div class="row">
+                <div class="formEntry col-xs-3 col-xs-offset-1">Email<span class="error">*</span></div>
+                <input id="emailEntry" type="text" name="emailEntry" class="col-xs-4">
+              </div>
+              <div id="emailError" class="error"></div>
+              <div class="row">
+                <div class="formEntry col-xs-3 col-xs-offset-1">Website</div>
+                <input id="websiteEntry" type="text" name="websiteEntry" class="col-xs-4">
+              </div>
+              <div id="websiteError" class="error"></div>
+              <div class="row">
+                <div class="formEntry col-xs-3 col-xs-offset-1">Subject<span class="error">*</span></div>
+                <input id="subjectEntry" type="text" name="subjectEntry" class="col-xs-4">
+              </div>
+              <div id="subjectError" class="error"></div>
+              <div class="row">
+                <div class="formEntry col-xs-3">Message<span class="error">*</span></div>
+                <input id="messageEntry" type="text" name="messageEntry" class="col-xs-4">
+              </div>
+              <div id="messageError" class="error"></div><br>
+              <div id="submit" type="submit" value="Submit" class="btn btn-default">Submit</div>
+              <input id="submitReal" type="submit" value="Real">
             </form>
           </div>
         </div>
