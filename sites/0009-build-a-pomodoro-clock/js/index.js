@@ -63,7 +63,7 @@ $('#start').click(function() {
 	});
 
 	function soundEffect() {
-		var wav = 'https://charmedsatyr.com/resources/0009/sounds-818-quarrel.mp3';
+		var wav = 'https://charmedsatyr.com/resources/0009/sounds-818-quarrel.ogg';
 		var audio = new Audio(wav);
 		audio.play();
 	}
