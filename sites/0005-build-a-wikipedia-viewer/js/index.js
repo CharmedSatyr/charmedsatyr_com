@@ -13,7 +13,7 @@ $("#rando").click(function() {
 		success: function(wiki) {
 			console.log('Success!');
 
-			var html = "<div><strong>Selections from Wikipedia:</strong></div><br>";
+			var html = "<div>Selections from Wikipedia:</div><br>";
 			var result = wiki.query.random;
 
 			for (var x in result) {
@@ -58,7 +58,7 @@ $("#bar").on('keyup keypress', function(e) {
 		crossDomain: true,
 		success: function(wiki) {
 			console.log('Success!');
-			var html = "<div><strong>Results for \"" + entry + "\":</strong></div><br>";
+			var html = "<div>Results for \"" + entry + "\":</div><br>";
 
 			var result = wiki.query.pages;
 
