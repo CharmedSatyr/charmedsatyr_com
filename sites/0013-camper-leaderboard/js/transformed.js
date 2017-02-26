@@ -6743,6 +6743,18 @@ var Row = React.createClass({
             bg = 'light';
         }
 
+        var insecureRegex = /http:/gi;
+        var altImg = 'https://github.com/identicons/jasonlong.png';
+
+        function secure(site, sub) {
+            if (site.match(insecureRegex)) {
+                console.log('Insecure site found and fixed');
+                return sub;
+            } else {
+                return site;
+            }
+        }
+
         return React.createElement(
             'tr',
             { className: bg },
@@ -6761,7 +6773,7 @@ var Row = React.createClass({
                 React.createElement(
                     'a',
                     { href: 'https://freecodecamp.com/' + this.props.data.username, target: '_blank' },
-                    React.createElement('img', { src: this.props.data.img }),
+                    React.createElement('img', { src: secure(this.props.data.img, altImg) }),
                     ' ',
                     this.props.data.username
                 )
