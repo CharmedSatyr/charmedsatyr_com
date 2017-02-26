@@ -9645,7 +9645,8 @@ var Header = React.createClass({
 			React.createElement(
 				'a',
 				{ href: 'https://freeCodeCamp.com' },
-				'freeCodeCamp'
+				'freeCodeCamp',
+				React.createElement('i', { className: 'fa fa-free-code-camp' })
 			),
 			React.createElement(
 				'span',

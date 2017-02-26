@@ -2,10 +2,12 @@ $black: #000000;
 $brown: #482811;
 $dark: rgba(220, 220, 220, 0.7);
 $green: #006400;
+$green: rgba(0, 125, 0, 1.0);
 $highlight: rgba(252, 252, 209, 0.6);
 $light: rgba(235, 235, 235, 0.7);
 $white: #ffffff;
 $usual: 6vh;
+
 
 body {
     background: $dark;
@@ -39,6 +41,11 @@ body {
 .header {
     font-size: $usual * 0.5;
     top: 0;
+    .fa {
+      color: $white;
+      font-size: $usual * 0.5;
+    }
+
 }
 
 .bl {
@@ -61,14 +68,6 @@ button {
   height: $usual * 0.8;
 }
 
-.fa {
-  color: $black;
-  font-size: $usual * 0.4 !important;
-  margin: 0 -0.8vh 0 0;
-}
-
-
-
 table {
     border: 1px solid $dark;
     border-collapse: collapse;
@@ -85,6 +84,12 @@ table {
         color: $white;
         height: $usual;
         padding: $usual * 0.2;
+        .fa {
+          color: $black;
+          font-size: $usual * 0.4 !important;
+          margin: 0 -0.8vh 0 0;
+        }
+
     }
     tbody {
         a {
