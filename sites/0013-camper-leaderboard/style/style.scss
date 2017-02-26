@@ -59,7 +59,7 @@ body {
 }
 
 button {
-  background: $green;
+  background: $brown;
   border-radius: 5%;
   color: $white;
   font-family: monospace;
@@ -80,12 +80,12 @@ table {
     text-align: center;
     width: 70%;
     thead {
-        background: $green;
+        background: $brown;
         color: $white;
         height: $usual;
         padding: $usual * 0.2;
         .fa {
-          color: $black;
+          color: $white;
           font-size: $usual * 0.4 !important;
           margin: 0 -0.8vh 0 0;
         }
