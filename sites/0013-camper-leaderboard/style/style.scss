@@ -27,7 +27,7 @@ body {
     height: $usual;
     line-height: $usual;
     position: fixed;
-    width: 100%;
+    width: 99%;
     z-index: 1;
     a {
         color: $white;
@@ -65,7 +65,6 @@ button {
   font-family: monospace;
   font-size: $usual * 0.5;
   font-weight: 800;
-  height: $usual * 0.8;
 }
 
 table {
@@ -98,6 +97,9 @@ table {
             &:hover {
                 text-decoration: none;
             }
+        }
+        tr td a {
+          display: block;
         }
         tr:hover {
             background: $highlight;
