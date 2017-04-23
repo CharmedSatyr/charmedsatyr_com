@@ -1,29 +1,16 @@
 /* Fonts, variables, & tiny font tweaks */
-//Fonts
+/*Fonts*/
 @font-face {
-    font-family: 'Montserrat Subrayada';
-    src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf');
+  font-family: 'Montserrat Subrayada';
+  src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf');
 }
 @font-face {
-    font-family: 'Montserrat Alternates';
-    src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
+  font-family: 'Montserrat Alternates';
+  src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
 }
-//Variables
+/*Variables*/
 $alt: 'Montserrat Alternates', sans-serif;
-$sub: 'Montserrat Subrayada',sans-serif; //Tweaks
-
-.fa {
-    font-size: 120%;
-    margin-left: 1%;
-}
-
-.orange {
-    color: rgba(255, 148, 23, 1.0);
-}
-
-.cert {
-    font-size: 130%;
-}
+$sub: 'Montserrat Subrayada',sans-serif;
 /* Colors */
 $black-color: #202020;
 $gold-color: #ffd338 !important;
@@ -34,379 +21,388 @@ $purple: rgba(40,31,220,0.5);
 $white-color: #ffffff;
 /* Mixins not used for media queries */
 @mixin mfonts($mcolor: $white-color, $mfont: $alt, $msize: 100%, $outline: 0 0 0 $black-color) {
-    color: $mcolor;
-    font: {
-        family: $mfont;
-        size: $msize;
-    }
-    text: {
-        decoration: none;
-        shadow: $outline;
-    }
+  color: $mcolor;
+  font: {
+    family: $mfont;
+    size: $msize;
+  }
+  text: {
+    decoration: none;
+    shadow: $outline;
+  }
 }
 @mixin emph {
-    color: $gold-color;
-    text: {
-        decoration: none;
-        shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
-    }
+  color: $gold-color;
+  text: {
+    decoration: none;
+    shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
+  }
 }
-//Thank you and Error pages
+/*Tweaks*/
+.fa {
+  font-size: 120%;
+  margin-left: 1%;
+}
 
+.orange {
+  color: rgba(255, 148, 23, 1.0);
+}
+
+.cert {
+  font-size: 130%;
+}
+
+.fcc,
+.fcc a {
+/*  font-family: monospace;*/
+  @include emph;
+
+  &:hover,
+  &:target,
+  &:visited {
+    text-decoration: none;
+  }
+}
+/*Thank you and Error pages*/
 .tyerrHead {
-    @include mfonts($gold-color,$sub,180%);
-    text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
+  @include mfonts($gold-color,$sub,180%);
+  text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
 }
 
 .tyerrDesc {
-    @include mfonts($white-color,$alt,140%);
-    text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
+  @include mfonts($white-color,$alt,140%);
+  text-shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
 }
 
 .tyerrMain {
-    @include mfonts($white-color,$alt,100%);
-    background-color: $gray-color;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 3%;
-    margin-top: 10%;
-    min-height: 20%; // Fallback for vh unit
-    min-height: 20vh;
-    padding-bottom: 5%;
-    text-align: center;
+  @include mfonts($white-color,$alt,100%);
+  background-color: $gray-color;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 3%;
+  margin-top: 10%;
+  min-height: 20%;
+  /* Fallback for vh unit*/
+  min-height: 20vh;
+  padding-bottom: 5%;
+  text-align: center;
 
-    .fa {
-        font-size: 150%;
-    }
+  .fa {
+    font-size: 150%;
+  }
 
-    .satyr {
-        height: 120px;
-    }
+  .satyr {
+    height: 120px;
+  }
 }
 /* Contact form */
 .formEntry {
-    margin-right: 0;
-    text-align: right;
+  margin-right: 0;
+  text-align: right;
 }
 
 .error {
-    color: #fc0206;
-    margin: 0 0 2%;
+  color: #fc0206;
+  margin: 0 0 2%;
 }
 
 input {
-    border-radius: 1%;
-    margin-bottom: 1%;
+  border-radius: 1%;
+  margin-bottom: 1%;
 }
 
 #messageEntry {
-    border-radius: 1%;
-    height: 50%;
-    height: 25vh;
-    width: 50%;
+  border-radius: 1%;
+  height: 50%;
+  height: 25vh;
+  width: 50%;
 }
 
 #submit {
-    background: $gray-color;
-    border: 1px solid $black-color;
-    color: $black-color;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+  background: $gray-color;
+  border: 1px solid $black-color;
+  color: $black-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 
-    &:hover {
-        @include emph;
-    }
+  &:hover {
+    @include emph;
+  }
 }
 
 #submitReal {
-    display: none; //Invisible, PHP-connected input button
+  display: none;
+  /*Invisible, PHP-connected input button*/
 }
 /*Thumbnail fade-in*/
 #fader {
-    animation: fadein 3s;
-    -moz-animation: fadein 3s;
-    /* Firefox */
-    -o-animation: fadein 3s;
-    /* Opera */
-    -webkit-animation: fadein 3s;
-    /* Safari and Chrome */
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -o-animation: fadein 3s;
+  /* Opera */
+  -webkit-animation: fadein 3s;
+  /* Safari and Chrome */
 }
 /*Animation*/
 @keyframes fadein {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
-}
-@-moz-keyframes fadein {
-    /* Firefox */
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 @-webkit-keyframes fadein {
-    /* Safari and Chrome */
-    from {
-        opacity: 0;
-    }
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
-}
-@-o-keyframes fadein {
-    /* Opera */
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 /* Styles */
 body {
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    background: $gray-color url('../resources/CharmedSatyr/R-DSC_0232.JPG') no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background: $gray-color url('../resources/CharmedSatyr/R-DSC_0232.JPG') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  user-select: none;
 }
 
 .satyr {
-    height: 120px;
-    margin-top: 1%;
-    width: auto;
+  height: 120px;
+  margin-top: 1%;
+  width: auto;
 }
 
 .subtitle {
-    @include emph;
+  @include emph;
 }
 
 .main {
-    @include mfonts($white-color,$alt,100%);
-    background-color: $gray-color;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 3%;
-    margin-top: 3%;
-    min-height: 80%; // Fallback for vh unit
-    min-height: 80vh;
-    padding-bottom: 5%;
-    text-align: center;
+  @include mfonts($white-color,$alt,100%);
+  background-color: $gray-color;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 3%;
+  margin-top: 3%;
+  min-height: 80%;
+  /* Fallback for vh unit*/
+  min-height: 80vh;
+  padding-bottom: 5%;
+  text-align: center;
 
-    code {
-        -khtml-user-select: text;
-        -moz-user-select: text;
-        -ms-user-select: text;
-        -webkit-touch-callout: text;
-        -webkit-user-select: text;
-    }
+  code {
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    user-select: text;
+  }
 }
 
 .headings {
-    @include mfonts($white-color,$sub,100%,(1px 1px 2px $black-color, -1px -1px 2px $black-color));
-    background: $trans-purple-color;
-    border-color: $gray-color;
+  @include mfonts($white-color,$sub,100%,(1px 1px 2px $black-color, -1px -1px 2px $black-color));
+  background: $trans-purple-color;
+  border-color: $gray-color;
 
-    &:active,
-    &:hover,
-    &:target {
-        background: $purple !important;
-        border-color: $gray-color !important;
-    }
+  &:active,
+  &:hover,
+  &:target {
+    background: $purple !important;
+    border-color: $gray-color !important;
+  }
 
-    &:hover {
-        @include emph;
-    }
+  &:hover {
+    @include emph;
+  }
 
-    .description {
-        @include mfonts($gray-color, $alt, 80%, 1px 1px 2px $black-color);
-    }
+  .description {
+    @include mfonts($gray-color, $alt, 80%, 1px 1px 2px $black-color);
+  }
 }
 
 .inner {
-    @include mfonts($black-color, $alt, 110%);
-    background: rgba(255, 255, 255, 0.5) url('../resources/CharmedSatyr/handmadepaper.jpg') repeat;
-    border-radius: 1px;
-    margin-top: -1%;
+  @include mfonts($black-color, $alt, 110%);
+  background: rgba(255, 255, 255, 0.5) url('../resources/CharmedSatyr/handmadepaper.jpg') repeat;
+  border-radius: 1px;
+  margin-top: -1%;
 
-    a {
-        color: $black-color;
+  a {
+    color: $black-color;
 
-        &:hover {
-            @include emph;
-        }
+    &:hover {
+      @include emph;
+    }
+  }
+
+  p {
+    margin: 0.5% 0 2%;
+  }
+  /* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
+  .thumbnail {
+    iframe {
+      -moz-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+      height: 900px;
+      opacity: 0;
+      position: relative;
+      transform-origin: 0 0;
+      transition: all 300ms ease-in-out;
+      width: 1440px;
     }
 
-    p {
-        margin: 0.5% 0 2%;
+    &::after {
+      bottom: 0;
+      content: '';
+      /*This line prevents interaction*/
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
-    /* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
-    .thumbnail {
-        iframe {
-            -moz-transform-origin: 0 0;
-            -o-transform-origin: 0 0;
-            -webkit-transform-origin: 0 0;
-            height: 900px;
-            opacity: 0;
-            position: relative;
-            transform-origin: 0 0;
-            transition: all 300ms ease-in-out;
-            width: 1440px;
-        }
+  }
 
-        &::after {
-            bottom: 0;
-            content: ''; //This line prevents interaction
-            display: block;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-    }
-
-    .thumbnail-container {
-        display: inline-block;
-        overflow: hidden;
-        position: relative;
-    }
+  .thumbnail-container {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
 }
 /* Social buttons */
 .social,
 .social a {
-    color: #000000;
-    font-size: 160%;
-    margin-top: 2%;
-    margin-bottom: -6%;
-    text-shadow: 0 0 2px $gold-color;
+  color: #000000;
+  font-size: 160%;
+  margin-top: 2%;
+  margin-bottom: -6%;
+  text-shadow: 0 0 2px $gold-color;
 }
 
 .social a:hover {
-    color: $gold-color;
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important; //This doesn't work when it's nested inside .social
+  color: $gold-color;
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important;
+  /*This doesn't work when it's nested inside .social*/
 }
 
 .eff {
-    border-radius: 100%;
-    margin-top: -2vh;
-    box-shadow: 0 0 3px $gold-color;
-    width: 6vw;
+  border-radius: 100%;
+  margin-top: -2vh;
+  box-shadow: 0 0 3px $gold-color;
+  width: 6vw;
 }
 /* Mixins used for media queries */
 @mixin transform-iframe($size) {
-    .thumbnail iframe {
-        -ms-zoom: $size;
-        -moz-transform: scale($size);
-        -o-transform: scale($size);
-        -webkit-transform: scale($size);
-        transform: $size;
-    }
+  .thumbnail iframe {
+    -ms-zoom: $size;
+    -webkit-transform: scale($size);
+    transform: $size;
+  }
 
-    .thumbnail-container {
-        height: 900px * $size; //No need for "calc"
-        width: 1440px * $size; //No need for "calc"
-    }
+  .thumbnail-container {
+    height: 900px * $size;
+    /*No need for "calc"*/
+    width: 1440px * $size;
+    /*No need for "calc"*/
+  }
 }
 @mixin heading-size($f-size) {
-    .headings,
-    .headings a,
-    .headings a:hover,
-    .headings a:visited {
-        font-size: $f-size;
-    }
+  .headings,
+  .headings a,
+  .headings a:hover,
+  .headings a:visited {
+    font-size: $f-size;
+  }
 }
 /* Media queries for the website thumbnails */
 @media screen and (max-width: 420px) {
-     @include heading-size(100%);
-    @include transform-iframe(0.15);
+   @include heading-size(100%);
+  @include transform-iframe(0.15);
 
-    .eff {
-        margin-top: -2vh;
-        width: 10vw;
-    }
+  .eff {
+    margin-top: -2vh;
+    width: 10vw;
+  }
 
-    .satyr {
-        height: 80px;
-    }
+  .satyr {
+    height: 80px;
+  }
 }
 @media screen and (min-width: 421px) {
-     @include heading-size(100%);
-    @include transform-iframe(0.21);
+   @include heading-size(100%);
+  @include transform-iframe(0.21);
 
-    .eff {
-        margin-top: -2vh;
-        width: 10vw;
-    }
+  .eff {
+    margin-top: -2vh;
+    width: 10vw;
+  }
 
-    .satyr {
-        height: 90px;
-    }
+  .satyr {
+    height: 90px;
+  }
 }
-//Note that this one is HEIGHT
+/*Note that this one is HEIGHT*/
 @media screen and (min-height: 901px) {
-    .eff {
-        margin-top: -1vh;
-    }
+  .eff {
+    margin-top: -1vh;
+  }
 }
 @media screen and (min-width: 500px) {
-    .eff {
-        width: 8vw;
-    }
+  .eff {
+    width: 8vw;
+  }
 }
 @media screen and (min-width: 560px) {
-     @include heading-size(120%);
-    @include transform-iframe(0.26);
+   @include heading-size(120%);
+  @include transform-iframe(0.26);
 
-    .eff {
-        width: 6vw;
-    }
+  .eff {
+    width: 6vw;
+  }
 
-    .satyr {
-        height: 110px;
-    }
+  .satyr {
+    height: 110px;
+  }
 }
 @media screen and (min-width: 720px) {
-    .eff {
-        width: 5vw;
-    }
+  .eff {
+    width: 5vw;
+  }
 }
 @media screen and (min-width: 1000px) {
-    .eff {
-        width: 4vw;
-    }
+  .eff {
+    width: 4vw;
+  }
 }
 @media screen and (min-width: 1200px) {
-     @include transform-iframe(0.31);
+   @include transform-iframe(0.31);
 
-    .eff {
-        width: 3vw;
-    }
+  .eff {
+    width: 3vw;
+  }
 
-    .satyr {
-        height: 120px;
-    }
+  .satyr {
+    height: 120px;
+  }
 }
 @media screen and (min-width: 1440px) {
-     @include transform-iframe(0.36);
+   @include transform-iframe(0.36);
 }
 @media screen and (min-width: 1680px) {
-     @include transform-iframe(0.41);
+   @include transform-iframe(0.41);
 
-    .eff {
-        width: 2vw;
-    }
+  .eff {
+    width: 2vw;
+  }
 }
 @media screen and (min-width: 1920px) {
-     @include transform-iframe(0.50);
+   @include transform-iframe(0.50);
 }
