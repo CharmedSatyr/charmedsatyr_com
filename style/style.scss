@@ -299,7 +299,15 @@ body {
   box-shadow: 0 0 3px $gold-color;
   width: 6vw;
 }
+
+.fsf {
+  margin-top: -2vh;
+  box-shadow: 0 0 3px $gold-color;
+  height: 6vh;
+}
+
 /* Mixins used for media queries */
+
 @mixin transform-iframe($size) {
   .thumbnail iframe {
     -ms-zoom: $size;
