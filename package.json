@@ -1,0 +1,17 @@
+{
+  "name": "charmedsatyr.github.io",
+  "version": "0.0.1",
+  "main": "index.html",
+  "repository": "https://github.com/CharmedSatyr/charmedsatyr.github.io.git",
+  "author": "CharmedSatyr <z@charmed.tech>",
+  "license": "GPL-3.0",
+  "private": false,
+  "scripts": {
+     "gulp index": "gulp index"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^3.3.0"
+  }
+}
