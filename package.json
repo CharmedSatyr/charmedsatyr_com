@@ -7,12 +7,15 @@
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-     "gulp index": "gulp index",
-     "gulp default": "gulp default"
+    "gulp index": "gulp index",
+    "gulp default": "gulp default"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
-    "gulp-pug": "^3.3.0"
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0"
   }
 }
