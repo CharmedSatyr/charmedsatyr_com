@@ -83,4 +83,4 @@ gulp.task('style', function() {
 })
 
 //All tasks
-gulp.task('default', ['index', 'thanks', 'missing', 'fiveOhOne', 'style'])
+gulp.task('build', ['index', 'thanks', 'missing', 'fiveOhOne', 'style'])
