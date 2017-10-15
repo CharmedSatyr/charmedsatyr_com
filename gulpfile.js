@@ -67,6 +67,22 @@ gulp.task('fiveOhOne', function buildHTML() {
     .pipe(gulp.dest('./'))
 })
 
+//Render error418.html
+gulp.task('teapot', function buildHTML() {
+  return gulp
+    .src('thanksAndError.pug')
+    .pipe(
+      pug({
+        data: {
+          teapotTop: 'Error 418',
+          teapotSub: 'Your request was neither short nor stout.'
+        }
+      })
+    )
+    .pipe(concat('error418.html'))
+    .pipe(gulp.dest('./'))
+})
+
 //Handle styles
 gulp.task('style', function() {
   return gulp
@@ -83,4 +99,4 @@ gulp.task('style', function() {
 })
 
 //All tasks
-gulp.task('build', ['index', 'thanks', 'missing', 'fiveOhOne', 'style'])
+gulp.task('build', ['index', 'thanks', 'missing', 'fiveOhOne', 'teapot', 'style'])
