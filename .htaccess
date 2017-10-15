@@ -13,9 +13,11 @@ RewriteRule ^(.*)$ https://charmedsatyr.com/$1 [R,L]
 #Error 404 page
 ErrorDocument 404 https://charmedsatyr.com/error404.html
 
+#Error 418 page
+ErrorDocument 418 https://charmedsatyr.com/error418.html
+
 #Error 501 page
 ErrorDocument 501 https://charmedsatyr.com/error501.html
-
 
 RewriteOptions inherit
 
