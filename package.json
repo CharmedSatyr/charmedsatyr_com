@@ -7,7 +7,7 @@
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-    "gulp build": "gulp build"
+    "build": "gulp build"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
