@@ -10,12 +10,18 @@
     "build": "gulp build"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "browser-sync": "^2.26.7",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.3.1",
+    "gulp-inject": "^5.0.2",
     "gulp-pug": "^3.3.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "jquery": "^3.4.1",
+    "prettier": "^1.18.2"
   }
 }
