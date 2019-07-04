@@ -1,10 +1,11 @@
+const autoprefixer = require('gulp-autoprefixer');
+const bs = require('browser-sync').create();
+const cleanCSS = require('gulp-clean-css');
+const concat = require('gulp-concat');
 const del = require('del');
 const gulp = require('gulp');
-const concat = require('gulp-concat');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
 
 /* DELETE PREVIOUS BUILD */
 gulp.task('clean', () => del(['build/']));
@@ -44,12 +45,16 @@ gulp.task('sass', () => {
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('build/style'));
+    .pipe(gulp.dest('build/style'))
+    .pipe(bs.stream());
 });
 
 // Move non-Sass files
 gulp.task('css', () =>
-  gulp.src(['src/style/*.css'], { base: 'src/style' }).pipe(gulp.dest('build/style/'))
+  gulp
+    .src(['src/style/*.css'], { base: 'src/style' })
+    .pipe(gulp.dest('build/style/'))
+    .pipe(bs.stream())
 );
 
 // Combined style task
@@ -58,12 +63,13 @@ gulp.task('style', gulp.parallel('sass', 'css'));
 /* Render Pug files to HTML */
 // Render index.html
 gulp.task('index', () => {
-  const target = gulp.src('src/index.pug', { reada: true });
+  const target = gulp.src('src/index.pug', { read: true });
   return target.pipe(pug()).pipe(gulp.dest('build/'));
 });
 
 // Render thanks.html
 gulp.task('thanks', () => {
+  const target = gulp.src('src/thanksAndError.pug');
   return gulp
     .src('src/thanksAndError.pug')
     .pipe(
@@ -75,7 +81,8 @@ gulp.task('thanks', () => {
       })
     )
     .pipe(concat('thanks.html'))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('build/'))
+    .pipe(bs.stream());
 });
 
 // Render error404.html
@@ -91,7 +98,8 @@ gulp.task('missing', () => {
       })
     )
     .pipe(concat('error404.html'))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build'))
+    .pipe(bs.stream());
 });
 
 // Render error501.html
@@ -107,7 +115,8 @@ gulp.task('fiveOhOne', () => {
       })
     )
     .pipe(concat('error501.html'))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('build/'))
+    .pipe(bs.stream());
 });
 
 // Render error418.html
@@ -123,7 +132,8 @@ gulp.task('teapot', () => {
       })
     )
     .pipe(concat('error418.html'))
-    .pipe(gulp.dest('build/'));
+    .pipe(gulp.dest('build/'))
+    .pipe(bs.stream());
 });
 
 // Combined Pug rendering task
@@ -131,3 +141,11 @@ gulp.task('pug', gulp.parallel('index', 'thanks', 'missing', 'fiveOhOne', 'teapo
 
 /* All tasks */
 gulp.task('build', gulp.series('pre-render', 'style', 'pug'));
+
+/* Stream rendering to browser and update on change */
+gulp.task('watch', () => {
+  bs.init({ server: { baseDir: 'build/' } });
+  gulp.watch('src/**/*.pug', gulp.series('pug'));
+  gulp.watch('src/style/style.scss', gulp.series('style'));
+  gulp.watch(['src/**/*.pug', 'src/**/*.scss']).on('change', bs.reload);
+});
