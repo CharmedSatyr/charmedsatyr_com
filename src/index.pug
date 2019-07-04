@@ -10,6 +10,8 @@ html
     noscript
       div#ns Please enable Javascript. This site will not function properly without it.
     script(type='text/javascript', src='js/queryloader2.min.js')
+    script(type='text/javascript', id='__bs_script__')
+      //<! [CDATA[document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname)); //]]>
     div.container-fluid
       div.row
         div.main.well.col-xs-12.col-md-8.col-md-offset-2
@@ -338,7 +340,6 @@ html
                 div.col-xs-2
                   a(href='https://fsf.org', target='_blank' rel='noopener' )
                     img(src='resources/CharmedSatyr/FSF-Member.png' title='Free Software Foundation Member' alt='FSF Digital Badge').fsf
-
 
     script(type='text/javascript', src='js/jquery-3.1.0.min.js')
     script(type='text/javascript', src='js/bootstrap.min.js')
