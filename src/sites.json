@@ -1,0 +1,51 @@
+{
+  "responsive": {
+    "cert": "",
+    "sites": [
+      {
+        "title": "A Tribute to Spaceman Spiff",
+        "url": "https://charmedsatyr-freecodecamp.github.io/tribute_page"
+      },
+      {
+        "title": "Survey Form",
+        "url": ""
+      },
+      {
+        "title": "Product Landing Page",
+        "url": ""
+      },
+      {
+        "title": "Technical Documentation Page",
+        "url": ""
+      },
+      {
+        "title": "Personal Portfolio Webpage",
+        "url": "https://charmedsatyr-freecodecamp.github.io/personal_portfolio"
+      }
+    ]
+  },
+  "dsa": {
+    "cert": "",
+    "sites": []
+  },
+  "libraries": {
+    "cert": "",
+    "sites": []
+  },
+  "visualization": {
+    "cert": "",
+    "sites": []
+  },
+  "apis": {
+    "cert": "",
+    "sites": []
+  },
+  "infosec": {
+    "cert": "",
+    "sites": []
+  },
+  "legacy": {
+    "cert": "",
+    "sites": []
+  }
+}
