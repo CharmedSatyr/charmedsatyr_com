@@ -2,7 +2,9 @@ const autoprefixer = require('gulp-autoprefixer');
 const bs = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
+const data = require('gulp-data');
 const del = require('del');
+const fs = require('fs');
 const gulp = require('gulp');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
@@ -64,7 +66,15 @@ gulp.task('style', gulp.parallel('sass', 'css'));
 // Render index.html
 gulp.task('index', () => {
   const target = gulp.src('src/index.pug', { read: true });
-  return target.pipe(pug()).pipe(gulp.dest('build/'));
+  return target
+    .pipe(
+      data(file => {
+        return JSON.parse(fs.readFileSync('./src/sites.json'));
+      })
+    )
+    .pipe(pug())
+    .pipe(gulp.dest('build/'))
+    .pipe(bs.stream());
 });
 
 // Render thanks.html
@@ -145,6 +155,7 @@ gulp.task('build', gulp.series('pre-render', 'style', 'pug'));
 /* Stream rendering to browser and update on change */
 gulp.task('watch', () => {
   bs.init({ server: { baseDir: 'build/' } });
+  gulp.watch(['src/sites.json', 'src/index.pug'], gulp.series('index'));
   gulp.watch('src/**/*.pug', gulp.series('pug'));
   gulp.watch('src/style/style.scss', gulp.series('style'));
   gulp.watch(['src/**/*.pug', 'src/**/*.scss']).on('change', bs.reload);
