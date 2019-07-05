@@ -1,28 +1,32 @@
 doctype html
 html
   head
-    meta(charset='UTF-8', name='viewport', content='width=device-width, initial-scale=1')
-    title &#9733;&#633;&#654;&#647;&#592;S p&#477;&#623;&#633;&#592;&#613;&#390;&#9733;
-    link(rel='stylesheet', href='style/bootstrap.min.css')
-    link(rel='stylesheet', href='style/font-awesome.min.css')
-    link(rel='stylesheet', href='style/style.min.css')
+    include modules/head.pug
   body
-    noscript
-      div#ns Please enable Javascript. This site will not function properly without it.
+    include modules/noscript.pug
     script(type='text/javascript', src='js/queryloader2.min.js')
     script(type='text/javascript', id='__bs_script__')
       //<! [CDATA[document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname)); //]]>
     div.container-fluid
       div.row
         div.main.well.col-xs-12.col-md-8.col-md-offset-2
-          // title
-          div.row
-            img.satyr(src='resources/CharmedSatyr/Glowing-Black-Satyr.png', alt='CharmedSatyr logo')
-            //Subtitles
-            h4.subtitle.col-xs-12 libre. learning to code with&nbsp;
-              a.fcc(href='https://freecodecamp.com/CharmedSatyr/' target='_blank' rel='noopener') freeCodeCamp
-              span .
-          br
+          include modules/header.pug
+          // Responsive Web Design
+          div.row(title='freeCodeCamp Responsive Web Design Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleRWD') Responsive Web Design Projects
+              i.fa.fa-free-code-camp
+              p.description basic &#8594; intermediate &#8594; advanced
+          div.row.collapse#toggleRWD
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //my_first_website
+              each val in responsive.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
           // Front End Projects for FCC
           // FCC Heading
           div.row(title='freeCodeCamp Front End Development Certification: acquired!')
