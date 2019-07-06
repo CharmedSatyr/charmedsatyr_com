@@ -280,8 +280,11 @@ body {
 }
 
 /* Mixins used for media queries */
+// Don't touch it - this exact setup works in Chromium and Firefox
 @mixin transform-iframe($size) {
   .thumbnail iframe {
+    -ms-zoom: $size;
+    -webkit-transform: scale($size);
     transform: $size;
   }
 
