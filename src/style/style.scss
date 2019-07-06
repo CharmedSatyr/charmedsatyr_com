@@ -1,24 +1,6 @@
-/* Fonts, variables, & tiny font tweaks */
-/*Fonts*/
-@font-face {
-  font-family: 'Montserrat Subrayada';
-  src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf');
-}
-@font-face {
-  font-family: 'Montserrat Alternates';
-  src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
-}
-/*Variables*/
-$alt: 'Montserrat Alternates', sans-serif;
-$sub: 'Montserrat Subrayada',sans-serif;
-/* Colors */
-$black-color: #202020;
-$gold-color: #ffd338 !important;
-$gray-color: #a0a0a0;
-$trans-purple-color: #a757f2;
-$trans-purple-color: rgba(40,31,220,0.4);
-$purple: rgba(40,31,220,0.5);
-$white-color: #ffffff;
+@import 'variables';
+@import 'fonts';
+
 /* Mixins not used for media queries */
 @mixin mfonts($mcolor: $white-color, $mfont: $alt, $msize: 100%, $outline: 0 0 0 $black-color) {
   color: $mcolor;
@@ -31,6 +13,7 @@ $white-color: #ffffff;
     shadow: $outline;
   }
 }
+
 @mixin emph {
   color: $gold-color;
   text: {
@@ -38,8 +21,9 @@ $white-color: #ffffff;
     shadow: 1px 1px 1.5px $black-color, -1px -1px 1.5px $black-color, 1px -1px 1.5px $black-color, -1px 1px 1.5px $black-color;
   }
 }
+
 /*Tweaks*/
-.fa {
+.fa, .fab {
   font-size: 120%;
   margin-left: 1%;
 }
@@ -63,6 +47,7 @@ $white-color: #ffffff;
     text-decoration: none;
   }
 }
+
 /*Thank you and Error pages*/
 .tyerrHead {
   @include mfonts($gold-color,$sub,180%);
@@ -86,7 +71,7 @@ $white-color: #ffffff;
   padding-bottom: 5%;
   text-align: center;
 
-  .fa {
+  .fa, .fab {
     font-size: 150%;
   }
 
@@ -94,6 +79,7 @@ $white-color: #ffffff;
     height: 120px;
   }
 }
+
 /* Contact form */
 .formEntry {
   margin-right: 0;
@@ -136,12 +122,6 @@ input {
 /*Thumbnail fade-in*/
 #fader {
   animation: fadein 3s;
-  -moz-animation: fadein 3s;
-  /* Firefox */
-  -o-animation: fadein 3s;
-  /* Opera */
-  -webkit-animation: fadein 3s;
-  /* Safari and Chrome */
 }
 /*Animation*/
 @keyframes fadein {
@@ -153,6 +133,7 @@ input {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadein {
   /* Safari and Chrome */
   from {
@@ -163,12 +144,9 @@ input {
     opacity: 1;
   }
 }
+
 /* Styles */
 body {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
   background: $gray-color url('../resources/CharmedSatyr/R-DSC_0232.JPG') no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -199,10 +177,6 @@ body {
   text-align: center;
 
   code {
-    -moz-user-select: text;
-    -ms-user-select: text;
-    -webkit-touch-callout: text;
-    -webkit-user-select: text;
     user-select: text;
   }
 }
@@ -248,9 +222,6 @@ body {
   /* Thumbnail styling from https://medium.com/@jamesfuthey/simulating-the-creation-of-website-thumbnail-screenshots-using-iframes-7145269891db#.ux1117uec */
   .thumbnail {
     iframe {
-      -moz-transform-origin: 0 0;
-      -o-transform-origin: 0 0;
-      -webkit-transform-origin: 0 0;
       height: 900px;
       opacity: 0;
       position: relative;
@@ -277,13 +248,14 @@ body {
     position: relative;
   }
 }
+
 /* Social buttons */
 .social,
 .social a {
   color: #000000;
   font-size: 160%;
-  margin-top: 2%;
-  margin-bottom: -6%;
+  margin-top: 4%;
+  margin-bottom: 0;
   text-shadow: 0 0 2px $gold-color;
 }
 
@@ -302,26 +274,25 @@ body {
 
 .fsf {
   margin-top: -2vh;
+  margin-left: -2vh;
   box-shadow: 0 0 3px $gold-color;
   height: 6vh;
 }
 
 /* Mixins used for media queries */
-
 @mixin transform-iframe($size) {
   .thumbnail iframe {
-    -ms-zoom: $size;
-    -webkit-transform: scale($size);
     transform: $size;
   }
 
   .thumbnail-container {
     height: 900px * $size;
-    /*No need for "calc"*/
+    /*No need for 'calc'*/
     width: 1440px * $size;
-    /*No need for "calc"*/
+    /*No need for 'calc'*/
   }
 }
+
 @mixin heading-size($f-size) {
   .headings,
   .headings a,
@@ -330,9 +301,10 @@ body {
     font-size: $f-size;
   }
 }
+
 /* Media queries for the website thumbnails */
 @media screen and (max-width: 420px) {
-   @include heading-size(100%);
+  @include heading-size(100%);
   @include transform-iframe(0.15);
 
   .eff {
@@ -344,6 +316,7 @@ body {
     height: 80px;
   }
 }
+
 @media screen and (min-width: 421px) {
    @include heading-size(100%);
   @include transform-iframe(0.21);
@@ -363,13 +336,15 @@ body {
     margin-top: -1vh;
   }
 }
+
 @media screen and (min-width: 500px) {
   .eff {
     width: 8vw;
   }
 }
+
 @media screen and (min-width: 560px) {
-   @include heading-size(120%);
+  @include heading-size(120%);
   @include transform-iframe(0.26);
 
   .eff {
@@ -380,16 +355,19 @@ body {
     height: 110px;
   }
 }
+
 @media screen and (min-width: 720px) {
   .eff {
     width: 5vw;
   }
 }
+
 @media screen and (min-width: 1000px) {
   .eff {
     width: 4vw;
   }
 }
+
 @media screen and (min-width: 1200px) {
    @include transform-iframe(0.31);
 
@@ -401,9 +379,11 @@ body {
     height: 120px;
   }
 }
+
 @media screen and (min-width: 1440px) {
    @include transform-iframe(0.36);
 }
+
 @media screen and (min-width: 1680px) {
    @include transform-iframe(0.41);
 
@@ -411,6 +391,7 @@ body {
     width: 2vw;
   }
 }
+
 @media screen and (min-width: 1920px) {
    @include transform-iframe(0.50);
 }
