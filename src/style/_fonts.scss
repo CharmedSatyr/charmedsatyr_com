@@ -1,0 +1,48 @@
+/* Fonts & tiny font tweaks */
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.otf') format('opentype'), /* Open Type Font */
+       url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.svg') format('svg'), /* Legacy iOS */
+       url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Montserrat_Subrayada/MontserratSubrayada-Regular.woff2') format('woff2'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.otf') format('opentype'), /* Open Type Font */
+       url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.svg') format('svg'), /* Legacy iOS */
+       url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Montserrat_Alternates/MontserratAlternates-Regular.woff2') format('woff2'); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Font Awesome brands
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-brands-400.eot');
+  src: url('#{$fa-font-path}/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-brands-400.woff') format('woff'),
+  url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+// Keybase icon - trying to limit unneeded imports from font-awesome
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+}
+.fa-keybase:before { content: '\f4f5';
+  font-style: normal;
+}

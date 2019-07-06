@@ -1,0 +1,38 @@
+// Contact heading
+div.row(title='contact me via gpg or encrypted message')
+  div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
+    i.fa.fa-send
+    p.description get in touch securely
+
+// Contact sites
+div.row.collapse#toggleContact
+  div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+    form(method='post' action='contact.php')
+      div.row
+        div.formEntry.col-xs-3.col-xs-offset-1 Name
+          span.error *
+        input#nameEntry.col-xs-4(type='text' name='nameEntry')
+      div#nameError.error
+      div.row
+        div.formEntry.col-xs-3.col-xs-offset-1 Email
+          span.error *
+        input#emailEntry.col-xs-4(type='text' name='emailEntry')
+      div#emailError.error
+      div.row
+        div.formEntry.col-xs-3.col-xs-offset-1 Website
+        input#websiteEntry.col-xs-4(type='text' name='websiteEntry')
+      div#websiteError.error
+      div.row
+        div.formEntry.col-xs-3.col-xs-offset-1 Subject
+          span.error *
+        input#subjectEntry.col-xs-4(type='text' name='subjectEntry')
+      div#subjectError.error
+      div.row
+        div.formEntry.col-xs-3 Message
+          span.error *
+        textarea#messageEntry.col-xs-4(type='text' name='messageEntry')
+      div#messageError.error
+      br
+      div#submit.btn.btn-default(type='submit' value='Submit') Submit
+      input#submitReal(type='submit' value='Real')
+

@@ -1,346 +1,210 @@
 doctype html
 html
   head
-    meta(charset='UTF-8', name='viewport', content='width=device-width, initial-scale=1')
-    title &#9733;&#633;&#654;&#647;&#592;S p&#477;&#623;&#633;&#592;&#613;&#390;&#9733;
-    link(rel='stylesheet', href='style/bootstrap.min.css')
-    link(rel='stylesheet', href='style/font-awesome.min.css')
-    link(rel='stylesheet', href='style/style.min.css')
+    include modules/head.pug
   body
-    noscript
-      div#ns Please enable Javascript. This site will not function properly without it.
+    include modules/noscript.pug
     script(type='text/javascript', src='js/queryloader2.min.js')
     script(type='text/javascript', id='__bs_script__')
       //<! [CDATA[document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname)); //]]>
     div.container-fluid
       div.row
         div.main.well.col-xs-12.col-md-8.col-md-offset-2
-          // title
-          div.row
-            img.satyr(src='resources/CharmedSatyr/Glowing-Black-Satyr.png', alt='CharmedSatyr logo')
-            //Subtitles
-            h4.subtitle.col-xs-12 libre. learning to code with&nbsp;
-              a.fcc(href='https://freecodecamp.com/CharmedSatyr/' target='_blank' rel='noopener') freeCodeCamp
-              span .
+          //- Header
+          include modules/header.pug
+
+          //- Responsive Web Design
+          div.row(title='freeCodeCamp Responsive Web Design Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleRWD') Responsive Web Design
+              i.fa.fa-mobile
+              p.description html &#8594; css &#8594; visual design &#8594; accessibility
+          div.row.collapse#toggleRWD
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- RWD sites (dynamic)
+              each val in responsive.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Responsive Web Design Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/responsive-web-design' target='_blank' rel='noopener noreferrer')
+                p.cert Responsive Web Design Certificate
           br
-          // Front End Projects for FCC
-          // FCC Heading
-          div.row(title='freeCodeCamp Front End Development Certification: acquired!')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFCC') Front End Development Projects
+
+          //- JavaScript Algorithms and Data Structures
+          div.row(title='freeCodeCamp JavaScript Algorithms and Data Structures Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDSA') JavaScript Algorithms and Data Structures
+              i.fa.fa-code
+              p.description scripting challenges &#8594; algorithms &#8594; small programs
+          div.row.collapse#toggleDSA
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- DSA algorithms (Gists)
+              script(src="https://gist.github.com/CharmedSatyr/be02429bb75c4b140945b6f0858c3901.js")
+              //- JavaScript Algorithms and Data Structures Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/javascript-algorithms-and-data-structures' target='_blank' rel='noopener noreferrer')
+                p.cert JavaScript Algorithms and Data Structures Certificate
+          br
+
+          //- Front End Libraries
+          div.row(title='freeCodeCamp Front End Libraries Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleFEL') Front End Libraries
+              i.fa.fa-book
+              p.description bootstrap &#8594; sass &#8594; jQuery &#8594; react &#8594; redux
+          div.row.collapse#toggleFEL
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- Libraries sites (dynamic)
+              each val in libraries.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Front End Libraries Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/front-end-libraries' target='_blank' rel='noopener noreferrer')
+                p.cert Front End Libraries Certificate
+          br
+
+          //- Data Visualization
+          div.row(title='check out my progress!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDV') Data Visualization
+              i.fa.fa-camera-retro
+              p.description svg &#8594; d3
+          div.row.collapse#toggleDV
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- Data visualization sites (dynamic)
+              each val in visualization.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Data Visualization Certificate
+              p.cert Data Visualization Certificate in progress!
+          br
+
+          //- APIs and Microservices
+          div.row(title='freeCodeCamp APIs and Microservices Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleAPIs') APIs and Microservices
+              i.fa.fa-server
+              p.description basic &#8594; intermediate &#8594; advanced
+          div.row.collapse#toggleAPIs
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- APIs and Microservices sites (dynamic)
+              each val in apis.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- APIs and Microservices Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/apis-and-microservices' target='_blank' rel='noopener noreferrer')
+                p.cert APIs and Microservices Certificate
+          br
+
+          //- Information Security and Quality Assurance
+          div.row(title='freeCodeCamp Information Security and Quality Assurance Certification: in progress!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleISQA') Information Security and Quality Assurance
+              i.fa.fa-lock
+              p.description content security policy &#8594; xss filtering &#8594; http strict transport security
+          div.row.collapse#toggleISQA
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //- Information Security and Quality Assurance sites (dynamic)
+              each val in infosec.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Information Security and Quality Assurance Certificate
+              p.cert Information Security and Quality Assurance Certificate in progress!
+          br
+
+          //- Legacy Front End
+          div.row(title='freeCodeCamp Legacy Front End Certification: acquired!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleLFE') Legacy Front End
               i.fa.fa-free-code-camp
               p.description basic &#8594; intermediate &#8594; advanced
-          // FCC Sites
-          div.row.collapse#toggleFCC
+          div.row.collapse#toggleLFE
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
               br
-              //my_first_website
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/my_first_website/')
-                div.thumbnail-container(title='My First Website')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/my_first_website/' frameborder='0' onload='this.style.opacity=1')
-                p My First Website
-              br
-              //personal_portfolio
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/personal_portfolio/')
-                div.thumbnail-container(title='Sample Personal Portfolio')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/personal_portfolio/' frameborder='0' onload='this.style.opacity=1')
-                p Sample Personal Portfolio
-              br
-              //tribute_page
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/tribute_page/')
-                div.thumbnail-container(title='A Tribute to Spaceman Spiff')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/tribute_page/' frameborder='0' onload='this.style.opacity=1')
-                p A Tribute to Spaceman Spiff
-              br
-              //random_quote_machine
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/random_quote_machine/')
-                div.thumbnail-container(title='Random Quote Machine')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/random_quote_machine/' frameborder='0' onload='this.style.opacity=1')
-                p Random Quote Machine
-              br
-              //local_weather_viewer
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/local_weather_viewer/')
-                div.thumbnail-container(title='View Your Local Weather')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/local_weather_viewer/' frameborder='0' onload='this.style.opacity=1')
-                p View Your Local Weather
-              br
-              //wikipedia_viewer
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/wikipedia_viewer/')
-                div.thumbnail-container(title='Wikipedia Viewer')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/wikipedia_viewer/' frameborder='0' onload='this.style.opacity=1')
-                p Wikipedia Viewer
-              br
-              //twitch_stream_tracker
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/twitch_stream_tracker/')
-                div.thumbnail-container(title='Twitch Stream Tracker')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/twitch_stream_tracker/' frameborder='0' onload='this.style.opacity=1')
-                p Twitch Stream Tracker
-              br
-              //javascript_calculator
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/javascript_calculator/')
-                div.thumbnail-container(title='Javascript Calculator')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/javascript_calculator/' frameborder='0' onload='this.style.opacity=1')
-                p Javascript Calculator
-              br
-              //pomodoro_clock
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/pomodoro_clock/')
-                div.thumbnail-container(title='Pomodoro Clock')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/pomodoro_clock/' frameborder='0' onload='this.style.opacity=1')
-                p Pomodoro Clock
-              br
-              //tic_tac_toe
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/tic_tac_toe/')
-                div.thumbnail-container(title='Tic Tac Toe')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/tic_tac_toe/' frameborder='0' onload='this.style.opacity=1')
-                p Tic Tac Toe
-              br
-              //simon-game
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/simon_game/')
-                div.thumbnail-container(title='Simon Game')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/simon_game/' frameborder='0' onload='this.style.opacity=1')
-                p Simon Game
-              br
-              //Free Code Camp Front End Development Certificate
-              a(href='https://www.freecodecamp.com/CharmedSatyr/front-end-certification' target='_blank' rel='noopener')
-                p.cert Front End Development Certificate
+              //-  Legacy Front End sites (dynamic)
+              each val in legacy_front.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Legacy Front End Development Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/legacy-front-end' target='_blank' rel='noopener noreferrer')
+                p.cert Legacy Front End Development Certificate
           br
-          // Data Visualization Projects for FCC
-          // Data Visualization Heading
-          div.row(title='check out my progress!')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleData') Data Visualization Projects
-              //IMG doesn't take text shadows
-              //img(style='height: 50px' src='resources/CharmedSatyr/react.png')
-              i.fa.fa-camera-retro
-              p.description react &#8594; d3
-          // Data Visualization Sites
-          div.row.collapse#toggleData
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              //markdown_previewer
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/markdown_previewer/')
-                div.thumbnail-container(title='Markdown Previewer')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/markdown_previewer/' frameborder='0' onload='this.style.opacity=1')
-                p Markdown Previewer
-              br
-              //camper_leaderboard
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/camper_leaderboard/' )
-                div.thumbnail-container(title='Camper Leaderboard')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/camper_leaderboard/' frameborder='0' onload='this.style.opacity=1')
-                p Camper Leaderboard
-              br
-              //recipe_box
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/recipe_box/')
-                div.thumbnail-container(title='Recipe Box')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/recipe_box/' frameborder='0' onload='this.style.opacity=1')
-                p Recipe Box
-              //game_of_life
-              a#fader(href='https://charmedsatyr-freecodecamp.github.io/game_of_life/')
-                div.thumbnail-container(title='The Game of Life')
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr-freecodecamp.github.io/game_of_life/' frameborder='0' onload='this.style.opacity=1')
-                p The Game of Life
 
-          br
-          // Back End Development Projects for FCC
+          //- Legacy Back End
           div.row(title='the full stack experience!')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleBackEnd') Back End Development Projects
-              i.fa.fa-server
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleLBE') Legacy Back End
+              i.fa.fa-free-code-camp
               p.description node &#8594; express &#8594; mongodb
-          // Back End Sites
-          div.row.collapse#toggleBackEnd
+          div.row.collapse#toggleLBE
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              //timestamp_microservice
-              a#fader(href='https://charmed-timestamper.herokuapp.com' )
-                div.thumbnail-container(title='Timestamp Microservice')
-                  div.thumbnail
-                    iframe(src='https://charmed-timestamper.herokuapp.com' frameborder='0' onload='this.style.opacity=1')
-                p Timestamp Microservice
               br
-              //request_header_parser_microservice
-              a#fader(href='https://charmed-rhpm.herokuapp.com' )
-                div.thumbnail-container(title='Request Header Parser Microservice')
-                  div.thumbnail
-                    iframe(src='https://charmed-rhpm.herokuapp.com' frameborder='0' onload='this.style.opacity=1')
-                p Request Header Parser Microservice
-              br
-              //url_shortener_microservice
-              a#fader(href='http://op.pe')
-                div.thumbnail-container(title='URL Shortener Microservice')
-                  div.thumbnail
-                    iframe(src='https://charmed-urls.herokuapp.com' frameborder='0' onload='this.style.opacity=1')
-                p URL Shortener Microservice
-              br
-              //image_search_abstraction_layer
-              a#fader(href='https://charmed-isal.herokuapp.com' )
-                div.thumbnail-container(title='Image Search Abstraction Layer')
-                  div.thumbnail
-                    iframe(src='https://charmed-isal.herokuapp.com' frameborder='0' onload='this.style.opacity=1')
-                p Image Search Abstraction Layer
-              br
-              //file_metadata_microservice
-              a#fader(href='https://charmed-metadata.herokuapp.com' )
-                div.thumbnail-container(title='File Metadata Microservice')
-                  div.thumbnail
-                    iframe(src='https://charmed-metadata.herokuapp.com' frameborder='0' onload='this.style.opacity=1')
-                p File Metadata Microservice
-              br
-              //voting_app
-              a#fader(href='https://charmed-polling.herokuapp.com/' )
-                div.thumbnail-container(title='Voting App')
-                  div.thumbnail
-                    iframe(src='https://charmed-polling.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
-                p Voting App
-              br
-              //nightlife_coordination_app
-              a#fader(href='https://charmed-nightlife.herokuapp.com/' )
-                div.thumbnail-container(title='Nightlife Coordination App')
-                  div.thumbnail
-                    iframe(src='https://charmed-nightlife.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
-                p Nightlife Coordination App
-              br
-              //charmed_cash
-              a#fader(href='https://charmed-cash.herokuapp.com/' )
-                div.thumbnail-container(title='Chart the Stock Market')
-                  div.thumbnail
-                    iframe(src='https://charmed-cash.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
-                p Chart the Stock [Digital Currency] Market
-              br
-              //charmed_books
-              a#fader(href='https://charmed-books.herokuapp.com/' )
-                div.thumbnail-container(title='Manage a Book Trading Club')
-                  div.thumbnail
-                    iframe(src='https://charmed-books.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
-                p Manage a Book Trading Club
-              br
-              //pinterest_clone
-              a#fader(href='https://sorcerer-city.herokuapp.com')
-                div.thumbnail-container(title='Build a Pinterest Clone')
-                  div.thumbnail
-                    iframe(src='https://sorcerer-city.herokuapp.com/' frameborder='0' onload='this.style.opacity=1')
-                p Build a Pinterest Clone 
-              br
-              //Free Code Camp Back End Development Certificate
-              a(href='https://www.freecodecamp.com/CharmedSatyr/back-end-certification' target='_blank' rel='noopener')
-                p.cert Back End Development Certificate
-          br
-          // Other Projects
-          // Other heading
-          div.row(title='cordial, cooperative code cobbling')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleOther') Other Projects
-              i.fa.fa-code
-              p.description non-code camp projects i've worked on
-              //Other Sites
-          div.row.collapse#toggleOther
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              //corrupting_caesars_cipher
-              a#fader(href='https://charmedsatyr.github.io/corrupting_caesars_cipher/', )
-                div.thumbnail-container(title="Corrupting Caesar's Cipher")
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr.github.io/corrupting_caesars_cipher/' frameborder='0' onload='this.style.opacity=1')
-                p Corrupting Caesar's Cipher
-              br
-              //uMAPiT
-              a#fader(href='https://busanmaps.herokuapp.com/', target='_blank' rel='noopener' )
-                div.thumbnail-container(title='uMAPiT')
-                  div.thumbnail
-                    iframe(src='resources/uMAPiT/uMAPiT.html' frameborder='0' onload='this.style.opacity=1')
-                p uMAPiT
-          br
-          // Donate
-          // Donate heading
-          div.row(title='cryptocurrency is convenient and neat!')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
-              i.fa.fa-btc
-              p.description help me pay for equipment and training
-          // Donate
-          div.row.collapse#toggleDonate
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              a(href='bitcoin:18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw?message=CharmedSatyr.com%20Donate%20Button&time=1470445686')
-                p
-                  i.fa.fa-btc(aria-hidden='true').orange
-                  span.orange  bitcoin link
-              p Bitcoin Receiving Address:
+              //-  Legacy Back End sites (dynamic)
+              each val in legacy_back.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
                 br
-                code 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
-              br
-              p Zcash Receiving Address:
-                br
-                code t1cXgQZkJYXxT1nAzCHKHFpQtpHCh2m3cet
+              //- Legacy Back End Development Certificate
+              a(href='https://www.freecodecamp.org/certification/charmedsatyr/legacy-back-end' target='_blank' rel='noopener noreferrer')
+                p.cert Legacy Back End Development Certificate
           br
-          // Contact
-          // Contact heading
-          div.row(title='have you tried pgp or protonmail?')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
-              i.fa.fa-send
-              p.description get in touch securely
-          // Contact sites
-          div.row.collapse#toggleContact
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              a(href='publickey.email-at-charmedsatyr-dot-com.txt', target='_blank' rel='noopener' )
-                p(title='send me an encrypted message')
-                  i.fa.fa-lock(aria-hidden='true')
-                  span  OpenPGP Public Key
-              br
-              form(method='post' action='contact.php')
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Name
-                    span.error *
-                  input#nameEntry.col-xs-4(type='text' name='nameEntry')
-                div#nameError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Email
-                    span.error *
-                  input#emailEntry.col-xs-4(type='text' name='emailEntry')
-                div#emailError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Website
-                  input#websiteEntry.col-xs-4(type='text' name='websiteEntry')
-                div#websiteError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Subject
-                    span.error *
-                  input#subjectEntry.col-xs-4(type='text' name='subjectEntry')
-                div#subjectError.error
-                div.row
-                  div.formEntry.col-xs-3 Message
-                    span.error *
-                  textarea#messageEntry.col-xs-4(type='text' name='messageEntry')
-                div#messageError.error
-                br
-                div#submit.btn.btn-default(type='submit' value='Submit') Submit
-                input#submitReal(type='submit' value='Real')
-          //Social sites
-          div.row
-            div.social.col.xs-12.col-xs-offset-2.col-md-8
-              div.row
-                div.col-xs-2
-                  a(href='https://github.com/CharmedSatyr', target='_blank' rel='noopener'  title='Read my code on GitHub')
-                    i.fa.fa-github(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://codepen.io/CharmedSatyr/', target='_blank' rel='noopener'  title='Catch works in progress on CodePen')
-                    i.fa.fa-codepen(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://www.twitter.com/CharmedSatyr', target='_blank' rel='noopener'  title='Tweet with me')
-                    i.fa.fa-twitter(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://eff.org', target='_blank' rel='noopener' )
-                    img(src='resources/CharmedSatyr/EFF-2017mb.png' title='Electronic Frontier Foundation Member' alt='EFF Digital Badge').eff
-                div.col-xs-2
-                  a(href='https://fsf.org', target='_blank' rel='noopener' )
-                    img(src='resources/CharmedSatyr/FSF-Member.png' title='Free Software Foundation Member' alt='FSF Digital Badge').fsf
 
+          //- Legacy Data Visualization
+          div.row(title='freeCodeCamp Legacy Data Visualization Certification: obsolete!')
+            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleLDV') Legacy Data Visualization
+              i.fa.fa-free-code-camp
+              p.description react &#8594; d3
+          div.row.collapse#toggleLDV
+            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+              br
+              //-  Legacy Data Visualization sites (dynamic)
+              each val in legacy_data.sites
+                a#fader(href=`${val.url}`)
+                  div.thumbnail-container(title=`${val.title}`)
+                    div.thumbnail
+                      iframe(src=`${val.url}` frameborder='0' onload='this.style.opacity=1')
+                  p !{val.title}
+                br
+              //- Legacy Data Visualization Certificate
+              p.cert This certificate is not offered in the new curriculum
+          br
+
+          // Other Projects
+          include modules/other-projects.pug
+
+          // Donate
+          include modules/donate.pug
+
+          // Contact
+          include modules/contact.pug
+
+          //Social sites
+          include modules/social.pug
+          
     script(type='text/javascript', src='js/jquery-3.1.0.min.js')
     script(type='text/javascript', src='js/bootstrap.min.js')
     script(type='text/javascript', src='js/index.js')
