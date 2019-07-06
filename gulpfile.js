@@ -44,9 +44,9 @@ gulp.task('sass', () => {
         'sourcemap=none': true,
       })
     )
-    .pipe(concat('style.min.css'))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(autoprefixer())
+    .pipe(concat('style.min.css'))
     .pipe(gulp.dest('build/style'))
     .pipe(bs.stream());
 });
