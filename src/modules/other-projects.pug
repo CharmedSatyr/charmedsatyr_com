@@ -1,0 +1,22 @@
+// Other heading
+div.row(title='cordial, cooperative code cobbling')
+  div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleOther') Other Projects
+    i.fa.fa-code
+    p.description non-code camp projects i've worked on
+    //Other Sites
+div.row.collapse#toggleOther
+  div.inner.well.col-xs-12.col-md-8.col-md-offset-2
+    //corrupting_caesars_cipher
+    a#fader(href='https://charmedsatyr.github.io/corrupting_caesars_cipher/', )
+      div.thumbnail-container(title="Corrupting Caesar's Cipher")
+        div.thumbnail
+          iframe(src='https://charmedsatyr.github.io/corrupting_caesars_cipher/' frameborder='0' onload='this.style.opacity=1')
+      p Corrupting Caesar's Cipher
+    br
+    //uMAPiT
+    a#fader(href='https://busanmaps.herokuapp.com/', target='_blank' rel='noopener noreferrer' )
+      div.thumbnail-container(title='uMAPiT')
+        div.thumbnail
+          iframe(src='resources/uMAPiT/uMAPiT.html' frameborder='0' onload='this.style.opacity=1')
+      p uMAPiT
+br

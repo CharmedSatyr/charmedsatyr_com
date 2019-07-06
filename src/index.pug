@@ -16,7 +16,7 @@ html
           //- Responsive Web Design
           div.row(title='freeCodeCamp Responsive Web Design Certification: acquired!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleRWD') Responsive Web Design
-              i.fa.fa-free-code-camp
+              i.fa.fa-mobile
               p.description html &#8594; css &#8594; visual design &#8594; accessibility
           div.row.collapse#toggleRWD
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
@@ -74,7 +74,7 @@ html
           div.row(title='check out my progress!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDV') Data Visualization
               i.fa.fa-camera-retro
-              p.description basic &#8594; intermediate &#8594; advanced
+              p.description svg &#8594; d3
           div.row.collapse#toggleDV
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
               br
@@ -114,8 +114,8 @@ html
           //- Information Security and Quality Assurance
           div.row(title='freeCodeCamp Information Security and Quality Assurance Certification: in progress!')
             div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleISQA') Information Security and Quality Assurance
-              i.fa.fa-free-code-camp
-              p.description basic &#8594; intermediate &#8594; advanced
+              i.fa.fa-lock
+              p.description content security policy &#8594; xss filtering &#8594; http strict transport security
           div.row.collapse#toggleISQA
             div.inner.well.col-xs-12.col-md-8.col-md-offset-2
               br
@@ -194,111 +194,17 @@ html
           br
 
           // Other Projects
-          // Other heading
-          div.row(title='cordial, cooperative code cobbling')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleOther') Other Projects
-              i.fa.fa-code
-              p.description non-code camp projects i've worked on
-              //Other Sites
-          div.row.collapse#toggleOther
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              //corrupting_caesars_cipher
-              a#fader(href='https://charmedsatyr.github.io/corrupting_caesars_cipher/', )
-                div.thumbnail-container(title="Corrupting Caesar's Cipher")
-                  div.thumbnail
-                    iframe(src='https://charmedsatyr.github.io/corrupting_caesars_cipher/' frameborder='0' onload='this.style.opacity=1')
-                p Corrupting Caesar's Cipher
-              br
-              //uMAPiT
-              a#fader(href='https://busanmaps.herokuapp.com/', target='_blank' rel='noopener noreferrer' )
-                div.thumbnail-container(title='uMAPiT')
-                  div.thumbnail
-                    iframe(src='resources/uMAPiT/uMAPiT.html' frameborder='0' onload='this.style.opacity=1')
-                p uMAPiT
-          br
-          // Donate
-          // Donate heading
-          div.row(title='cryptocurrency is convenient and neat!')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleDonate') Donate
-              i.fa.fa-btc
-              p.description help me pay for equipment and training
-          // Donate
-          div.row.collapse#toggleDonate
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              a(href='bitcoin:18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw?message=CharmedSatyr.com%20Donate%20Button&time=1470445686')
-                p
-                  i.fa.fa-btc(aria-hidden='true').orange
-                  span.orange  bitcoin link
-              p Bitcoin Receiving Address:
-                br
-                code 18F2UrKKe3hfM17yzQNJapQVPDk8rsuEWw
-              br
-              p Zcash Receiving Address:
-                br
-                code t1cXgQZkJYXxT1nAzCHKHFpQtpHCh2m3cet
-          br
-          // Contact
-          // Contact heading
-          div.row(title='have you tried pgp or protonmail?')
-            div.headings.btn.btn-primary.col-xs-12.col-md-8.col-md-offset-2(data-toggle='collapse', data-target='#toggleContact') Contact
-              i.fa.fa-send
-              p.description get in touch securely
-          // Contact sites
-          div.row.collapse#toggleContact
-            div.inner.well.col-xs-12.col-md-8.col-md-offset-2
-              a(href='publickey.email-at-charmedsatyr-dot-com.txt', target='_blank' rel='noopener noreferrer' )
-                p(title='send me an encrypted message')
-                  i.fa.fa-lock(aria-hidden='true')
-                  span  OpenPGP Public Key
-              br
-              form(method='post' action='contact.php')
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Name
-                    span.error *
-                  input#nameEntry.col-xs-4(type='text' name='nameEntry')
-                div#nameError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Email
-                    span.error *
-                  input#emailEntry.col-xs-4(type='text' name='emailEntry')
-                div#emailError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Website
-                  input#websiteEntry.col-xs-4(type='text' name='websiteEntry')
-                div#websiteError.error
-                div.row
-                  div.formEntry.col-xs-3.col-xs-offset-1 Subject
-                    span.error *
-                  input#subjectEntry.col-xs-4(type='text' name='subjectEntry')
-                div#subjectError.error
-                div.row
-                  div.formEntry.col-xs-3 Message
-                    span.error *
-                  textarea#messageEntry.col-xs-4(type='text' name='messageEntry')
-                div#messageError.error
-                br
-                div#submit.btn.btn-default(type='submit' value='Submit') Submit
-                input#submitReal(type='submit' value='Real')
-          //Social sites
-          div.row
-            div.social.col.xs-12.col-xs-offset-2.col-md-8
-              div.row
-                div.col-xs-2
-                  a(href='https://github.com/CharmedSatyr', target='_blank' rel='noopener noreferrer'  title='Read my code on GitHub')
-                    i.fa.fa-github(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://codepen.io/CharmedSatyr/', target='_blank' rel='noopener noreferrer'  title='Catch works in progress on CodePen')
-                    i.fa.fa-codepen(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://www.twitter.com/CharmedSatyr', target='_blank' rel='noopener noreferrer'  title='Tweet with me')
-                    i.fa.fa-twitter(aria-hidden='false')
-                div.col-xs-2
-                  a(href='https://eff.org', target='_blank' rel='noopener noreferrer' )
-                    img(src='resources/CharmedSatyr/EFF-2017mb.png' title='Electronic Frontier Foundation Member' alt='EFF Digital Badge').eff
-                div.col-xs-2
-                  a(href='https://fsf.org', target='_blank' rel='noopener noreferrer' )
-                    img(src='resources/CharmedSatyr/FSF-Member.png' title='Free Software Foundation Member' alt='FSF Digital Badge').fsf
+          include modules/other-projects.pug
 
+          // Donate
+          include modules/donate.pug
+
+          // Contact
+          include modules/contact.pug
+
+          //Social sites
+          include modules/social.pug
+          
     script(type='text/javascript', src='js/jquery-3.1.0.min.js')
     script(type='text/javascript', src='js/bootstrap.min.js')
     script(type='text/javascript', src='js/index.js')
